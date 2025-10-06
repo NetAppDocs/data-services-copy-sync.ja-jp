@@ -4,7 +4,7 @@ permalink: reference-supported-relationships.html
 keywords: supported sync relationships, support, supported target, supported source 
 summary: NetApp Copy and Sync を使用すると、ソースからターゲットにデータを同期できます。これを同期関係と呼びます。始める前に、サポートされている関係を理解し​​ておく必要があります。 
 ---
-= NetApp Copy and Sync でサポートされている同期関係
+= NetApp Copy and Syncでサポートされている同期関係
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

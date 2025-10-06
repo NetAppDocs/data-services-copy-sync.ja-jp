@@ -4,7 +4,7 @@ permalink: task-installing-azure.html
 keywords: data broker, install, azure, networking, permissions, regions, install data broker in azure, install in azure, deploy in azure, deploy data broker in azure, networking requirements, port, ports, 443, port 443, ntp, network time protocol, azure data broker 
 summary: 新しいデータ ブローカーを作成するときは、Azure Data Broker オプションを選択して、VNet 内の新しい仮想マシンにデータ ブローカー ソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。 
 ---
-= Azure でNetApp Copy and Sync 用の新しいデータ ブローカーを作成する
+= Azure でNetApp Copy and Sync用の新しいデータ ブローカーを作成する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 新しいデータ ブローカーを作成するときは、Azure Data
 
 
 [role="lead"]
-NetApp Copy and Sync の新しいデータ ブローカー グループを作成するときは、Microsoft Azure を選択して、VNet 内の新しい仮想マシンにデータ ブローカー ソフトウェアを展開します。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
+NetApp Copy and Syncの新しいデータ ブローカー グループを作成するときは、Microsoft Azure を選択して、VNet 内の新しい仮想マシンにデータ ブローカー ソフトウェアを展開します。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
 
 クラウド内またはオンプレミスの既存の Linux ホストにデータ ブローカーをインストールすることもできます。link:task-installing-linux.html["詳細情報"] 。
 

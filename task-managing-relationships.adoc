@@ -4,7 +4,7 @@ permalink: task-managing-relationships.html
 keywords: sync, immediate, now, schedule, minutes, hours, on, off, delete, group, accelerate, accelerating, grouping, multiple data brokers, sync now, turn off, turn on, sync schedule, settings, change settings, recently modified files, delete files on target, retries, retry, file types, exclude file type, include file type, delete relationship 
 summary: データを即時に同期したり、スケジュールを変更したりすることで、いつでも同期関係を管理できます。 
 ---
-= NetApp Copy and Sync での同期関係の管理
+= NetApp Copy and Syncでの同期関係の管理
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: データを即時に同期したり、スケジュールを変更し�
 
 
 [role="lead"]
-NetApp Copy and Sync では、データの即時同期、スケジュールの変更などにより、いつでも同期関係を管理できます。
+NetApp Copy and Syncでは、データの即時同期、スケジュールの変更などにより、いつでも同期関係を管理できます。
 
 
 
@@ -82,7 +82,7 @@ SMB サーバーに関する注意: ドメインが新しい場合は、資格�
 
 
 .結果
-コピーと同期により、データ ブローカーの資格情報が更新されます。データ ブローカーがデータ同期に更新された資格情報を使用し始めるまで、最大 10 分かかる場合があります。
+コピーと同期により、データ ブローカーの資格情報が更新されます。データ ブローカーがデータ同期のために更新された資格情報を使用し始めるまで、最大 10 分かかる場合があります。
 
 
 
@@ -90,7 +90,7 @@ SMB サーバーに関する注意: ドメインが新しい場合は、資格�
 
 各同期関係の *通知* 設定により、 NetAppコンソールの通知センターでコピーと同期の通知を受信するかどうかを選択できます。成功したデータ同期、失敗したデータ同期、キャンセルされたデータ同期に関する通知を有効にすることができます。
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["NetAppコンソールの通知センターを示すスクリーンショット。"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["NetApp Consoleの通知センターを示すスクリーンショット。"]
 
 また、メールで通知を受け取ることもできます。
 
@@ -189,7 +189,7 @@ video::7f957dbf-9215-41ea-a705-b24c010b2212[panopto]
 NOTE: Regex または正規表現は、ワイルドカードや glob 表現とは異なります。この機能は正規表現でのみ動作します。
 
 --
-ディレクトリを除外する:: 同期から除外する正規表現またはディレクトリを最大 15 個指定するには、名前またはディレクトリのフル パスを入力し、*Enter* キーを押します。デフォルトでは、.copy-offload、.snapshot、~snapshot ディレクトリは除外されます。
+ディレクトリを除外する:: 同期から除外する正規表現またはディレクトリを最大 15 個指定するには、名前またはディレクトリのフル パスを入力して Enter キーを押します。デフォルトでは、.copy-offload、.snapshot、~snapshot ディレクトリは除外されます。
 +
 --
 

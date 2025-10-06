@@ -4,7 +4,7 @@ permalink: task-installing-aws.html
 keywords: data broker, install, aws, networking, permissions, regions, install data broker in aws, install in aws, deploy in aws, deploy data broker in aws, cft, template, iam role, use your own iam role, regions, supported regions, networking requirements, port, ports, 443, port 443, ntp, network time protocol, permissions, iam role, iam permissions, aws data broker 
 summary: 新しいデータブローカーを作成するときは、AWS Data Broker オプションを選択して、VPC 内の新しい EC2 インスタンスにデータブローカーソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。 
 ---
-= NetApp Copy and Sync 用の新しいデータブローカーを AWS に作成する
+= NetApp Copy and Sync用の新しいデータブローカーを AWS に作成する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 新しいデータブローカーを作成するときは、AWS Data Br
 
 
 [role="lead"]
-NetApp Copy and Sync の新しいデータ ブローカー グループを作成するときは、Amazon Web Services を選択して、VPC 内の新しい EC2 インスタンスにデータ ブローカー ソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
+NetApp Copy and Syncの新しいデータ ブローカー グループを作成するときは、Amazon Web Services を選択して、VPC 内の新しい EC2 インスタンスにデータ ブローカー ソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
 
 クラウド内またはオンプレミスの既存の Linux ホストにデータ ブローカーをインストールすることもできます。link:task-installing-linux.html["詳細情報"] 。
 

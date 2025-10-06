@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-external-vault.html 
 keywords: hashicorp, vault, credentials, secrets, API 
-summary: Amazon S3、Azure、または Google Cloud の認証情報を必要とする同期関係を作成する場合は、 NetApp Copy and Sync ユーザー インターフェイスまたは API を通じてそれらの認証情報を指定する必要があります。別の方法としては、データ ブローカーを設定して、外部の HashiCorp Vault から直接資格情報にアクセスすることもできます。 
+summary: Amazon S3、Azure、または Google Cloud の認証情報を必要とする同期関係を作成する場合は、 NetApp Copy and Syncユーザー インターフェイスまたは API を通じてそれらの認証情報を指定する必要があります。別の方法としては、データ ブローカーを設定して、外部の HashiCorp Vault から直接資格情報にアクセスすることもできます。 
 ---
-= NetApp Copy and Sync で外部 HashiCorp Vault を使用するためのデータ ブローカー グループを設定する
+= NetApp Copy and Syncで外部 HashiCorp Vault を使用するためのデータ ブローカー グループを設定する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Amazon S3、Azure、または Google Cloud の認証情報を必要と�
 
 
 [role="lead"]
-Amazon S3、Azure、または Google Cloud の認証情報を必要とする同期関係を作成する場合は、 NetApp Copy and Sync ユーザー インターフェイスまたは API を通じてそれらの認証情報を指定する必要があります。別の方法としては、データ ブローカー グループを設定して、外部の HashiCorp Vault から資格情報 (または _シークレット_) に直接アクセスすることもできます。
+Amazon S3、Azure、または Google Cloud の認証情報を必要とする同期関係を作成する場合は、 NetApp Copy and Syncユーザー インターフェイスまたは API を通じてそれらの認証情報を指定する必要があります。別の方法としては、データ ブローカー グループを設定して、外部の HashiCorp Vault から資格情報 (または _シークレット_) に直接アクセスすることもできます。
 
 この機能は、Amazon S3、Azure、または Google Cloud の資格情報を必要とする同期関係を持つコピーおよび同期 API を通じてサポートされます。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"]金庫の準備
 [role="quick-margin-para"]
-URL を設定して、データ ブローカー グループに資格情報を提供するためのボールトを準備します。ボールト内のシークレットの URL は _Creds_ で終わる必要があります。
+URL を設定して、データ ブローカー グループに資格情報を提供するためのボールトを準備します。ボールト内のシークレットの URL は、_Creds_ で終わる必要があります。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]データブローカーグループの準備
 [role="quick-margin-para"]
@@ -229,7 +229,7 @@ x-netapp-external-request-id-src: request ID as part of path for source credenti
 x-netapp-external-request-id-trg: request ID as part of path for target credentials
 Body: post relationship v2 body
 ....
-* ユーザートークンとNetAppコンソールアカウントIDを取得するには、link:api-sync.html["ドキュメントのこのページを参照してください"] 。
+* ユーザートークンとNetApp ConsoleアカウントIDを取得するには、link:api-sync.html["ドキュメントのこのページを参照してください"] 。
 * 結婚後の体を作るには、 https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["relationship-v2 API呼び出しを参照してください"^] 。
 
 

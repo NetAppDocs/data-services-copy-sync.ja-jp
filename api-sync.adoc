@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: api-sync.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis, 202, https status code 202, status code 202, id, id field, box 
-summary: Web UI を通じて利用できるNetApp のコピーおよび同期機能は、RESTful API を通じても利用できます。 
+summary: Web UI を通じて利用できるNetApp Copy and Sync機能は、RESTful API を通じても利用できます。 
 ---
-= NetAppコピーおよび同期 API
+= NetApp Copy and SyncAPI
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,16 +14,16 @@ summary: Web UI を通じて利用できるNetApp のコピーおよび同期機
 
 
 [role="lead"]
-Web UI を通じて利用できるNetApp のコピーおよび同期機能は、RESTful API を通じても利用できます。
+Web UI を通じて利用できるNetApp Copy and Sync機能は、RESTful API を通じても利用できます。
 
 
 
 == 始めましょう
 
-コピーおよび同期 API の使用を開始するには、ユーザー トークンとNetAppコンソール アカウント ID を取得する必要があります。  API 呼び出しを行うときは、トークンとアカウント ID を Authorization ヘッダーに追加する必要があります。
+コピーおよび同期 API の使用を開始するには、ユーザー トークンとNetApp Consoleアカウント ID を取得する必要があります。  API 呼び出しを行うときは、トークンとアカウント ID を Authorization ヘッダーに追加する必要があります。
 
 .手順
-. NetAppコンソールからユーザー トークンを取得します。
+. NetApp Consoleからユーザー トークンを取得します。
 +
 [source, http]
 ----
@@ -43,7 +43,7 @@ Body:
 
 NOTE: クライアント ID のない個人のメール アカウントを使用している場合は、デフォルトのクライアント ID「QC3AgHk6qdbmC7Yyr82ApBwaaJLwRrNO」を使用できます。
 
-. NetAppコンソール アカウント ID を取得します。
+. NetApp Consoleアカウント ID を取得します。
 +
 [source, http]
 ----
@@ -83,7 +83,7 @@ Body: { "name": "databroker1", "type": "AZURE" }
 
 
 .次の手順
-NetAppコンソールからのユーザー トークンには有効期限があります。トークンを更新するには、手順 1 から API を再度呼び出す必要があります。
+NetApp Consoleからのユーザー トークンには有効期限があります。トークンを更新するには、手順 1 から API を再度呼び出す必要があります。
 
 API レスポンスには、トークンの有効期限を示す「expires_in」フィールドが含まれています。
 
@@ -104,7 +104,7 @@ IDは呼び出すたびに変わるので注意してください。 `GET /messa
 
 *例*
 
-電話すると `list-s3-buckets`API では、結果はすぐには返されません。
+電話すると `list-s3-buckets`API では、結果がすぐに返されません。
 
 [source, http]
 ----

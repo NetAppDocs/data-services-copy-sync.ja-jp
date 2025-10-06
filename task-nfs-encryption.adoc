@@ -4,7 +4,7 @@ permalink: task-nfs-encryption.html
 keywords: encryption, in flight, data in flight, in-flight, data-in-flight, nfs, initiator, listener, port 
 summary: 企業に厳格なセキュリティ ポリシーがある場合は、転送中のデータ暗号化を使用して、異なるネットワーク内の NFS サーバー間でデータを同期します。 
 ---
-= NetApp Copy and Sync の Data In Flight 暗号化を使用して NFS データを同期する
+= NetApp Copy and Syncの Data In Flight 暗号化を使用して NFS データを同期する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 企業に厳格なセキュリティ ポリシーがある場合は、�
 
 
 [role="lead"]
-企業に厳格なセキュリティ ポリシーがある場合は、 NetApp Copy and Sync の転送中データ暗号化を使用して NFS データを同期できます。この機能は、NFS サーバーから別の NFS サーバー、およびAzure NetApp FilesからAzure NetApp Files間でサポートされます。
+企業に厳格なセキュリティ ポリシーがある場合は、 NetApp Copy and Syncの転送中データ暗号化を使用して NFS データを同期できます。この機能は、NFS サーバーから別の NFS サーバー、およびAzure NetApp FilesからAzure NetApp Files間でサポートされます。
 
 たとえば、異なるネットワークにある 2 つの NFS サーバー間でデータを同期したい場合があります。あるいは、サブネットまたはリージョン間でAzure NetApp Files上のデータを安全に転送する必要がある場合もあります。
 
@@ -24,7 +24,7 @@ summary: 企業に厳格なセキュリティ ポリシーがある場合は、�
 
 データインフライト暗号化は、2 つのデータ ブローカー間でネットワーク経由で送信される NFS データを暗号化します。次の図は、2 つの NFS サーバーと 2 つのデータ ブローカーの関係を示しています。
 
-image:diagram_nfs_encryption.gif["2 つの NFS サーバーと 2 つのデータ ブローカーを示す図。データはソース NFS サーバーからソース データ ブローカーに流れ、その時点でデータが暗号化されます。その後、データはターゲット データ ブローカーに送信され、次にターゲット NFS サーバーに送信されます。"]
+image:diagram_nfs_encryption.gif["2 つの NFS サーバーと 2 つのデータ ブローカーを示す図。データはソース NFS サーバーからソース データ ブローカーに流れ、そこでデータが暗号化されます。その後、データはターゲット データ ブローカーに送信され、次にターゲット NFS サーバーに送信されます。"]
 
 1 つのデータ ブローカーが _イニシエーター_ として機能します。データを同期する時間になると、他のデータ ブローカー (リスナー) に接続要求を送信します。そのデータ ブローカーはポート 443 で要求をリッスンします。必要に応じて別のポートを使用することもできますが、そのポートが別のサービスによって使用されていないことを必ず確認してください。
 

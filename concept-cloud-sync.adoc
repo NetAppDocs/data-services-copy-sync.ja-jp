@@ -4,7 +4,7 @@ permalink: concept-cloud-sync.html
 keywords: NetApp Copy and Sync, overview, conceptual, how, data broker, service, cloudsync, bluexp, copy and sync 
 summary: NetApp Copy and Sync は、クラウド内またはオンプレミスの任意のターゲットにデータを移行するためのシンプルで安全な自動化された方法を提供します。 
 ---
-= NetAppのコピーと同期について学ぶ
+= NetApp Copy and Syncについて学ぶ
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,21 +18,21 @@ NetApp Copy and Sync は、クラウド内またはオンプレミスの任意�
 
 
 
-== NetAppコンソール
+== NetApp Console
 
-NetApp Copy and Sync は、 NetAppコンソールからアクセスできます。
+NetApp Copy and Sync はNetApp Consoleからアクセスできます。
 
-NetAppコンソールは、オンプレミスとクラウド環境全体にわたるエンタープライズ グレードのNetAppストレージとデータ サービスの集中管理を提供します。NetAppデータ サービスにアクセスして使用するには、コンソールが必要です。管理インターフェースとして、1 つのインターフェースから多数のストレージ リソースを管理できます。コンソール管理者は、企業内のすべてのシステムのストレージとサービスへのアクセスを制御できます。
+NetApp Consoleは、オンプレミスとクラウド環境全体にわたるエンタープライズ グレードのNetAppストレージとデータ サービスの集中管理を提供します。NetAppデータ サービスにアクセスして使用するには、コンソールが必要です。管理インターフェースとして、1 つのインターフェースから多数のストレージ リソースを管理できます。コンソール管理者は、企業内のすべてのシステムのストレージとサービスへのアクセスを制御できます。
 
-NetAppコンソールの使用を開始するためにライセンスやサブスクリプションは必要ありません。ストレージ システムまたはNetAppデータ サービスへの接続を確保するためにクラウドにコンソール エージェントを展開する必要がある場合にのみ料金が発生します。ただし、コンソールからアクセスできる一部のNetAppデータ サービスは、ライセンスまたはサブスクリプションベースです。
+NetApp Consoleの使用を開始するためにライセンスやサブスクリプションは必要ありません。ストレージ システムまたはNetAppデータ サービスへの接続を確保するためにクラウドにコンソール エージェントを展開する必要がある場合にのみ料金が発生します。ただし、コンソールからアクセスできる一部のNetAppデータ サービスは、ライセンスまたはサブスクリプションベースです。
 
-詳細はこちら https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetAppコンソール"]。
+詳細はこちら https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"]。
 
 
 
-== NetAppのコピーと同期の仕組み
+== NetApp Copy and Syncの仕組み
 
-NetApp Copy and Sync は、データ ブローカー グループ、 NetAppコンソールから利用できるクラウドベースのインターフェイス、およびソースとターゲットで構成される SaaS (Software-as-a-Service) プラットフォームです。
+NetApp Copy and Sync は、データ ブローカー グループ、 NetApp Consoleから利用できるクラウドベースのインターフェイス、およびソースとターゲットで構成される SaaS (Software-as-a-Service) プラットフォームです。
 
 次の図は、コピー コンポーネントと同期コンポーネントの関係を示しています。
 

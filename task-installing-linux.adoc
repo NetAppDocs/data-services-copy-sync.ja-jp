@@ -4,7 +4,7 @@ permalink: task-installing-linux.html
 keywords: data broker, install, linux, on-prem data broker, on-prem, on prem, on premises, networking, permissions, os, operating system, rhel, red hat, ram, cpu, disk space, install data broker, installing data broker, install a data broker, data broker installation, linux installation, linux operating system, aws access, aws keys, keys, gcp access, aws permissions, gcp permissions, google permissions 
 summary: 新しいデータ ブローカーを作成するときは、オンプレミス データ ブローカー オプションを選択して、オンプレミスの Linux ホストまたはクラウド内の既存の Linux ホストにデータ ブローカー ソフトウェアをインストールします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。 
 ---
-= NetApp Copy and Sync 用のデータ ブローカーを Linux ホストにインストールします。
+= NetApp Copy and Sync用のデータ ブローカーを Linux ホストにインストールします。
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 新しいデータ ブローカーを作成するときは、オンプ�
 
 
 [role="lead"]
-NetApp Copy and Sync の新しいデータ ブローカー グループを作成する場合は、オンプレミス データ ブローカー オプションを選択して、オンプレミスの Linux ホストまたはクラウド内の既存の Linux ホストにデータ ブローカー ソフトウェアをインストールします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
+NetApp Copy and Syncの新しいデータ ブローカー グループを作成する場合は、オンプレミス データ ブローカー オプションを選択して、オンプレミスの Linux ホストまたはクラウド内の既存の Linux ホストにデータ ブローカー ソフトウェアをインストールします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
 
 
 
@@ -194,8 +194,8 @@ chmod +x data_broker_installer.sh
 ./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file> -h <proxy_host> -p <proxy_port> -u <proxy_username> -w <proxy_password>`
 
 +
-AWSキー:: これらは、ユーザーが準備しておくべきキーです<<AWSへのアクセスを有効にする,以下の手順に従って>>。  AWS キーは、オンプレミスまたはクラウド ネットワークで実行されるデータ ブローカーに保存されます。  NetApp はデータ ブローカーの外部ではキーを使用しません。
-JSONファイル:: これは、準備しておくべきサービスアカウントキーを含むJSONファイルです。<<Google Cloudへのアクセスを有効にする,以下の手順に従って>> 。
+AWSキー:: これらは、ユーザーが準備しておくべきキーです<<AWSへのアクセスを有効にする,以下の手順に従ってください>>。  AWS キーは、オンプレミスまたはクラウド ネットワークで実行されるデータ ブローカーに保存されます。  NetApp はデータ ブローカーの外部ではキーを使用しません。
+JSONファイル:: これは、準備しておくべきサービスアカウントキーを含むJSONファイルです。<<Google Cloudへのアクセスを有効にする,以下の手順に従ってください>> 。
 
 
 

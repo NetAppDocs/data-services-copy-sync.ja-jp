@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: faq.html 
 keywords: community, forums, help, support, videos, faq, getting help, permissions, access control lists, acls, preserve, preserving, troubleshooting, support, encryption, smb 
-summary: フォーラム、チャット サービス、ビデオなどのさまざまなリソースを通じて、 NetApp Copy and Sync に関するサポートを受けたり、詳細情報を入手したりできます。 
+summary: フォーラム、チャット サービス、ビデオなどのさまざまなリソースを通じて、 NetApp Copy and Syncに関するサポートを受けたり、詳細情報を入手したりできます。 
 ---
-= NetAppコピーおよび同期に関する技術 FAQ
+= NetApp Copy and Sync技術 FAQ
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,9 +18,9 @@ summary: フォーラム、チャット サービス、ビデオなどのさま�
 
 
 
-== はじめる
+== 開始
 
-次の質問は、 NetApp Copy and Sync の使用開始に関するものです。
+次の質問は、NetApp Copy and Syncの使用開始に関連しています。
 
 
 
@@ -86,7 +86,7 @@ NOTE: コピーおよび同期関係は、Azure NetApp Filesでは無料です�
 
 === コピーと同期にアクセスするにはどうすればよいですか?
 
-コピーと同期はNetAppコンソールから利用できます。コンソールの左側のナビゲーションから、*モビリティ* > *コピーと同期*を選択します。
+コピーと同期はNetApp Consoleから利用できます。コンソールの左側のナビゲーションから、*モビリティ* > *コピーと同期*を選択します。
 
 
 
@@ -187,7 +187,7 @@ BLOB コンテナーがターゲットの場合は、特定の Azure BLOB スト
 
 === 同期はどのくらいの頻度で行われますか?
 
-デフォルトのスケジュールは毎日同期するように設定されています。初期同期後は、次の操作を実行できます。
+デフォルトのスケジュールは毎日同期するように設定されています。最初の同期後に、次の操作を実行できます。
 
 * 同期スケジュールを希望の日数、時間、分数に変更します
 * 同期スケジュールを無効にする

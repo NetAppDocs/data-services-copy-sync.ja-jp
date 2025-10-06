@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-networking.html 
 keywords: networking, 443, port, ports, port 443, connections, connectivity, path, paths, vpn, copy and sync, netapp, bluexp, cloud sync,connectivity,data broker 
-summary: NetApp Copy and Sync のネットワークには、データ ブローカー グループとソースおよびターゲットの場所間の接続、およびポート 443 経由のデータ ブローカーからの送信インターネット接続が含まれます。 
+summary: NetApp Copy and Syncのネットワークには、データ ブローカー グループとソースおよびターゲットの場所間の接続、およびポート 443 経由のデータ ブローカーからの送信インターネット接続が含まれます。 
 ---
-= NetApp Copy and Sync のネットワーク概要
+= NetApp Copy and Syncのネットワーク概要
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: NetApp Copy and Sync のネットワークには、データ ブロー�
 
 
 [role="lead"]
-NetApp Copy and Sync のネットワークには、データ ブローカー グループとソースおよびターゲットの場所間の接続、およびポート 443 経由のデータ ブローカーからの送信インターネット接続が含まれます。
+NetApp Copy and Syncのネットワークには、データ ブローカー グループとソースおよびターゲットの場所間の接続、およびポート 443 経由のデータ ブローカーからの送信インターネット接続が含まれます。
 
 
 
@@ -106,7 +106,7 @@ NetAppデータ ブローカーでは、コピーおよび同期と通信し、�
 | \https://sts.amazonaws.com \https://sts.us-east-1.amazonaws.com | データブローカーが AWS にデプロイされている場合、またはオンプレミスにデプロイされていて AWS 認証情報が提供されている場合に、AWS 認証情報を検証します。データ ブローカーは、デプロイ中、更新時、および再起動時にこのエンドポイントに接続します。 
 
 
-| \https://api.bluexp.netapp.com \https://netapp-cloud-account.auth0.com | 分類を使用して新しい同期関係のソース ファイルを選択するときに、 NetApp Data Classification に問い合わせます。 
+| \https://api.bluexp.netapp.com \https://netapp-cloud-account.auth0.com | 分類を使用して新しい同期関係のソース ファイルを選択するときに、 NetApp Data Classificationに問い合わせます。 
 
 
 | \https://pubsub.googleapis.com | Google ストレージ アカウントから継続的な同期関係を作成する場合。 

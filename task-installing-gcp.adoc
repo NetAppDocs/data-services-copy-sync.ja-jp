@@ -4,7 +4,7 @@ permalink: task-installing-gcp.html
 keywords: data broker, install, gcp, google, networking, permissions, regions, install data broker in gcp, install in gcp, deploy in gcp, deploy data broker in gcp, install data broker in google, install in google, deploy in google, deploy data broker in google, networking requirements, port, ports, 443, port 443, ntp, network time protocol, gcp data broker, service account 
 summary: 新しいデータ ブローカーを作成するときは、Google Cloud Data Broker オプションを選択して、VPC 内の新しい仮想マシン インスタンスにデータ ブローカー ソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。 
 ---
-= Google Cloud でNetApp Copy and Sync 用の新しいデータ ブローカーを作成する
+= Google Cloud でNetApp Copy and Sync用の新しいデータ ブローカーを作成する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 新しいデータ ブローカーを作成するときは、Google Clo
 
 
 [role="lead"]
-NetApp Copy and Sync の新しいデータ ブローカー グループを作成するときは、Google Cloud Platform を選択して、Google Cloud VPC 内の新しい仮想マシン インスタンスにデータ ブローカー ソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
+NetApp Copy and Syncの新しいデータ ブローカー グループを作成するときは、Google Cloud Platform を選択して、Google Cloud VPC 内の新しい仮想マシン インスタンスにデータ ブローカー ソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
 
 クラウド内またはオンプレミスの既存の Linux ホストにデータ ブローカーをインストールすることもできます。link:task-installing-linux.html["詳細情報"] 。
 
@@ -134,7 +134,7 @@ image:screenshot_data_broker_gcp.png["Google Cloud にデータ ブローカー�
 
 . データ ブローカーが利用可能になったら、[コピーと同期] で [*続行*] を選択します。
 +
-インスタンスのデプロイには約 5 ～ 10 分かかります。コピーと同期から進行状況を監視できます。インスタンスが利用可能になると、自動的に更新されます。
+インスタンスのデプロイには約 5 ～ 10 分かかります。コピーと同期の進行状況を監視できます。インスタンスが利用可能になると、自動的に更新されます。
 
 . ウィザードのページを完了して、新しい同期関係を作成します。
 

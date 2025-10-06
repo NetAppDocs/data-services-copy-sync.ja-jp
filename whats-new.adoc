@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, enhancements, fixes' 
-summary: NetApp Copy and Sync の新機能について説明します。 
+summary: NetApp Copy and Syncの新機能について説明します。 
 ---
 = NetApp Copy and Syncの新機能
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Copy and Sync の新機能について説明します。
 
 
 [role="lead"]
-NetApp Copy and Sync の新機能について説明します。
+NetApp Copy and Syncの新機能について説明します。
 
 
 
@@ -22,17 +22,17 @@ NetApp Copy and Sync の新機能について説明します。
 
 
 
-=== BlueXP copy and syncはNetAppコピー＆同期になりました
+=== BlueXP copy and syncはNetApp Copy and Syncになりました
 
-BlueXP copy and syncは、 NetAppコピーおよび同期に名前が変更されました。
+BlueXP copy and syncは、 NetApp Copy and Syncに名前が変更されました。
 
 
 
-=== BlueXPはNetAppコンソールになりました
+=== BlueXPはNetApp Consoleになりました
 
-NetAppコンソールは、強化され再構築されたBlueXP基盤上に構築され、オンプレミスとクラウド環境全体にわたるエンタープライズ グレードのNetAppストレージとNetAppデータ サービスの集中管理を提供し、リアルタイムの分析情報、ワークフローの高速化、および高度なセキュリティとコンプライアンスを備えた簡素化された管理を実現します。
+NetApp Consoleは、強化され再構築されたBlueXP基盤上に構築され、オンプレミスとクラウド環境全体にわたるエンタープライズ グレードのNetAppストレージとNetApp Data Servicesの集中管理を提供し、リアルタイムの分析情報、より高速なワークフロー、および高度なセキュリティとコンプライアンスを備えた簡素化された管理を実現します。
 
-変更内容の詳細については、link:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetAppコンソールのリリースノート"] 。
+変更内容の詳細については、link:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp Consoleのリリースノート"] 。
 
 
 
@@ -54,7 +54,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-
 
 === バグ修正
 
-いくつかのバグを修正するために、 NetApp Copy and Sync とデータ ブローカーを更新しました。新しいデータ ブローカーのバージョンは 1.0.56 です。
+いくつかのバグを修正するために、 NetApp Copy and Syncとデータ ブローカーを更新しました。新しいデータ ブローカーのバージョンは 1.0.56 です。
 
 
 
@@ -64,7 +64,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-
 
 === バグ修正
 
-いくつかのバグを修正するために、 NetApp Copy and Sync とデータ ブローカーを更新しました。新しいデータ ブローカーのバージョンは 1.0.55 です。
+いくつかのバグを修正するために、 NetApp Copy and Syncとデータ ブローカーを更新しました。新しいデータ ブローカーのバージョンは 1.0.55 です。
 
 
 
@@ -74,7 +74,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-
 
 === バグ修正
 
-いくつかのバグを修正するために、 NetApp Copy and Sync とデータ ブローカーを更新しました。新しいデータ ブローカーのバージョンは 1.0.54 です。
+いくつかのバグを修正するために、 NetApp Copy and Syncとデータ ブローカーを更新しました。新しいデータ ブローカーのバージョンは 1.0.54 です。
 
 
 
@@ -94,7 +94,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-
 
 === バグ修正
 
-NetApp Copy and Sync が更新され、いくつかのバグが修正されました。データ ブローカーも更新され、セキュリティ更新が適用されます。新しいデータ ブローカーのバージョンは 1.0.52 です。
+NetApp Copy and Syncが更新され、いくつかのバグが修正されました。データ ブローカーも更新され、セキュリティ更新が適用されます。新しいデータ ブローカーのバージョンは 1.0.52 です。
 
 
 
@@ -144,7 +144,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-aws.html#creating
 
 === データブローカーのノードバージョンの更新
 
-すべての新しいデータ ブローカーは、ノード バージョン 21.2.0 を使用します。  CentOS 7.0 や Ubuntu Server 18.0 など、このアップデートと互換性のないデータ ブローカーは、 NetApp Copy and Sync で動作しなくなります。
+すべての新しいデータ ブローカーは、ノード バージョン 21.2.0 を使用します。  CentOS 7.0 や Ubuntu Server 18.0 など、このアップデートと互換性のないデータ ブローカーは、 NetApp Copy and Syncで動作しなくなります。
 
 
 
@@ -206,9 +206,9 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/reference-requirements.html#googl
 
 === 複数の同期関係を一度に削除する
 
-ユーザーは、UI で一度に複数の同期関係を削除できるようになりました。
+ユーザーは UI で一度に複数の同期関係を削除できるようになりました。
 
-https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#deleting-relationships["同期関係の削除について詳しくは、こちらをご覧ください。"]
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#deleting-relationships["同期関係の削除の詳細について説明します。"]
 
 
 
@@ -276,7 +276,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#
 
 RESTful API を使用しているユーザーは、関係 ID を使用して関係をフィルターできるようになりました。
 
-https://docs.netapp.com/us-en/bluexp-copy-sync/api-sync.html["NetApp Copy and Sync で RESTful API を使用する方法の詳細"] 。
+https://docs.netapp.com/us-en/bluexp-copy-sync/api-sync.html["NetApp Copy and Syncで RESTful API を使用する方法の詳細"] 。
 
 https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["除外ディレクトリ設定の詳細"] 。
 
@@ -332,7 +332,7 @@ Cloud Sync は、 ONTAP S3 ストレージと NFS の追加の同期関係をサ
 * NFS からONTAP S3 ストレージへ
 
 
-Cloud Sync、Azure Data Lake Storage Gen2 をソースとターゲットの両方としてさらにサポートし、次のことを実現します。
+Cloud Syncでは、Azure Data Lake Storage Gen2 をソースとターゲットの両方としてサポートし、次のことが可能になります。
 
 * NFS サーバ
 * SMB サーバ
@@ -465,7 +465,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#
 
 Cloud Sync の通知を電子メールで受信できるようになりました。
 
-電子メールで通知を受信するには、同期関係で *通知* 設定を有効にし、 NetAppコンソールでアラートと通知の設定を構成する必要があります。
+電子メールで通知を受信するには、同期関係で *通知* 設定を有効にし、 NetApp Consoleでアラートと通知の設定を構成する必要があります。
 
 https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#setting-up-notifications["通知の設定方法を学ぶ"] 。
 
@@ -479,7 +479,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#
 
 NFS サーバーまたは SMB サーバーから Google ドライブにデータを同期できるようになりました。  「マイドライブ」と「共有ドライブ」の両方がターゲットとしてサポートされています。
 
-Google ドライブを含む同期関係を作成する前に、必要な権限と秘密鍵を持つサービス アカウントを設定する必要があります。 https://docs.netapp.com/us-en/bluexp-copy-sync/reference-requirements.html#google-drive["Googleドライブの要件について詳しくはこちらをご覧ください"] 。
+Google ドライブを含む同期関係を作成するには、必要な権限と秘密鍵を持つサービス アカウントを設定する必要があります。 https://docs.netapp.com/us-en/bluexp-copy-sync/reference-requirements.html#google-drive["Googleドライブの要件について詳しくは"] 。
 
 https://docs.netapp.com/us-en/bluexp-copy-sync/reference-supported-relationships.html["サポートされている同期関係のリストを表示する"] 。
 
@@ -508,7 +508,7 @@ NetAppコンソールのシステム ページから直接同期関係を設定�
 
 システム ページから、あるシステムを別のシステムの上にドラッグ アンド ドロップすることで、同期関係を設定できるようになりました。
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-drag-and-drop.png["NetAppコンソールの通知センターを示すスクリーンショット。"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-drag-and-drop.png["NetApp Consoleの通知センターを示すスクリーンショット。"]
 
 
 
@@ -516,7 +516,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/s
 
 システム ページからシステムを選択し、右側のパネルから同期オプションを選択することで、Azure Blob Storage または Google Cloud Storage の同期関係を設定できるようになりました。
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-panel.png["NetAppコンソールの通知センターを示すスクリーンショット。"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-panel.png["NetApp Consoleの通知センターを示すスクリーンショット。"]
 
 
 
@@ -605,7 +605,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#
 
 同期関係を作成すると、 Cloud Sync はソースのCloud Volumes ONTAPシステム、オンプレミスのONTAPクラスター、または FSx for ONTAPファイル システム上のすべてのボリュームを表示するようになりました。
 
-以前は、 Cloud Sync、選択したプロトコルに一致するボリュームのみが表示されていました。これですべてのボリュームが表示されますが、選択したプロトコルに一致しないボリュームや共有またはエクスポートがないボリュームはグレー表示され、選択できなくなります。
+以前は、 Cloud Sync、選択したプロトコルに一致するボリュームのみが表示されていました。これですべてのボリュームが表示されますが、選択したプロトコルと一致しないボリュームや共有またはエクスポートがないボリュームはグレー表示され、選択できなくなります。
 
 
 
@@ -637,7 +637,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#
 
 同期関係に新しい *通知* 設定が利用できるようになりました。この設定により、 NetAppコンソールの通知センターでCloud Sync通知を受信するかどうかを選択できます。成功したデータ同期、失敗したデータ同期、キャンセルされたデータ同期に関する通知を有効にすることができます。
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["NetAppコンソールの通知センターを示すスクリーンショット。"]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["NetApp Consoleの通知センターを示すスクリーンショット。"]
 
 https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#change-the-settings-for-a-sync-relationship["同期関係の設定の変更について詳しくは、こちらをご覧ください。"] 。
 
@@ -847,7 +847,7 @@ Cloud Syncは、以下の追加の同期関係をサポートするようにな�
 * Amazon S3からBoxへ
 * IBM Cloud Object StorageからBoxへ
 * StorageGRIDからBoxへ
-* NFSサーバーへのBox
+* BoxからNFSサーバーへ
 * BoxからSMBサーバーへ
 
 
@@ -1002,9 +1002,9 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 === スタンドアロンのCloud Syncサービスは廃止されました
 
-スタンドアロンのCloud Syncサービスは廃止されました。これで、 NetAppコンソールから直接Cloud Syncにアクセスし、同じ機能をすべて利用できるようになります。
+スタンドアロンのCloud Syncサービスは廃止されました。これで、 NetApp ConsoleからCloud Syncに直接アクセスし、同じ機能をすべて利用できるようになります。
 
-NetAppコンソールにログインすると、上部の [同期] タブに切り替えて、以前と同じように関係を表示できます。
+NetApp Consoleにログインすると、上部の [同期] タブに切り替えて、以前と同じように関係を表示できます。
 
 
 

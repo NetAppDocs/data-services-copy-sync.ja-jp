@@ -4,7 +4,7 @@ permalink: reference-limitations.html
 keywords: limitations, china, unsupported regions 
 summary: 今回のリリースでサポートされていない、または今回のリリースでは正常に機能しないプラットフォーム、デバイス、機能が記載されています。これらの制限事項をよく確認してください。 
 ---
-= NetAppコピーと同期の制限
+= NetApp Copy and Syncの制限
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

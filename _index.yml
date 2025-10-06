@@ -1,19 +1,19 @@
 ---
 indexpage:
-  title: NetAppコピーおよび同期のドキュメント
+  title: NetApp Copy and Syncのドキュメント
   summary: NetApp Copy and Sync は、オンプレミスとクラウド オブジェクト ストア間で NAS データを転送するためのクラウド レプリケーションおよび同期サービスです。
   keywords: bluexp-family, documentation, cloud, copy and sync, cloud sync, netapp
   lead: NetApp Copy and Sync は、オンプレミスとクラウド オブジェクト ストア間で NAS データを転送するためのクラウド レプリケーションおよび同期サービスです。
   tiles:
   - title: 始めましょう
     links:
-    - title: NetAppコピーと同期の概要
+    - title: NetApp Copy and Syncの概要
       url: concept-cloud-sync.html
     - title: クイック スタート
       url: task-quick-start.html
     - title: FAQ
       url: faq.html
-  - title: NetAppのコピーと同期を使用する
+  - title: NetApp Copy and Syncを使用する
     links:
     - title: 同期関係を作成する
       url: task-creating-relationships.html
@@ -23,9 +23,9 @@ indexpage:
       url: task-managing-data-brokers.html
   - title: ブログとコミュニティ
     links:
-    - title: NetAppコンソール
+    - title: NetApp Console
       url: https://www.netapp.com/console
-    - title: NetAppデータサービス
+    - title: NetApp Data Services
       url: https://www.netapp.com/data-services/
     - title: NetAppコミュニティ
       url: https://community.netapp.com

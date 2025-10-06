@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-creating-relationships.html 
 keywords: sync, relationship, create, tags, settings, create a relationship, creating relationships, bucket setup, tags, bluexp, copy and sync 
-summary: 同期関係を作成すると、 NetApp Copy and Sync によってソースからターゲットにファイルがコピーされます。最初のコピーの後、サービスは変更されたデータを 24 時間ごとに同期します。 
+summary: 同期関係を作成すると、 NetApp Copy and Syncソースからターゲットにファイルがコピーされます。最初のコピーの後、サービスは変更されたデータを 24 時間ごとに同期します。 
 ---
 = NetApp Copy and Syncで同期関係を作成する
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: 同期関係を作成すると、 NetApp Copy and Sync によってソ�
 
 
 [role="lead"]
-同期関係を作成すると、 NetApp Copy and Sync によってソースからターゲットにファイルがコピーされます。最初のコピーの後、コピーと同期は変更されたデータを 24 時間ごとに同期します。
+同期関係を作成すると、 NetApp Copy and Syncソースからターゲットにファイルがコピーされます。最初のコピーの後、コピーと同期は変更されたデータを 24 時間ごとに同期します。
 
-一部の種類の同期関係を作成するには、まずNetAppコンソールでシステムを作成する必要があります。
+一部のタイプの同期関係を作成するには、まずNetApp Consoleでシステムを作成する必要があります。
 
 
 
@@ -47,7 +47,7 @@ summary: 同期関係を作成すると、 NetApp Copy and Sync によってソ�
 . 上記のいずれかのタイプに一致するシステムを選択してください。
 . [同期]の横にあるアクション メニューを選択します。
 +
-image:screenshot_sync_we.gif["システムを選択した後、同期メニューから実行できるアクションを示すスクリーンショット。"]
+image:screenshot_sync_we.gif["システムを選択した後、同期メニューから利用できるアクションを示すスクリーンショット。"]
 
 . *この場所からデータを同期*または*この場所にデータを同期*を選択し、プロンプトに従って同期関係を設定します。
 
@@ -58,7 +58,7 @@ image:screenshot_sync_we.gif["システムを選択した後、同期メニュ�
 
 Amazon FSx for ONTAP、 Azure NetApp Files、 Cloud Volumes ONTAP、またはオンプレミスのONTAPクラスター以外のサポートされているストレージタイプとの間でデータを同期するには、次の手順に従います。以下の手順は、NFS サーバーから S3 バケットへの同期関係を設定する方法を示した例です。
 
-. NetAppコンソールで、[同期] を選択します。
+. NetApp Consoleで、[同期] を選択します。
 . *同期関係の定義*ページで、ソースとターゲットを選択します。
 +
 次の手順は、NFS サーバーから S3 バケットへの同期関係を作成する方法の例を示しています。
@@ -221,7 +221,7 @@ video::7f957dbf-9215-41ea-a705-b24c010b2212[panopto]
 NOTE: Regex または正規表現は、ワイルドカードや glob 表現とは異なります。この機能は正規表現でのみ動作します。
 
 --
-ディレクトリを除外する:: 同期から除外する正規表現またはディレクトリを最大 15 個指定するには、名前またはディレクトリのフル パスを入力し、*Enter* キーを押します。デフォルトでは、.copy-offload、.snapshot、~snapshot ディレクトリは除外されます。
+ディレクトリを除外する:: 同期から除外する正規表現またはディレクトリを最大 15 個指定するには、名前またはディレクトリのフル パスを入力して Enter キーを押します。デフォルトでは、.copy-offload、.snapshot、~snapshot ディレクトリは除外されます。
 +
 --
 
@@ -253,10 +253,10 @@ TIP: 同じ機能は、 StorageGRIDおよび IBM Cloud Object Storage にデー�
 
 == NetApp Data Classificationから同期関係を作成する
 
-コピーと同期はNetApp Data Classification と統合されています。  NetApp Data Classification 内から、コピーと同期を使用してターゲットの場所に同期するソース ファイルを選択できます。
+コピーと同期はNetApp Data Classificationと統合されています。  NetApp Data Classification内から、コピーと同期を使用してターゲットの場所に同期するソース ファイルを選択できます。
 
-NetApp Data Classification からデータ同期を開始すると、すべてのソース情報が 1 つの手順にまとめられ、いくつかの重要な詳細を入力するだけで済みます。次に、新しい同期関係のターゲットの場所を選択します。
+NetApp Data Classificationからデータ同期を開始すると、すべてのソース情報が 1 つの手順にまとめられ、いくつかの重要な詳細を入力するだけで済みます。次に、新しい同期関係のターゲットの場所を選択します。
 
-image:screenshot-sync-data-sense.png["NetApp Data Classification から直接新しい同期を開始した後に表示されるNetApp Data Classification 統合ページを示すスクリーンショット。"]
+image:screenshot-sync-data-sense.png["NetApp Data Classification NetApp Data Classification Classification 統合ページを示すスクリーンショット。"]
 
 https://docs.netapp.com/us-en/bluexp-classification/task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system["NetApp Data Classificationから同期関係を開始する方法を学びます"^] 。
