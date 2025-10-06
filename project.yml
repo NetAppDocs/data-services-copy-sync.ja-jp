@@ -1,0 +1,90 @@
+---
+settings:
+  name: NetApp Copy and Sync
+  harmony_integration: maestro
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  langs: ja-jp,us-en,de-de,es-es,fr-fr,it-it,pt-br,ko-kr,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: NetAppコピーおよび同期ドキュメント
+    url: "/index.html"
+  - title: リリース ノート
+    entries:
+    - title: 新機能
+      url: "/whats-new.html"
+    - title: 制限事項
+      url: "/reference-limitations.html"
+  - title: 始めましょう
+    entries:
+    - title: NetAppのコピーと同期について学ぶ
+      url: "/concept-cloud-sync.html"
+    - title: クイック スタート
+      url: "/task-quick-start.html"
+    - title: サポートされている同期関係を表示する
+      url: "/reference-supported-relationships.html"
+    - title: ソースとターゲットを準備する
+      url: "/reference-requirements.html"
+    - title: ネットワークを準備する
+      url: "/reference-networking.html"
+    - title: NetApp Copy and Syncにログイン
+      url: "/task-login-copyandsync.html"
+    - title: データブローカーをインストールする
+      entries:
+      - title: AWSにインストール
+        url: "/task-installing-aws.html"
+      - title: Azureにインストール
+        url: "/task-installing-azure.html"
+      - title: Google Cloudにインストール
+        url: "/task-installing-gcp.html"
+      - title: Linuxホストにインストールする
+        url: "/task-installing-linux.html"
+  - title: NetAppのコピーと同期を使用する
+    entries:
+    - title: ソースとターゲット間でデータを同期する
+      entries:
+      - title: オブジェクトストレージ間でデータを同期するためのデータブローカーを準備する
+        url: "/task-prepare-object-storage.html"
+      - title: 同期関係を作成する
+        url: "/task-creating-relationships.html"
+      - title: SMB共有からACLをコピーする
+        url: "/task-copying-acls.html"
+      - title: 飛行中のNFSデータを暗号化する
+        url: "/task-nfs-encryption.html"
+      - title: HashiCorp Vaultのシークレットを使用する
+        url: "/task-external-vault.html"
+    - title: ライセンスの設定
+      url: "/task-licensing.html"
+    - title: 同期関係を管理する
+      url: "/task-managing-relationships.html"
+    - title: データブローカーの管理
+      url: "/task-managing-data-brokers.html"
+    - title: レポートを表示して構成を調整する
+      url: "/task-managing-reports.html"
+    - title: データブローカーをアンインストールする
+      url: "/task-uninstalling.html"
+  - title: REST APIによる自動化
+    url: "/api-sync.html"
+  - title: 概念
+    entries:
+    - title: ライセンス
+      url: "/concept-licensing.html"
+    - title: データプライバシー
+      url: "/concept-privacy.html"
+    - title: FAQ
+      url: "/faq.html"
+  - title: 知識とサポート
+    entries:
+    - title: サポートに登録する
+      url: "/task-support-registration.html"
+    - title: ヘルプを受ける
+      url: "/task-get-help.html"
+  - title: 法律上の表示
+    url: "/legal-notices.html"
+product-family:
+  name: NetApp Data Services
+  repo: data-services-family

@@ -1,0 +1,335 @@
+---
+sidebar: sidebar 
+permalink: reference-requirements.html 
+keywords: networking, nfs, cifs, smb, version, connection, google, gcp, azure, blob, service account, resource, permissions, networking, version, ntp, network, protocol, aws efs requirements, efs requirements, s3 requirements, azure blob requirements, blob requirements, azure netapp files, cifs requirements, smb requirements, google cloud storage, gcp, ibm cloud object storage, storagegrid, storage tier, blob storage tier, storage class, s3 storage class, nfs versions, smb versions, box 
+summary: ソースとターゲットが次の要件を満たしていることを確認します。 
+---
+= NetApp Copy and Syncでソースとターゲットを準備する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ソースとターゲットがNetApp Copy and Sync の次の要件を満たしていることを確認します。
+
+
+
+== ネットワーク
+
+* ソースとターゲットは、データ ブローカー グループへのネットワーク接続を持っている必要があります。
++
+たとえば、NFS サーバーがデータセンターにあり、データブローカーが AWS にある場合は、ネットワークから VPC へのネットワーク接続 (VPN または Direct Connect) が必要です。
+
+* NetApp、ソース、ターゲット、およびデータ ブローカーをネットワーク タイム プロトコル (NTP) サービスを使用するように構成することを推奨しています。  3 つのコンポーネント間の時間差は 5 分を超えてはなりません。
+
+
+
+
+== ターゲット ディレクトリ
+
+同期関係を作成するときに、「コピーと同期」を使用すると、既存のターゲット ディレクトリを選択し、必要に応じてそのディレクトリ内に新しいフォルダーを作成できます。したがって、優先するターゲット ディレクトリがすでに存在することを確認してください。
+
+
+
+== ディレクトリの読み取り権限
+
+ソースまたはターゲット内のすべてのディレクトリまたはフォルダーを表示するには、コピーと同期にそのディレクトリまたはフォルダーに対する読み取り権限が必要です。
+
+NFS:: ファイルとディレクトリの uid/gid を使用して、ソース/ターゲット上で権限を定義する必要があります。
+オブジェクト ストレージ::
++
+--
+* AWS および Google Cloud の場合、データ ブローカーにはリスト オブジェクト権限が必要です (データ ブローカーのインストール手順に従うと、これらの権限はデフォルトで提供されます)。
+* Azure、 StorageGRID、IBM の場合、同期関係を設定するときに入力する資格情報には、オブジェクトの一覧権限が必要です。
+
+
+--
+SMB:: 同期関係を設定するときに入力する SMB 資格情報には、リスト フォルダーのアクセス許可が必要です。
+
+
+
+NOTE: データブローカーは、デフォルトで次のディレクトリを無視します: .snapshot、~snapshot、.copy-offload
+
+
+
+== [[s3]]Amazon S3バケットの要件
+
+Amazon S3 バケットが次の要件を満たしていることを確認してください。
+
+
+
+=== Amazon S3 でサポートされているデータブローカーの場所
+
+S3 ストレージを含む同期関係には、AWS またはオンプレミスにデプロイされたデータブローカーが必要です。どちらの場合でも、コピーと同期では、インストール中にデータブローカーを AWS アカウントに関連付けるように求められます。
+
+* link:task-installing-aws.html["AWSデータブローカーの導入方法を学ぶ"]
+* link:task-installing-linux.html["Linuxホストにデータブローカーをインストールする方法を学ぶ"]
+
+
+
+
+=== サポートされているAWSリージョン
+
+中国地域を除くすべての地域がサポートされています。
+
+
+
+=== 他の AWS アカウントの S3 バケットに必要な権限
+
+同期関係を設定するときに、データブローカーに関連付けられていない AWS アカウントにある S3 バケットを指定できます。
+
+link:media/aws_iam_policy_s3_bucket.json["このJSONファイルに含まれる権限"^]データ ブローカーがアクセスできるようにするには、その S3 バケットに適用する必要があります。これらの権限により、データ ブローカーはバケットとの間でデータをコピーしたり、バケット内のオブジェクトを一覧表示したりできるようになります。
+
+JSON ファイルに含まれる権限については、次の点に注意してください。
+
+. _<BucketName>_ は、データブローカーに関連付けられていない AWS アカウントにあるバケットの名前です。
+. _<RoleARN>_ は、次のいずれかに置き換える必要があります。
++
+** データブローカーが Linux ホストに手動でインストールされた場合、_RoleARN_ は、データブローカーのデプロイ時に AWS 認証情報を指定した AWS ユーザーの ARN である必要があります。
+** CloudFormation テンプレートを使用してデータブローカーが AWS にデプロイされた場合、_RoleARN_ はテンプレートによって作成された IAM ロールの ARN である必要があります。
++
+ロール ARN を見つけるには、EC2 コンソールに移動し、データブローカーインスタンスを選択して、[説明] タブから IAM ロールを選択します。その後、IAM コンソールにロール ARN を含む概要ページが表示されます。
+
++
+image:screenshot_iam_role_arn.gif["ロール ARN を表示する AWS IAM コンソールのスクリーンショット。"]
+
+
+
+
+
+
+
+== [[blob]]Azure Blobストレージの要件
+
+Azure Blob ストレージが次の要件を満たしていることを確認してください。
+
+
+
+=== Azure Blob でサポートされているデータ ブローカーの場所
+
+同期関係に Azure Blob Storage が含まれている場合、データ ブローカーは任意の場所に配置できます。
+
+
+
+=== サポートされているAzureリージョン
+
+中国、米国政府、米国国防総省地域を除くすべての地域がサポートされています。
+
+
+
+=== Azure Blob と NFS/SMB を含む関係の接続文字列
+
+Azure BLOB コンテナーと NFS または SMB サーバー間の同期関係を作成するときは、Copy と Sync にストレージ アカウント接続文字列を指定する必要があります。
+
+image:screenshot_connection_string.gif["ストレージ アカウントを選択し、アクセス キーを選択すると、Azure ポータルから利用できる接続文字列が表示されます。"]
+
+2つのAzure Blobコンテナ間でデータを同期したい場合は、接続文字列に https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1["共有アクセス署名"^]（SAS）。また、Blob コンテナーと NFS または SMB サーバー間で同期するときに SAS を使用するオプションもあります。
+
+SAS は、Blob サービスおよびすべてのリソース タイプ (サービス、コンテナー、オブジェクト) へのアクセスを許可する必要があります。  SAS には次の権限も含まれている必要があります。
+
+* ソースBLOBコンテナの場合: 読み取りとリスト
+* 対象のBLOBコンテナの場合: 読み取り、書き込み、一覧表示、追加、作成
+
+
+image:screenshot_connection_string_sas.gif["共有アクセス署名を表示します。これは、Azure ポータルでストレージ アカウントを選択し、次に [共有アクセス署名] を選択すると利用できます。"]
+
+
+NOTE: Azure BLOB コンテナーを含む継続的な同期関係を実装する場合は、通常の接続文字列または SAS 接続文字列を使用できます。  SAS 接続文字列を使用する場合は、近い将来に期限切れになるように設定しないでください。
+
+
+
+== Azure データレイクストレージ Gen2
+
+Azure Data Lake を含む同期関係を作成する場合は、Copy and Sync にストレージ アカウント接続文字列を提供する必要があります。共有アクセス署名 (SAS) ではなく、通常の接続文字列である必要があります。
+
+
+
+== Azure NetApp Files の要件
+
+Azure NetApp Filesとの間でデータを同期する場合は、Premium または Ultra サービス レベルを使用します。ディスク サービス レベルが標準の場合、障害やパフォーマンスの問題が発生する可能性があります。
+
+
+TIP: 適切なサービス レベルを決定する際にサポートが必要な場合は、ソリューション アーキテクトにご相談ください。ボリューム サイズとボリューム ティアによって、取得できるスループットが決まります。
+
+https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels#throughput-limits["Azure NetApp Files のサービス レベルとスループットの詳細"^] 。
+
+
+
+== ボックスの要件
+
+* Box を含む同期関係を作成するには、次の資格情報を提供する必要があります。
++
+** クライアントID
+** Client secret
+** 秘密鍵
+** 公開鍵ID
+** パスフレーズ
+** エンタープライズID
+
+
+* Amazon S3 から Box への同期関係を作成する場合は、次の設定が 1 に設定されている統合構成を持つデータ ブローカー グループを使用する必要があります。
++
+** スキャナの同時実行
+** スキャナプロセス制限
+** 転送者の同時実行
+** 転送プロセス制限
+
+
++
+link:task-managing-data-brokers.html#set-up-a-unified-configuration["データブローカーグループの統一された構成を定義する方法を学びます"^] 。
+
+
+
+
+
+== [[google]]Google Cloud Storage バケットの要件
+
+Google Cloud Storage バケットが次の要件を満たしていることを確認してください。
+
+
+
+=== Google Cloud Storage でサポートされているデータ ブローカーの場所
+
+Google Cloud Storage を含む同期関係には、Google Cloud またはオンプレミスにデプロイされたデータ ブローカーが必要です。コピーと同期では、同期関係を作成するときに、データ ブローカーのインストール プロセスをガイドします。
+
+* link:task-installing-gcp.html["Google Cloud データブローカーの導入方法を学ぶ"]
+* link:task-installing-linux.html["Linuxホストにデータブローカーをインストールする方法を学ぶ"]
+
+
+
+
+=== サポートされている Google Cloud リージョン
+
+すべての地域がサポートされています。
+
+
+
+=== 他の Google Cloud プロジェクトのバケットに対する権限
+
+同期関係を設定するときに、データブローカーのサービス アカウントに必要な権限を付与すると、異なるプロジェクトの Google Cloud バケットから選択できます。link:task-installing-gcp.html["サービスアカウントの設定方法を学ぶ"] 。
+
+
+
+=== SnapMirrorの宛先に対する権限
+
+同期関係のソースがSnapMirror の宛先 (読み取り専用) である場合、ソースからターゲットにデータを同期するには、「読み取り/リスト」権限で十分です。
+
+
+
+=== Google Cloud バケットの暗号化
+
+ターゲットの Google Cloud バケットは、顧客管理の KMS キーまたはデフォルトの Google 管理キーを使用して暗号化できます。バケットにすでに KMS 暗号化が追加されている場合は、デフォルトの Google 管理の暗号化が上書きされます。
+
+顧客管理KMSキーを追加するには、 https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-gcp.html#permissions-required-for-the-service-account["正しい権限"]キーはバケットと同じリージョンに存在する必要があります。
+
+
+
+== Googleドライブ
+
+Google ドライブを含む同期関係を設定する場合は、次の情報を提供する必要があります。
+
+* データを同期するGoogleドライブの場所にアクセスできるユーザーのメールアドレス
+* Google ドライブにアクセスする権限を持つ Google Cloud サービス アカウントのメールアドレス
+* サービスアカウントの秘密鍵
+
+
+サービス アカウントを設定するには、Google ドキュメントの指示に従ってください。
+
+* https://developers.google.com/admin-sdk/directory/v1/guides/delegation#create_the_service_account_and_credentials["サービスアカウントと資格情報を作成する"^]
+* https://developers.google.com/admin-sdk/directory/v1/guides/delegation#delegate_domain-wide_authority_to_your_service_account["ドメイン全体の権限をサービス アカウントに委任する"^]
+
+
+OAuth スコープ フィールドを編集するときは、次のスコープを入力します。
+
+* \https://www.googleapis.com/auth/drive
+* \https://www.googleapis.com/auth/drive.file
+
+
+
+
+== NFSサーバの要件
+
+* NFS サーバーは、 NetAppシステムでも非NetAppシステムでもかまいません。
+* ファイル サーバーは、データ ブローカー ホストが必要なポート経由でエクスポートにアクセスできるようにする必要があります。
++
+** 111 TCP/UDP
+** 2049 TCP/UDP
+** 5555 TCP/UDP
+
+
+* NFS バージョン 3、4.0、4.1、4.2 がサポートされています。
++
+必要なバージョンをサーバー上で有効にする必要があります。
+
+* ONTAPシステムから NFS データを同期する場合は、SVM の NFS エクスポート リストへのアクセスが有効になっていることを確認します (vserver nfs modify -vserver _svm_name_ -showmount enabled)。
++
+
+NOTE: ONTAP 9.2 以降では、showmount のデフォルト設定は _enabled_ になっています。
+
+
+
+
+
+== ONTAPの要件
+
+同期関係にCloud Volumes ONTAPまたはオンプレミスのONTAPクラスターが含まれており、NFSv4 以降を選択した場合は、 ONTAPシステムで NFSv4 ACL を有効にする必要があります。  ACL をコピーするにはこれが必要です。
+
+
+
+== ONTAP S3 ストレージ要件
+
+同期関係を設定すると、 https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["ONTAP S3 ストレージ"^] 、以下の情報を提供する必要があります。
+
+* ONTAP S3に接続されているLIFのIPアドレス
+* ONTAPが使用するように設定されているアクセス キーと秘密キー
+
+
+
+
+== SMBサーバの要件
+
+* SMB サーバーは、 NetAppシステムでも非NetAppシステムでもかまいません。
+* SMB サーバーに対する権限を持つ資格情報をコピーおよび同期に提供する必要があります。
++
+** ソース SMB サーバーの場合、リストと読み取りの権限が必要です。
++
+バックアップ オペレーター グループのメンバーは、ソース SMB サーバーでサポートされます。
+
+** ターゲット SMB サーバーには、リスト、読み取り、および書き込みの権限が必要です。
+
+
+* ファイル サーバーは、データ ブローカー ホストが必要なポート経由でエクスポートにアクセスできるようにする必要があります。
++
+** 139 TCP
+** 445 TCP
+** 137-138 UDP
+
+
+* SMB バージョン 1.0、2.0、2.1、3.0、3.11 がサポートされています。
+* 「Administrators」グループに、ソース フォルダーとターゲット フォルダーに対する「フル コントロール」権限を付与します。
++
+この権限を付与しないと、データ ブローカーにはファイルまたはディレクトリの ACL を取得するための十分な権限がない可能性があります。この問題が発生すると、次のエラーが表示されます: 「getxattr error 95」
+
+
+
+
+
+=== 隠しディレクトリとファイルに対する SMB 制限
+
+SMB 制限は、SMB サーバー間でデータを同期するときに隠しディレクトリとファイルに影響します。ソース SMB サーバー上のディレクトリまたはファイルのいずれかが Windows によって非表示になっている場合、非表示属性はターゲット SMB サーバーにコピーされません。
+
+
+
+=== 大文字と小文字を区別しない制限による SMB 同期の動作
+
+SMB プロトコルは大文字と小文字を区別しません。つまり、大文字と小文字は同じものとして扱われます。同期関係に SMB サーバーが含まれており、ターゲットにデータがすでに存在する場合、この動作によりファイルが上書きされ、ディレクトリのコピー エラーが発生する可能性があります。
+
+たとえば、ソースに「a」という名前のファイルがあり、ターゲットに「A」という名前のファイルがあるとします。コピーと同期によって「a」という名前のファイルがターゲットにコピーされると、ファイル「A」はソースのファイル「a」によって上書きされます。
+
+ディレクトリの場合、ソースに「b」という名前のディレクトリがあり、ターゲットに「B」という名前のディレクトリがあるとします。コピーと同期が「b」という名前のディレクトリをターゲットにコピーしようとすると、ディレクトリがすでに存在するというエラーがコピーと同期によって受信されます。その結果、コピーと同期では常に「b」という名前のディレクトリのコピーに失敗します。
+
+この制限を回避する最善の方法は、データを空のディレクトリに同期することです。

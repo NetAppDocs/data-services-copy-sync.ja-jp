@@ -1,0 +1,207 @@
+---
+sidebar: sidebar 
+permalink: task-installing-linux.html 
+keywords: data broker, install, linux, on-prem data broker, on-prem, on prem, on premises, networking, permissions, os, operating system, rhel, red hat, ram, cpu, disk space, install data broker, installing data broker, install a data broker, data broker installation, linux installation, linux operating system, aws access, aws keys, keys, gcp access, aws permissions, gcp permissions, google permissions 
+summary: 新しいデータ ブローカーを作成するときは、オンプレミス データ ブローカー オプションを選択して、オンプレミスの Linux ホストまたはクラウド内の既存の Linux ホストにデータ ブローカー ソフトウェアをインストールします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。 
+---
+= NetApp Copy and Sync 用のデータ ブローカーを Linux ホストにインストールします。
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync の新しいデータ ブローカー グループを作成する場合は、オンプレミス データ ブローカー オプションを選択して、オンプレミスの Linux ホストまたはクラウド内の既存の Linux ホストにデータ ブローカー ソフトウェアをインストールします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
+
+
+
+== Linuxホストの要件
+
+* *Node.js 互換性*: v21.2.0
+* *オペレーティング·システム*：
++
+** CentOS 8.0 および 8.5
++
+CentOS Streamはサポートされていません。
+
+** Red Hat Enterprise Linux 8.5、8.8、8.9、および 9.4
+** ロッキーLinux 9
+** Ubuntu Server 20.04 LTS、23.04 LTS、および 24.04 LTS
+** SUSE Linux Enterprise Server 15 SP1
++
+コマンド `yum update`データ ブローカーをインストールする前に、ホスト上で実行する必要があります。
+
++
+Red Hat Enterprise Linux システムは、Red Hat Subscription Management に登録する必要があります。登録されていない場合、システムはインストール中に必要なサードパーティ製ソフトウェアを更新するためのリポジトリにアクセスできません。
+
+
+
+* *RAM*: 16 GB
+* *CPU*: 4コア
+* *空きディスク容量*: 10 GB
+* *SELinux*: ホスト上で SELinux を無効にすることをお勧めします。
++
+SELinux は、データ ブローカー ソフトウェアの更新をブロックするポリシーを適用し、通常の操作に必要なエンドポイントへのデータ ブローカーの接続をブロックできます。
+
+
+
+
+
+== ルート権限
+
+データ ブローカー ソフトウェアは、Linux ホスト上で自動的に root として実行されます。データ ブローカーを操作するには、root として実行する必要があります。たとえば、共有をマウントします。
+
+
+
+== ネットワーク要件
+
+* Linux ホストはソースとターゲットに接続されている必要があります。
+* ファイル サーバーは、Linux ホストがエクスポートにアクセスできるようにする必要があります。
+* AWS への送信トラフィック用に、Linux ホストでポート 443 が開いている必要があります (データブローカーは Amazon SQS サービスと常に通信します)。
+* NetApp、ソース、ターゲット、およびデータ ブローカーをネットワーク タイム プロトコル (NTP) サービスを使用するように構成することを推奨しています。  3 つのコンポーネント間の時間差は 5 分を超えてはなりません。
+
+
+
+
+== AWSへのアクセスを有効にする
+
+S3 バケットを含む同期関係でデータ ブローカーを使用する予定の場合は、AWS アクセス用に Linux ホストを準備する必要があります。データブローカーをインストールするときは、プログラムによるアクセスと特定の権限を持つ AWS ユーザーに AWS キーを提供する必要があります。
+
+.手順
+. IAMポリシーを作成する https://s3.amazonaws.com/metadata.datafabric.io/docs/on_prem_iam_policy.json["NetAppが提供するこのポリシー"^]
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html["AWS の手順を見る"^]
+
+. プログラムによるアクセス権を持つ IAM ユーザーを作成します。
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html["AWS の手順を見る"^]
+
++
+データブローカーソフトウェアをインストールするときに AWS キーを指定する必要があるので、必ずコピーしてください。
+
+
+
+
+
+== Google Cloudへのアクセスを有効にする
+
+Google Cloud Storage バケットを含む同期関係でデータ ブローカーを使用する予定の場合は、Google Cloud アクセス用に Linux ホストを準備する必要があります。データ ブローカーをインストールするときは、特定の権限を持つサービス アカウントのキーを指定する必要があります。
+
+.手順
+. ストレージ管理者権限を持つ Google Cloud サービス アカウントをまだお持ちでない場合は作成します。
+. JSON 形式で保存されたサービス アカウント キーを作成します。
++
+https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys["Google Cloud の手順を見る"^]
+
++
+ファイルには少なくとも次のプロパティが含まれている必要があります: "project_id"、"private_key"、および "client_email"
+
++
+
+NOTE: キーを作成すると、ファイルが生成され、マシンにダウンロードされます。
+
+. JSON ファイルを Linux ホストに保存します。
+
+
+
+
+== Microsoft Azureへのアクセスを有効にする
+
+Azure へのアクセスは、同期関係ウィザードでストレージ アカウントと接続文字列を指定することにより、関係ごとに定義されます。
+
+
+
+== データブローカーをインストールする
+
+同期関係を作成するときに、Linux ホストにデータ ブローカーをインストールできます。
+
+.手順
+. link:task-login-copyandsync.html["コピーと同期にログイン"] 。
+. *新しい同期を作成*を選択します。
+. *同期関係の定義*ページで、ソースとターゲットを選択し、*続行*を選択します。
++
+*データ ブローカー グループ* ページに到達するまで手順を完了します。
+
+. *データ ブローカー グループ* ページで、*データ ブローカーの作成* を選択し、*オンプレミス データ ブローカー* を選択します。
++
+image:screenshot-on-prem.png["AWS、Azure、Google Cloud、オンプレミスのデータブローカーを選択できるデータブローカーページのスクリーンショット。"]
+
++
+
+NOTE: このオプションには *_On-Prem_ Data Broker* というラベルが付いていますが、オンプレミスまたはクラウド内の Linux ホストに適用されます。
+
+. データ ブローカーの名前を入力し、[続行] を選択します。
++
+説明ページがすぐに読み込まれます。以下の手順に従う必要があります。手順にはインストーラーをダウンロードするための固有のリンクが含まれています。
+
+. 説明ページで：
++
+.. *AWS*、*Google Cloud*、またはその両方へのアクセスを有効にするかどうかを選択します。
+.. インストール オプションを選択します: *プロキシなし*、*プロキシ サーバーを使用する*、または *認証付きプロキシ サーバーを使用する*。
++
+
+NOTE: ユーザーはローカル ユーザーである必要があります。ドメイン ユーザーはサポートされていません。
+
+.. コマンドを使用して、データ ブローカーをダウンロードしてインストールします。
++
+次の手順では、可能な各インストール オプションの詳細について説明します。インストール オプションに基づいて正確なコマンドを取得するには、指示ページに従ってください。
+
+.. インストーラーをダウンロードしてください:
++
+*** プロキシなし:
++
+`curl <URI> -o data_broker_installer.sh`
+
+*** プロキシサーバーを使用する:
++
+`curl <URI> -o data_broker_installer.sh -x <proxy_host>:<proxy_port>`
+
+*** 認証付きプロキシサーバーを使用する:
++
+`curl <URI> -o data_broker_installer.sh -x <proxy_username>:<proxy_password>@<proxy_host>:<proxy_port>`
+
++
+URI:: 「コピーと同期」では、指示ページにインストール ファイルの URI が表示されます。この URI は、プロンプトに従ってオンプレミス データ ブローカーを展開すると読み込まれます。リンクは動的に生成され、一度しか使用できないため、この URI はここでは繰り返されません。<<データブローカーをインストールする,コピーと同期からURIを取得するには、次の手順に従います。>> 。
+
+
+
+
+.. スーパーユーザーに切り替え、インストーラーを実行可能にしてソフトウェアをインストールします。
++
+
+NOTE: 以下にリストされている各コマンドには、AWS アクセスと Google Cloud アクセスのパラメータが含まれています。インストール オプションに基づいて正確なコマンドを取得するには、指示ページに従ってください。
+
++
+*** プロキシ設定なし:
++
+`sudo -s
+chmod +x data_broker_installer.sh
+./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file>`
+
+*** プロキシ設定:
++
+`sudo -s
+chmod +x data_broker_installer.sh
+./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file> -h <proxy_host> -p <proxy_port>`
+
+*** 認証付きプロキシ構成:
++
+`sudo -s
+chmod +x data_broker_installer.sh
+./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file> -h <proxy_host> -p <proxy_port> -u <proxy_username> -w <proxy_password>`
+
++
+AWSキー:: これらは、ユーザーが準備しておくべきキーです<<AWSへのアクセスを有効にする,以下の手順に従って>>。  AWS キーは、オンプレミスまたはクラウド ネットワークで実行されるデータ ブローカーに保存されます。  NetApp はデータ ブローカーの外部ではキーを使用しません。
+JSONファイル:: これは、準備しておくべきサービスアカウントキーを含むJSONファイルです。<<Google Cloudへのアクセスを有効にする,以下の手順に従って>> 。
+
+
+
+
+
+
+. データ ブローカーが利用可能になったら、[コピーと同期] で [*続行*] を選択します。
+. ウィザードのページを完了して、新しい同期関係を作成します。
+

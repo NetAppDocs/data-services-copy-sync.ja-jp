@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: task-quick-start.html 
+keywords: quick start, overview, deploying, getting started, get started, signing up, free trial 
+summary: NetApp Copy and Sync の使用を開始するには、いくつかの手順が必要です。 
+---
+= NetAppコピーおよび同期のクイックスタート
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync の使用を開始するには、いくつかの手順が必要です。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"]NetAppコンソールにログインしてセットアップする
+[role="quick-margin-para"]
+NetAppコンソールの使用を開始しているはずです。これには、ログイン、アカウントの設定、コンソール エージェントの展開、システムの作成などが含まれます。
+
+[role="quick-margin-para"]
+次のいずれかの同期関係を作成する場合は、まずシステムを作成または検出する必要があります。
+
+[role="quick-margin-list"]
+* Amazon FSx for ONTAP
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* オンプレミスのONTAPクラスター
+
+
+[role="quick-margin-para"]
+Cloud Volumes ONTAP、オンプレミスのONTAPクラスター、およびAmazon FSx for ONTAPには、コンソールエージェントが必要です。
+
+[role="quick-margin-list"]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetAppコンソールの使い方を学ぶ"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["コンソールエージェントの詳細"^]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]ソースとターゲットを準備する
+[role="quick-margin-para"]
+ソースとターゲットがサポートされ、設定されていることを確認します。最も重要な要件は、データ ブローカー グループとソースおよびターゲットの場所間の接続を確認することです。
+
+[role="quick-margin-list"]
+* link:reference-supported-relationships.html["サポートされている関係を表示する"]
+* link:reference-requirements.html["ソースとターゲットを準備する"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三つ"]NetAppデータブローカーの場所を準備する
+[role="quick-margin-para"]
+NetAppデータ ブローカー ソフトウェアは、ソースからターゲットにデータを同期します (これを _同期関係_ と呼びます)。データブローカーは、AWS、Azure、Google Cloud Platform、またはオンプレミスで実行できます。 1 つ以上のデータ ブローカーで構成されるデータ ブローカー グループには、 NetApp Copy and Sync と通信し、他のいくつかのサービスやリポジトリに接続できるように、ポート 443 経由の送信インターネット接続が必要です。link:reference-networking.html#networking-endpoints["エンドポイントのリストを表示する"] 。
+
+[role="quick-margin-para"]
+NetApp Copy and Sync は、同期関係を作成するときにインストール プロセスをガイドします。その時点で、クラウドにデータ ブローカーを展開したり、独自の Linux ホスト用のインストール スクリプトをダウンロードしたりできます。
+
+[role="quick-margin-list"]
+* link:task-installing-aws.html["AWSのインストールを確認する"]
+* link:task-installing-azure.html["Azureのインストールを確認する"]
+* link:task-installing-gcp.html["Google Cloud のインストールを確認する"]
+* link:task-installing-linux.html["Linuxホストのインストールを確認する"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4"]最初の同期関係を作成する
+[role="quick-margin-para"]
+ログイン https://console.netapp.com/["NetAppコンソール"^]をクリックし、[同期] を選択して、ソースとターゲットの選択内容をドラッグ アンド ドロップします。指示に従ってセットアップを完了します。link:task-creating-relationships.html["詳細情報"] 。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]無料トライアル終了後は同期関係の料金をお支払いください
+[role="quick-margin-para"]
+AWS または Azure から従量課金制または年間支払いでサブスクライブします。または、 NetAppから直接ライセンスを購入します。 NetApp Copy and Sync のライセンス設定ページに移動して設定するだけです。link:task-licensing.html["詳細情報"] 。

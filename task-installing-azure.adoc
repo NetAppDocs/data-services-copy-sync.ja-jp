@@ -1,0 +1,224 @@
+---
+sidebar: sidebar 
+permalink: task-installing-azure.html 
+keywords: data broker, install, azure, networking, permissions, regions, install data broker in azure, install in azure, deploy in azure, deploy data broker in azure, networking requirements, port, ports, 443, port 443, ntp, network time protocol, azure data broker 
+summary: 新しいデータ ブローカーを作成するときは、Azure Data Broker オプションを選択して、VNet 内の新しい仮想マシンにデータ ブローカー ソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。 
+---
+= Azure でNetApp Copy and Sync 用の新しいデータ ブローカーを作成する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync の新しいデータ ブローカー グループを作成するときは、Microsoft Azure を選択して、VNet 内の新しい仮想マシンにデータ ブローカー ソフトウェアを展開します。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
+
+クラウド内またはオンプレミスの既存の Linux ホストにデータ ブローカーをインストールすることもできます。link:task-installing-linux.html["詳細情報"] 。
+
+
+
+== サポートされているAzureリージョン
+
+中国、米国政府、米国国防総省地域を除くすべての地域がサポートされています。
+
+
+
+== ルート権限
+
+データ ブローカー ソフトウェアは、Linux ホスト上で自動的に root として実行されます。データ ブローカーを操作するには、root として実行する必要があります。たとえば、共有をマウントします。
+
+
+
+== ネットワーク要件
+
+* データ ブローカーには、ポート 443 経由でタスクのコピーおよび同期サービスをポーリングできるように、送信インターネット接続が必要です。
++
+コピーと同期によって Azure にデータ ブローカーがデプロイされると、必要な送信通信を有効にするセキュリティ グループが作成されます。
+
++
+アウトバウンド接続を制限する必要がある場合は、link:reference-networking.html["データブローカーが接続するエンドポイントのリスト"] 。
+
+* NetApp、ソース、ターゲット、およびデータ ブローカーをネットワーク タイム プロトコル (NTP) サービスを使用するように構成することを推奨しています。  3 つのコンポーネント間の時間差は 5 分を超えてはなりません。
+
+
+
+
+== Azure にデータ ブローカーをデプロイするために必要な権限
+
+データ ブローカーをデプロイするために使用する Azure ユーザー アカウントに次のアクセス許可があることを確認します。
+
+[source, json]
+----
+{
+    "Name": "Azure Data Broker",
+    "Actions": [
+					"Microsoft.Resources/subscriptions/read",
+                    "Microsoft.Resources/deployments/operationstatuses/read",
+                    "Microsoft.Resources/subscriptions/locations/read",
+                    "Microsoft.Network/networkInterfaces/read",
+                    "Microsoft.Network/virtualNetworks/subnets/read",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Resources/subscriptions/resourceGroups/delete",
+                    "Microsoft.Resources/deployments/write",
+                    "Microsoft.Resources/deployments/validate/action",
+                    "Microsoft.Resources/deployments/operationStatuses/read",
+                    "Microsoft.Resources/deployments/cancel/action",
+                    "Microsoft.Compute/virtualMachines/read",
+                    "Microsoft.Compute/virtualMachines/delete",
+                    "Microsoft.Compute/disks/delete",
+                    "Microsoft.Network/networkInterfaces/delete",
+                    "Microsoft.Network/publicIPAddresses/delete",
+                    "Microsoft.Network/networkSecurityGroups/securityRules/delete",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Compute/virtualMachines/delete",
+                    "Microsoft.Network/networkSecurityGroups/write",
+                    "Microsoft.Network/networkSecurityGroups/join/action",
+                    "Microsoft.Compute/disks/write",
+                    "Microsoft.Network/networkInterfaces/write",
+                    "Microsoft.Network/virtualNetworks/read",
+                    "Microsoft.Network/publicIPAddresses/write",
+                    "Microsoft.Compute/virtualMachines/write",
+                    "Microsoft.Compute/virtualMachines/extensions/write",
+                    "Microsoft.Resources/deployments/read",
+                    "Microsoft.Network/networkSecurityGroups/read",
+                    "Microsoft.Network/publicIPAddresses/read",
+                    "Microsoft.Network/virtualNetworks/subnets/join/action",
+                    "Microsoft.Network/publicIPAddresses/join/action",
+                    "Microsoft.Network/networkInterfaces/join/action",
+                    "Microsoft.Storage/storageAccounts/read",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/write",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/read",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/delete",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/getFullUrl/action",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/getDeliveryAttributes/action",
+                    "Microsoft.EventGrid/systemTopics/read",
+                    "Microsoft.EventGrid/systemTopics/write",
+                    "Microsoft.EventGrid/systemTopics/delete",
+                    "Microsoft.EventGrid/eventSubscriptions/write",
+                    "Microsoft.Storage/storageAccounts/write"
+                    "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read"
+                    "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write"
+                    "Microsoft.Network/networkSecurityGroups/securityRules/read",
+        	        "Microsoft.Network/networkSecurityGroups/read",
+----
+....
+    ],
+    "NotActions": [],
+    "AssignableScopes": [],
+    "Description": "Azure Data Broker",
+    "IsCustom": "true"
+}
+....
+注：
+
+. 以下の権限は、 https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["連続同期設定"] Azure から別のクラウド ストレージの場所への同期関係について:
++
+** 'Microsoft.Storage/storageAccounts/read'、
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/write',
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/read',
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/delete',
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/getFullUrl/action',
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/getDeliveryAttributes/アクション',
+** 'Microsoft.EventGrid/systemTopics/read'、
+** 'Microsoft.EventGrid/systemTopics/write',
+** 'Microsoft.EventGrid/systemTopics/削除',
+** 'Microsoft.EventGrid/eventSubscriptions/write',
+** 'Microsoft.Storage/storageAccounts/write'
+
+
++
+さらに、Azure で継続的な同期を実装する予定の場合は、割り当て可能なスコープをリソース グループ スコープではなくサブスクリプション スコープに設定する必要があります。
+
+. 次の権限は、データ ブローカーの作成に独自のセキュリティを選択する場合にのみ必要です。
++
+** 「Microsoft.Network/ネットワークセキュリティグループ/セキュリティルール/読み取り」
+** 「Microsoft.Network/networkSecurityGroups/読み取り」
+
+
+
+
+
+
+== 認証方式
+
+データ ブローカーをデプロイするときに、仮想マシンの認証方法 (パスワードまたは SSH 公開キーと秘密キーのペア) を選択する必要があります。
+
+キーペアの作成方法については、以下を参照してください。 https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys["Azure ドキュメント: Azure の Linux VM 用の SSH 公開キーと秘密キーのペアを作成して使用する"^] 。
+
+
+
+== データブローカーを作成する
+
+新しいデータ ブローカーを作成するには、いくつかの方法があります。次の手順では、同期関係を作成するときに Azure にデータ ブローカーをインストールする方法について説明します。
+
+.手順
+. link:task-login-copyandsync.html["コピーと同期にログイン"] 。
+. *新しい同期を作成*を選択します。
+. *同期関係の定義*ページで、ソースとターゲットを選択し、*続行*を選択します。
++
+*データ ブローカー グループ* ページに到達するまで手順を完了します。
+
+. *データ ブローカー グループ* ページで、*データ ブローカーの作成* を選択し、*Microsoft Azure* を選択します。
++
+image:screenshot-azure.png["AWS、Azure、Google Cloud、オンプレミスのデータブローカーを選択できるデータブローカーページのスクリーンショット。"]
+
+. データ ブローカーの名前を入力し、[続行] を選択します。
+. プロンプトが表示されたら、Microsoft アカウントにログインします。プロンプトが表示されない場合は、[Azure にログイン] を選択します。
++
+このフォームは Microsoft によって所有およびホストされています。資格情報がNetAppに提供されていません。
+
+. データ ブローカーの場所を選択し、仮想マシンに関する基本的な詳細を入力します。
++
+image:screenshot_azure_data_broker.png["サブスクリプション、Azure リージョン、VNet、サブネット、VM 名、ユーザー名、認証方法、リソース グループなどのフィールドが表示されている Azure デプロイ ページのスクリーンショット。"]
+
++
+
+NOTE: 継続的な同期関係を実装する予定の場合は、データ ブローカーにカスタム ロールを割り当てる必要があります。これは、ブローカーの作成後に手動で行うこともできます。
+
+. VNet でのインターネット アクセスにプロキシが必要な場合は、プロキシ構成を指定します。
+. *続行*を選択します。データブローカーに S3 権限を追加する場合は、AWS アクセスキーとシークレットキーを入力します。
+. *続行*を選択し、デプロイメントが完了するまでページを開いたままにします。
++
+この処理には最大 7 分かかる場合があります。
+
+. データ ブローカーが利用可能になったら、[コピーと同期] で [*続行*] を選択します。
+. ウィザードのページを完了して、新しい同期関係を作成します。
+
+
+.結果
+Azure にデータ ブローカーをデプロイし、新しい同期関係を作成しました。このデータ ブローカーは追加の同期関係で使用できます。
+
+.管理者の同意が必要であるというメッセージが表示されていますか?
+****
+コピーと同期にはユーザーに代わって組織内のリソースにアクセスする権限が必要であるため、管理者の承認が必要であると Microsoft から通知された場合は、次の 2 つのオプションがあります。
+
+. AD 管理者に次の権限を付与するよう依頼してください。
++
+Azure で、*管理センター > Azure AD > ユーザーとグループ > ユーザー設定* に移動し、*ユーザーはアプリが自分に代わって会社のデータにアクセスすることに同意できます* を有効にします。
+
+. 次の URL (管理者の同意エンドポイント) を使用して、AD 管理者に代わって *CloudSync-AzureDataBrokerCreator* に同意するよう依頼します。
++
+\https://login.microsoftonline.com/{テナントIDを入力してください}/v2.0/adminconsent?client_id=8ee4ca3a-bafa-4831-97cc-5a38923cab85&redirect_uri=https://cloudsync.netapp.com&scope=https://management.azure.com/user_impersonationhttps://graph.microsoft.com/User.Read
+
++
+URLに示されているように、アプリのURLは\https://cloudsync.netapp.comで、アプリケーションクライアントIDは8ee4ca3a-bafa-4831-97cc-5a38923cab85です。
+
+
+
+****
+
+
+== データブローカーVMの詳細
+
+コピーと同期は、次の構成を使用して Azure にデータ ブローカーを作成します。
+
+Node.js の互換性:: バージョン21.2.0
+VMタイプ:: 標準 DS4 v2
+vCPU:: 8
+RAM:: 28 GB
+オペレーティング システム:: ロッキーLinux 9.0
+ディスクのサイズと種類:: 64 GB プレミアム SSD
+

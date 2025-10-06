@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: concept-privacy.html 
+keywords: privacy, data privacy, credentials, access to credentials, hashicorp vault 
+summary: NetApp は、 NetApp Copy and Sync の使用中に提供された資格情報にアクセスできません。資格情報は、ネットワーク内にあるデータ ブローカー マシンに直接保存されます。 
+---
+= NetApp Copy and Syncにおけるデータプライバシー
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp は、 NetApp Copy and Sync の使用中に提供された資格情報にアクセスできません。資格情報は、ネットワーク内にあるデータ ブローカー マシンに直接保存されます。
+
+選択した構成によっては、新しい関係を作成するときに、コピーと同期によって資格情報の入力が求められる場合があります。たとえば、SMB サーバーを含む関係を設定する場合や、AWS にデータブローカーをデプロイする場合などです。
+
+これらの資格情報は常にデータ ブローカー自体に直接保存されます。データ ブローカーは、オンプレミスでもクラウド アカウントでも、ネットワーク内のマシンに存在します。資格情報はNetAppに提供されることはありません。
+
+資格情報は、HashiCorp Vault を使用してデータ ブローカー マシン上でローカルに暗号化されます。

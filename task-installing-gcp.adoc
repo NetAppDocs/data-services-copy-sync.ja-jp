@@ -1,0 +1,176 @@
+---
+sidebar: sidebar 
+permalink: task-installing-gcp.html 
+keywords: data broker, install, gcp, google, networking, permissions, regions, install data broker in gcp, install in gcp, deploy in gcp, deploy data broker in gcp, install data broker in google, install in google, deploy in google, deploy data broker in google, networking requirements, port, ports, 443, port 443, ntp, network time protocol, gcp data broker, service account 
+summary: 新しいデータ ブローカーを作成するときは、Google Cloud Data Broker オプションを選択して、VPC 内の新しい仮想マシン インスタンスにデータ ブローカー ソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。 
+---
+= Google Cloud でNetApp Copy and Sync 用の新しいデータ ブローカーを作成する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync の新しいデータ ブローカー グループを作成するときは、Google Cloud Platform を選択して、Google Cloud VPC 内の新しい仮想マシン インスタンスにデータ ブローカー ソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。
+
+クラウド内またはオンプレミスの既存の Linux ホストにデータ ブローカーをインストールすることもできます。link:task-installing-linux.html["詳細情報"] 。
+
+
+
+== サポートされている Google Cloud リージョン
+
+すべての地域がサポートされています。
+
+
+
+== ルート権限
+
+データ ブローカー ソフトウェアは、Linux ホスト上で自動的に root として実行されます。データ ブローカーを操作するには、root として実行する必要があります。たとえば、共有をマウントします。
+
+
+
+== ネットワーク要件
+
+* データ ブローカーには、ポート 443 経由でタスクのコピーと同期をポーリングできるように、送信インターネット接続が必要です。
++
+Copy and Sync が Google Cloud にデータ ブローカーをデプロイすると、必要な送信通信を有効にするセキュリティ グループが作成されます。
+
++
+アウトバウンド接続を制限する必要がある場合は、link:reference-networking.html["データブローカーが接続するエンドポイントのリスト"] 。
+
+* NetApp、ソース、ターゲット、およびデータ ブローカーをネットワーク タイム プロトコル (NTP) サービスを使用するように構成することを推奨しています。  3 つのコンポーネント間の時間差は 5 分を超えてはなりません。
+
+
+
+
+== Google Cloud にデータブローカーをデプロイするために必要な権限
+
+データ ブローカーをデプロイする Google Cloud ユーザーに次の権限があることを確認します。
+
+[source, yaml]
+----
+- compute.networks.list
+- compute.regions.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.operations.get
+- iam.serviceAccounts.list
+----
+
+
+== サービスアカウントに必要な権限
+
+データ ブローカーをデプロイするときは、次の権限を持つサービス アカウントを選択する必要があります。
+
+[source, yaml]
+----
+- logging.logEntries.create
+- resourcemanager.projects.get
+- storage.buckets.get
+- storage.buckets.list
+- storage.objects.create
+- storage.objects.delete
+- storage.objects.get
+- storage.objects.getIamPolicy
+- storage.objects.list
+- storage.objects.setIamPolicy
+- storage.objects.update
+- iam.serviceAccounts.signJwt
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+----
+注：
+
+. 「iam.serviceAccounts.signJwt」権限は、外部の HashiCorp ボールトを使用するようにデータ ブローカーを設定する場合にのみ必要です。
+. 「pubsub.*」および「storage.buckets.update」権限は、Google Cloud Storage から別のクラウド ストレージの場所への同期関係で継続的な同期設定を有効にする場合にのみ必要です。link:task-creating-relationships.html#settings["継続同期オプションの詳細"] 。
+. 「cloudkms.cryptoKeys.list」および「cloudkms.keyRings.list」権限は、ターゲットの Google Cloud Storage バケットで顧客管理の KMS キーを使用する予定の場合にのみ必要です。
+
+
+
+
+== データブローカーを作成する
+
+新しいデータ ブローカーを作成するには、いくつかの方法があります。次の手順では、同期関係を作成するときに Google Cloud にデータ ブローカーをインストールする方法について説明します。
+
+.手順
+. link:task-login-copyandsync.html["コピーと同期にログイン"] 。
+. *新しい同期を作成*を選択します。
+. *同期関係の定義*ページで、ソースとターゲットを選択し、*続行*を選択します。
++
+*データ ブローカー グループ* ページに到達するまで手順を完了します。
+
+. *データ ブローカー グループ* ページで、*データ ブローカーの作成* を選択し、*Google Cloud Platform* を選択します。
++
+image:screenshot-google.png["AWS、Azure、Google Cloud、オンプレミスのデータブローカーを選択できるデータブローカーページのスクリーンショット。"]
+
+. データ ブローカーの名前を入力し、[続行] を選択します。
+. プロンプトが表示されたら、Google アカウントでログインします。
++
+このフォームは Google が所有し、ホストしています。資格情報がNetAppに提供されていません。
+
+. プロジェクトとサービス アカウントを選択し、データ ブローカーの場所を選択します (パブリック IP アドレスを有効にするか無効にするかを含む)。
++
+パブリック IP アドレスを有効にしない場合は、次の手順でプロキシ サーバーを定義する必要があります。
+
++
+image:screenshot_data_broker_gcp.png["Google Cloud にデータ ブローカーをデプロイするために必要な情報を示すスクリーンショット。"]
+
+. VPC でのインターネット アクセスにプロキシが必要な場合は、プロキシ設定を指定します。
++
+インターネット アクセスにプロキシが必要な場合は、プロキシを Google Cloud 内に配置して、データ ブローカーと同じサービス アカウントを使用する必要があります。
+
+. データ ブローカーが利用可能になったら、[コピーと同期] で [*続行*] を選択します。
++
+インスタンスのデプロイには約 5 ～ 10 分かかります。コピーと同期から進行状況を監視できます。インスタンスが利用可能になると、自動的に更新されます。
+
+. ウィザードのページを完了して、新しい同期関係を作成します。
+
+
+.結果
+Google Cloud にデータ ブローカーをデプロイし、新しい同期関係を作成しました。このデータ ブローカーは追加の同期関係で使用できます。
+
+
+
+== 他の Google Cloud プロジェクトでバケットを使用する権限を付与する
+
+同期関係を作成し、ソースまたはターゲットとして Google Cloud Storage を選択すると、コピーと同期により、データブローカーのサービス アカウントが使用権限を持つバケットから選択できるようになります。デフォルトでは、データ ブローカー サービス アカウントと同じプロジェクトにあるバケットが含まれます。ただし、必要な権限を付与すれば、他のプロジェクトからバケットを選択できます。
+
+.手順
+. Google Cloud Platform コンソールを開き、Cloud Storage サービスを読み込みます。
+. 同期関係のソースまたはターゲットとして使用するバケットの名前を選択します。
+. *権限*を選択します。
+. *追加*を選択します。
+. データ ブローカーのサービス アカウントの名前を入力します。
+. 提供する役割を選択してください<<サービスアカウントに必要な権限,上記と同じ権限>>。
+. *保存*を選択します。
+
+
+.結果
+同期関係を設定するときに、そのバケットを同期関係のソースまたはターゲットとして選択できるようになりました。
+
+
+
+== データブローカーVMインスタンスの詳細
+
+コピーと同期は、次の構成を使用して Google Cloud にデータ ブローカーを作成します。
+
+Node.js の互換性:: バージョン21.2.0
+機械の種類:: n2-標準-4
+vCPU:: 4
+RAM:: 15 GB
+オペレーティング システム:: ロッキーLinux 9.0
+ディスクのサイズと種類:: 20 GB HDD PD標準
+

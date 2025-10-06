@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: concept-licensing.html 
+keywords: licenses, licensing, subscriptions, annual subscription, paygo, hourly subscription, bluexp 
+summary: 14 日間の無料トライアルが終了した後、同期関係の料金を支払う方法は 2 つあります。最初のオプションは、AWS または Azure から従量課金制または年間払いでサブスクライブすることです。  2 番目のオプションは、 NetAppから直接ライセンスを購入することです。 
+---
+= NetApp Copy and Sync のライセンスの概要
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+14 日間の無料トライアルが終了した後、 NetApp のコピーおよび同期関係の支払い方法は 2 つあります。最初のオプションは、AWS または Azure から従量課金制または年間払いでサブスクライブすることです。  2 番目のオプションは、 NetAppから直接ライセンスを購入することです。
+
+ライセンスは、 NetAppコンソールではなく、 NetApp Copy and Sync または該当する Web サイトを通じて管理する必要があります。
+
+
+
+== マーケットプレイスサブスクリプション
+
+AWS または Azure からのコピーと同期をサブスクライブすると、時間単位で支払うことも、年単位で支払うこともできます。link:task-licensing.html["AWSまたはAzureを通じてサブスクライブできます"]請求先に応じて異なります。
+
+
+
+=== 時間単位のサブスクリプション
+
+時間単位の従量課金制サブスクリプションでは、作成した同期関係の数に基づいて時間ごとに課金されます。
+
+* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice["Azure の価格を見る"^]
+* https://aws.amazon.com/marketplace/pp/B01LZV5DUJ["AWS の従量課金制料金を見る"^]
+
+
+
+
+=== 年間購読
+
+年間サブスクリプションでは、前払いで支払う 20 の同期関係のライセンスが提供されます。同期関係が 20 を超え、AWS を通じてサブスクライブしている場合は、追加の関係に対して時間単位で料金が発生します。
+
+https://aws.amazon.com/marketplace/pp/B06XX5V3M2["AWSの年間料金を見る"^]
+
+
+
+== NetAppのライセンス
+
+同期関係の料金を前払いする別の方法は、 NetAppから直接ライセンスを購入することです。各ライセンスでは、最大 20 個の同期関係を作成できます。
+
+これらのライセンスは、AWS または Azure サブスクリプションで使用できます。たとえば、同期関係が 25 個ある場合、ライセンスを使用して最初の 20 個の同期関係に対して料金を支払い、残りの 5 個の同期関係については AWS または Azure から従量課金制で支払うことができます。
+
+link:task-licensing.html["ライセンスを購入してNetApp Copy and Syncに追加する方法について学びます"] 。
+
+
+
+=== ライセンス条項
+
+コピーおよび同期のために Bring Your Own License (BYOL) を購入するお客様は、ライセンス資格に関連する制限事項に注意する必要があります。
+
+* お客様は、納品日から 1 年を超えない期間、BYOL ライセンスを活用する権利を有します。
+* お客様は、BYOL ライセンスを活用して、ソースとターゲット間の個別の接続 (それぞれ「同期関係」) を合計 20 個まで確立することができます。
+* お客様が 20 の同期関係の制限に達したかどうかに関係なく、お客様の権利は 1 年間のライセンス期間の終了時に失効します。
+* お客様がライセンスの更新を選択した場合、以前のライセンス付与に関連付けられた未使用の同期関係はライセンスの更新に引き継がれません。
+

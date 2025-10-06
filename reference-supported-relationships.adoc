@@ -1,0 +1,324 @@
+---
+sidebar: sidebar 
+permalink: reference-supported-relationships.html 
+keywords: supported sync relationships, support, supported target, supported source 
+summary: NetApp Copy and Sync を使用すると、ソースからターゲットにデータを同期できます。これを同期関係と呼びます。始める前に、サポートされている関係を理解し​​ておく必要があります。 
+---
+= NetApp Copy and Sync でサポートされている同期関係
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync を使用すると、ソースからターゲットにデータを同期できます。これを同期関係と呼びます。始める前に、サポートされている関係を理解し​​ておく必要があります。
+
+[cols="20,25"]
+|===
+| ソースの場所 | サポートされているターゲットの場所 
+
+
+| アマゾンEFS  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| Amazon FSx for ONTAP  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure データレイクストレージ Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| Amazon S3  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure データレイクストレージ Gen2
+* Azure NetApp Files
+* ボックス^1^
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* ONTAP S3 ストレージ
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| Azure ブロブ  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| Azure データレイクストレージ Gen2  a| 
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* ONTAP向け FSx
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスONTAP
+* ONTAP S3 ストレージ
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| Azure NetApp Files  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure データレイクストレージ Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| ボックス^1^  a| 
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* IBM Cloud Object Storage
+* NFS サーバ
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| Cloud Volumes ONTAP  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure データレイクストレージ Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| Google Cloud Storage  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* ONTAP S3 ストレージ
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| Googleドライブ  a| 
+* NFS サーバ
+* SMB サーバ
+
+
+
+
+| IBM Cloud Object Storage  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure データレイクストレージ Gen2
+* Azure NetApp Files
+* ボックス^1^
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| NFS サーバ  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure データレイクストレージ Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* Googleドライブ
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* ONTAP S3 ストレージ
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| オンプレミスのONTAPクラスタ（NFS または SMB）  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure データレイクストレージ Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| ONTAP S3 ストレージ  a| 
+* Amazon S3
+* Azure データレイクストレージ Gen2
+* Google Cloud Storage
+* NFS サーバ
+* SMB サーバ
+* StorageGRID
+* ONTAP S3 ストレージ
+
+
+
+
+| SFTP ^2^ | S3 
+
+
+| SMB サーバ  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure データレイクストレージ Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* Googleドライブ
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* ONTAP S3 ストレージ
+* SMB サーバ
+* StorageGRID
+
+
+
+
+| StorageGRID  a| 
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure データレイクストレージ Gen2
+* Azure NetApp Files
+* ボックス^1^
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* NFS サーバ
+* オンプレミスのONTAPクラスタ（NFS または SMB）
+* ONTAP S3 ストレージ
+* SMB サーバ
+* StorageGRID
+
+
+|===
+注：
+
+. Box サポートはプレビューとして利用できます。
+. このソース/ターゲットとの同期関係は、コピーおよび同期 API の使用によってのみサポートされます。
+. BLOB コンテナーがターゲットの場合は、特定の Azure BLOB ストレージ層を選択できます。
++
+** ホットストレージ
+** クールストレージ
+
+
+. [[storage-classes]]Amazon S3 がターゲットの場合は、特定の S3 ストレージクラスを選択できます。
++
+** 標準（これがデフォルトのクラスです）
+** インテリジェントティアリング
+** 標準-低頻度アクセス
+** 1つのゾーン - 低頻度アクセス
+** グレイシャーディープアーカイブ
+** 氷河フレキシブルリトリーバル
+** 氷河の即時検索
+
+
+. Google Cloud Storage バケットがターゲットの場合は、特定のストレージ クラスを選択できます。
++
+** Standard
+** ニアライン
+** コールドライン
+** アーカイブ
+
+
+

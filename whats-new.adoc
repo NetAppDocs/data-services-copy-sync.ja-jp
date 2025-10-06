@@ -1,0 +1,1037 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, enhancements, fixes' 
+summary: NetApp Copy and Sync の新機能について説明します。 
+---
+= NetApp Copy and Syncの新機能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync の新機能について説明します。
+
+
+
+== 2025年10月6日
+
+
+
+=== BlueXP copy and syncはNetAppコピー＆同期になりました
+
+BlueXP copy and syncは、 NetAppコピーおよび同期に名前が変更されました。
+
+
+
+=== BlueXPはNetAppコンソールになりました
+
+NetAppコンソールは、強化され再構築されたBlueXP基盤上に構築され、オンプレミスとクラウド環境全体にわたるエンタープライズ グレードのNetAppストレージとNetAppデータ サービスの集中管理を提供し、リアルタイムの分析情報、ワークフローの高速化、および高度なセキュリティとコンプライアンスを備えた簡素化された管理を実現します。
+
+変更内容の詳細については、link:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetAppコンソールのリリースノート"] 。
+
+
+
+== 2025年2月2日
+
+
+
+=== データブローカーの新しいOSサポート
+
+データ ブローカーは、Red Hat Enterprise 9.4、Ubuntu 23.04、Ubuntu 24.04 を実行しているホストでサポートされるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-host-requirements["Linuxホストの要件を表示"] 。
+
+
+
+== 2024年10月27日
+
+
+
+=== バグ修正
+
+いくつかのバグを修正するために、 NetApp Copy and Sync とデータ ブローカーを更新しました。新しいデータ ブローカーのバージョンは 1.0.56 です。
+
+
+
+== 2024年9月16日
+
+
+
+=== バグ修正
+
+いくつかのバグを修正するために、 NetApp Copy and Sync とデータ ブローカーを更新しました。新しいデータ ブローカーのバージョンは 1.0.55 です。
+
+
+
+== 2024年8月11日
+
+
+
+=== バグ修正
+
+いくつかのバグを修正するために、 NetApp Copy and Sync とデータ ブローカーを更新しました。新しいデータ ブローカーのバージョンは 1.0.54 です。
+
+
+
+== 2024年7月14日
+
+
+
+=== バグ修正
+
+いくつかのバグを修正するために、コピーと同期およびデータ ブローカーを更新しました。新しいデータ ブローカーのバージョンは 1.0.53 です。
+
+
+
+== 2024年6月2日
+
+
+
+=== バグ修正
+
+NetApp Copy and Sync が更新され、いくつかのバグが修正されました。データ ブローカーも更新され、セキュリティ更新が適用されます。新しいデータ ブローカーのバージョンは 1.0.52 です。
+
+
+
+== 2024年4月8日
+
+
+
+=== RHEL 8.9 のサポート
+
+データ ブローカーは、Red Hat Enterprise Linux 8.9 を実行しているホストでサポートされるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-host-requirements["Linuxホストの要件を表示"] 。
+
+
+
+== 2024年2月11日
+
+
+
+=== 正規表現でディレクトリをフィルタリングする
+
+ユーザーは正規表現を使用してディレクトリをフィルタリングできるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#create-other-types-of-sync-relationships["*ディレクトリを除外*機能の詳細をご覧ください。"]
+
+
+
+== 2023年11月26日
+
+
+
+=== Azure Blob のコールド ストレージ クラスのサポート
+
+同期関係を作成するときに、コールド ストレージ Azure Blob 層が使用できるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html["同期関係の作成について詳しく学習します。"]
+
+
+
+=== AWS データブローカーにおけるテルアビブリージョンのサポート
+
+AWS でデータブローカーを作成するときに、テルアビブがサポートされるリージョンになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-aws.html#creating-the-data-broker["AWSでデータブローカーを作成する方法の詳細"] 。
+
+
+
+=== データブローカーのノードバージョンの更新
+
+すべての新しいデータ ブローカーは、ノード バージョン 21.2.0 を使用します。  CentOS 7.0 や Ubuntu Server 18.0 など、このアップデートと互換性のないデータ ブローカーは、 NetApp Copy and Sync で動作しなくなります。
+
+
+
+== 2023年9月3日
+
+
+
+=== 正規表現でファイルを除外する
+
+ユーザーは正規表現を使用してファイルを除外できるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#create-other-types-of-sync-relationships["*ファイル拡張子を除外*機能の詳細をご覧ください。"]
+
+
+
+=== Azure データブローカーの作成時に S3 キーを追加する
+
+ユーザーは、Azure データ ブローカーを作成するときに、AWS S3 アクセス キーと秘密キーを追加できるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-azure.html#creating-the-data-broker["Azure でデータ ブローカーを作成する方法の詳細について説明します。"]
+
+
+
+== 2023年8月6日
+
+
+
+=== データ ブローカーを作成するときに既存の Azure セキュリティ グループを使用する
+
+ユーザーは、データ ブローカーを作成するときに、既存の Azure セキュリティ グループを使用するオプションを利用できるようになりました。
+
+データ ブローカーの作成時に使用するサービス アカウントには、次の権限が必要です。
+
+* 「Microsoft.Network/ネットワークセキュリティグループ/セキュリティルール/読み取り」
+* 「Microsoft.Network/networkSecurityGroups/読み取り」
+
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-azure.html["Azure でデータ ブローカーを作成する方法の詳細について説明します。"]
+
+
+
+=== Google ストレージに同期するときにデータを暗号化する
+
+ユーザーは、Google ストレージ バケットをターゲットとして同期関係を作成するときに、顧客管理の暗号化キーを指定できるようになりました。キーを手動で入力するか、単一のリージョン内のキーのリストから選択することができます。
+
+データ ブローカーの作成時に使用するサービス アカウントには、次の権限が必要です。
+
+* cloudkms.cryptoKeys.リスト
+* cloudkms.keyRings.リスト
+
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/reference-requirements.html#google-cloud-storage-bucket-requirements["Google Cloud Storage バケットの要件の詳細をご覧ください。"]
+
+
+
+== 2023年7月9日
+
+
+
+=== 複数の同期関係を一度に削除する
+
+ユーザーは、UI で一度に複数の同期関係を削除できるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#deleting-relationships["同期関係の削除について詳しくは、こちらをご覧ください。"]
+
+
+
+=== ACLのみコピー
+
+ユーザーには、CIF および NFS 関係で ACL 情報をコピーするための追加オプションが提供されるようになりました。同期関係を作成または管理するときに、ファイルのみをコピーしたり、ACL 情報のみをコピーしたり、ファイルと ACL 情報をコピーしたりできます。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-copying-acls.html["ACL のコピーについて詳しく学びます。"]
+
+
+
+=== Node.js 20にアップデート
+
+コピーと同期が Node.js 20 に更新されました。利用可能なすべてのデータ ブローカーが更新されます。この更新プログラムと互換性のないオペレーティング システムはインストールできず、互換性のない既存のシステムではパフォーマンスの問題が発生する可能性があります。
+
+
+
+== 2023年6月11日
+
+
+
+=== 分単位の自動中止をサポート
+
+完了していないアクティブな同期は、*同期タイムアウト*機能を使用して 15 分後に中止できるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["同期タイムアウト設定の詳細"] 。
+
+
+
+=== アクセス時間メタデータをコピーする
+
+ファイル システムを含む関係では、*オブジェクトのコピー*機能によってアクセス時間のメタデータがコピーされるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["オブジェクトのコピー設定の詳細"] 。
+
+
+
+== 2023年5月8日
+
+
+
+=== ハードリンク機能
+
+ユーザーは、セキュリティ保護されていない NFS と NFS の関係を含む同期にハード リンクを含めることができるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["ファイルタイプの設定について詳しくは"] 。
+
+
+
+=== セキュア NFS 関係におけるデータ ブローカーのユーザー証明書を追加する機能
+
+ユーザーは、安全な NFS 関係を作成するときに、ターゲット データ ブローカーに対して独自の証明書を設定できるようになりました。その際、サーバー名を設定し、秘密鍵と証明書 ID を提供する必要があります。この機能は、すべてのデータ ブローカーで利用できます。
+
+
+
+=== 最近変更されたファイルの除外期間の延長
+
+ユーザーは、スケジュールされた同期の最大 365 日前までに変更されたファイルを除外できるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["最近変更されたファイルの設定について詳しくは"] 。
+
+
+
+=== UI で関係 ID による関係のフィルタリング
+
+RESTful API を使用しているユーザーは、関係 ID を使用して関係をフィルターできるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/api-sync.html["NetApp Copy and Sync で RESTful API を使用する方法の詳細"] 。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["除外ディレクトリ設定の詳細"] 。
+
+
+
+== 2023年4月2日
+
+
+
+=== Azure Data Lake Storage Gen2 関係の追加サポート
+
+次のようにして、Azure Data Lake Storage Gen2 をソースおよびターゲットとして同期関係を作成できるようになりました。
+
+* Azure NetApp Files
+* Amazon FSx for ONTAP
+* Cloud Volumes ONTAP
+* オンプレミスONTAP
+
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/reference-supported-relationships.html["サポートされている同期関係の詳細"] 。
+
+
+
+=== フルパスでディレクトリをフィルタリングする
+
+名前によるディレクトリのフィルタリングに加えて、フルパスによるディレクトリのフィルタリングも可能になりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["除外ディレクトリ設定の詳細"] 。
+
+
+
+== 2023年3月7日
+
+
+
+=== AWS データブローカー向け EBS 暗号化
+
+アカウントの KMS キーを使用して AWS データブローカーボリュームを暗号化できるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-aws.html#creating-the-data-broker["AWSでデータブローカーを作成する方法の詳細"] 。
+
+
+
+== 2023年2月5日
+
+
+
+=== Azure Data Lake Storage Gen2、 ONTAP S3 ストレージ、NFS の追加サポート
+
+Cloud Sync は、 ONTAP S3 ストレージと NFS の追加の同期関係をサポートするようになりました。
+
+* ONTAP S3 ストレージから NFS へ
+* NFS からONTAP S3 ストレージへ
+
+
+Cloud Sync、Azure Data Lake Storage Gen2 をソースとターゲットの両方としてさらにサポートし、次のことを実現します。
+
+* NFS サーバ
+* SMB サーバ
+* ONTAP S3 ストレージ
+* StorageGRID
+* IBM Cloud Object Storage
+
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/reference-supported-relationships.html["サポートされている同期関係の詳細"] 。
+
+
+
+=== Amazon Web Services データブローカー オペレーティング システムへのアップグレード
+
+AWS データブローカーのオペレーティングシステムが Amazon Linux 2022 にアップグレードされました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-aws.html#details-about-the-data-broker-instance["AWS のデータブローカーインスタンスの詳細"] 。
+
+
+
+== 2023年1月3日
+
+
+
+=== UI にデータ ブローカーのローカル構成を表示する
+
+ユーザーが UI 上で各データ ブローカーのローカル構成を表示できる *構成の表示* オプションが追加されました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-data-brokers.html["データブローカーグループの管理の詳細"] 。
+
+
+
+=== Azure および Google Cloud データ ブローカー オペレーティング システムへのアップグレード
+
+Azure および Google Cloud のデータ ブローカーのオペレーティング システムが Rocky Linux 9.0 にアップグレードされました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-azure.html#details-about-the-data-broker-vm["Azure のデータ ブローカー インスタンスの詳細"] 。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-gcp.html#details-about-the-data-broker-vm-instance["Google Cloud のデータブローカーインスタンスの詳細"] 。
+
+
+
+== 2022年12月11日
+
+
+
+=== 名前でディレクトリをフィルタリングする
+
+同期関係に新しい *ディレクトリ名を除外* 設定が利用できるようになりました。ユーザーは、同期から最大 15 個のディレクトリ名を除外できます。デフォルトでは、.copy-offload、.snapshot、~snapshot ディレクトリは除外されます。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["ディレクトリ名を除外する設定の詳細"] 。
+
+
+
+=== 追加の Amazon S3 およびONTAP S3 ストレージのサポート
+
+Cloud Sync は、AWS S3 およびONTAP S3 ストレージの追加の同期関係をサポートするようになりました。
+
+* AWS S3 からONTAP S3 ストレージへ
+* ONTAP S3 ストレージから AWS S3 へ
+
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/reference-supported-relationships.html["サポートされている同期関係の詳細"] 。
+
+
+
+== 2022年10月30日
+
+
+
+=== Microsoft Azureからの継続的な同期
+
+Azure データ ブローカーを使用して、ソース Azure ストレージ バケットからクラウド ストレージへの継続的な同期設定がサポートされるようになりました。
+
+最初のデータ同期の後、 Cloud Sync はソースの Azure ストレージ バケットの変更をリッスンし、変更が発生するたびにターゲットに継続的に同期します。この設定は、Azure ストレージ バケットから Azure Blob ストレージ、CIFS、Google Cloud Storage、IBM Cloud Object Storage、NFS、 StorageGRIDに同期するときに使用できます。
+
+この設定を使用するには、Azure データ ブローカーにカスタム ロールと次のアクセス許可が必要です。
+
+[source, json]
+----
+'Microsoft.Storage/storageAccounts/read',
+'Microsoft.EventGrid/systemTopics/eventSubscriptions/write',
+'Microsoft.EventGrid/systemTopics/eventSubscriptions/read',
+'Microsoft.EventGrid/systemTopics/eventSubscriptions/delete',
+'Microsoft.EventGrid/systemTopics/eventSubscriptions/getFullUrl/action',
+'Microsoft.EventGrid/systemTopics/eventSubscriptions/getDeliveryAttributes/action',
+'Microsoft.EventGrid/systemTopics/read',
+'Microsoft.EventGrid/systemTopics/write',
+'Microsoft.EventGrid/systemTopics/delete',
+'Microsoft.EventGrid/eventSubscriptions/write',
+'Microsoft.Storage/storageAccounts/write'
+----
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["継続同期設定の詳細"] 。
+
+
+
+== 2022年9月4日
+
+
+
+=== Googleドライブの追加サポート
+
+* Cloud Sync は、 Google ドライブの追加の同期関係をサポートするようになりました。
++
+** Google ドライブから NFS サーバーへ
+** Google ドライブから SMB サーバーへ
+
+
+* Google ドライブを含む同期関係のレポートを生成することもできます。
++
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-reports.html["レポートの詳細"] 。
+
+
+
+
+
+=== 継続的な同期の強化
+
+次の種類の同期関係で継続的な同期設定を有効にできるようになりました。
+
+* S3バケットからNFSサーバーへ
+* Google Cloud Storage から NFS サーバーへ
+
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["継続同期設定の詳細"] 。
+
+
+
+=== メール通知
+
+Cloud Sync の通知を電子メールで受信できるようになりました。
+
+電子メールで通知を受信するには、同期関係で *通知* 設定を有効にし、 NetAppコンソールでアラートと通知の設定を構成する必要があります。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#setting-up-notifications["通知の設定方法を学ぶ"] 。
+
+
+
+== 2022年7月31日
+
+
+
+=== Googleドライブ
+
+NFS サーバーまたは SMB サーバーから Google ドライブにデータを同期できるようになりました。  「マイドライブ」と「共有ドライブ」の両方がターゲットとしてサポートされています。
+
+Google ドライブを含む同期関係を作成する前に、必要な権限と秘密鍵を持つサービス アカウントを設定する必要があります。 https://docs.netapp.com/us-en/bluexp-copy-sync/reference-requirements.html#google-drive["Googleドライブの要件について詳しくはこちらをご覧ください"] 。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/reference-supported-relationships.html["サポートされている同期関係のリストを表示する"] 。
+
+
+
+=== 追加の Azure Data Lake サポート
+
+Cloud Sync は、Azure Data Lake Storage Gen2 の追加の同期関係をサポートするようになりました。
+
+* Amazon S3 から Azure Data Lake Storage Gen2 へ
+* IBM Cloud Object Storage から Azure Data Lake Storage Gen2 へ
+* StorageGRIDから Azure Data Lake Storage Gen2 へ
+
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/reference-supported-relationships.html["サポートされている同期関係のリストを表示する"] 。
+
+
+
+=== 同期関係を設定する新しい方法
+
+NetAppコンソールのシステム ページから直接同期関係を設定するための追加の方法が追加されました。
+
+
+
+==== ドラッグ アンド ドロップ
+
+システム ページから、あるシステムを別のシステムの上にドラッグ アンド ドロップすることで、同期関係を設定できるようになりました。
+
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-drag-and-drop.png["NetAppコンソールの通知センターを示すスクリーンショット。"]
+
+
+
+==== 右パネルのセットアップ
+
+システム ページからシステムを選択し、右側のパネルから同期オプションを選択することで、Azure Blob Storage または Google Cloud Storage の同期関係を設定できるようになりました。
+
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-panel.png["NetAppコンソールの通知センターを示すスクリーンショット。"]
+
+
+
+== 2022年7月3日
+
+
+
+=== Azure Data Lake Storage Gen2 のサポート
+
+NFS サーバーまたは SMB サーバーから Azure Data Lake Storage Gen2 にデータを同期できるようになりました。
+
+Azure Data Lake を含む同期関係を作成する場合は、 Cloud Syncにストレージ アカウント接続文字列を提供する必要があります。共有アクセス署名 (SAS) ではなく、通常の接続文字列である必要があります。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/reference-supported-relationships.html["サポートされている同期関係のリストを表示する"] 。
+
+
+
+=== Google Cloud Storageからの継続的な同期
+
+ソースの Google Cloud Storage バケットからクラウド ストレージ ターゲットへの継続的な同期設定がサポートされるようになりました。
+
+最初のデータ同期の後、 Cloud Sync はソースの Google Cloud Storage バケットの変更をリッスンし、変更が発生するたびにターゲットに継続的に同期します。この設定は、Google Cloud Storage バケットから S3、Google Cloud Storage、Azure Blob Storage、 StorageGRID、または IBM Storage に同期するときに使用できます。
+
+この設定を使用するには、データ ブローカーに関連付けられたサービス アカウントに次の権限が必要です。
+
+[source, json]
+----
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update
+----
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["継続同期設定の詳細"] 。
+
+
+
+=== 新しい Google Cloud リージョンのサポート
+
+Cloud Syncデータ ブローカーは、次の Google Cloud リージョンでサポートされるようになりました。
+
+* コロンバス（米国東部5）
+* ダラス（米国南部1）
+* マドリード（ヨーロッパ南西部1）
+* ミラノ（ヨーロッパ西8）
+* パリ（ヨーロッパ西9）
+
+
+
+
+=== 新しい Google Cloud マシンタイプ
+
+Google Cloud のデータ ブローカーのデフォルトのマシンタイプは n2-standard-4 になりました。
+
+
+
+== 2022年6月6日
+
+
+
+=== 連続同期
+
+新しい設定により、ソース S3 バケットからターゲットへの変更を継続的に同期できるようになります。
+
+最初のデータ同期の後、 Cloud Sync はソースの S3 バケットの変更をリッスンし、変更が発生するたびにターゲットに継続的に同期します。スケジュールされた間隔でソースを再スキャンする必要はありません。この設定は、S3 バケットから S3、Google Cloud Storage、Azure Blob Storage、 StorageGRID、または IBM Storage に同期する場合にのみ使用できます。
+
+この設定を使用するには、データ ブローカーに関連付けられた IAM ロールに次の権限が必要であることに注意してください。
+
+[source, json]
+----
+"s3:GetBucketNotification",
+"s3:PutBucketNotification"
+----
+これらの権限は、作成する新しいデータ ブローカーに自動的に追加されます。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["継続同期設定の詳細"] 。
+
+
+
+=== すべてのONTAPボリュームを表示
+
+同期関係を作成すると、 Cloud Sync はソースのCloud Volumes ONTAPシステム、オンプレミスのONTAPクラスター、または FSx for ONTAPファイル システム上のすべてのボリュームを表示するようになりました。
+
+以前は、 Cloud Sync、選択したプロトコルに一致するボリュームのみが表示されていました。これですべてのボリュームが表示されますが、選択したプロトコルに一致しないボリュームや共有またはエクスポートがないボリュームはグレー表示され、選択できなくなります。
+
+
+
+=== Azure Blob へのタグのコピー
+
+Azure Blob をターゲットとする同期関係を作成すると、 Cloud Syncでは Azure Blob コンテナーにタグをコピーできるようになりました。
+
+* *設定* ページで、*オブジェクトのコピー* 設定を使用して、ソースから Azure BLOB コンテナーにタグをコピーできます。これはメタデータのコピーに加えて行われます。
+* *タグ/メタデータ* ページでは、Azure BLOB コンテナーにコピーされるオブジェクトに設定する BLOB インデックス タグを指定できます。以前は、関係メタデータのみを指定できました。
+
+
+これらのオプションは、Azure Blob がターゲットであり、ソースが Azure Blob または S3 互換エンドポイント (S3、 StorageGRID、または IBM Cloud Object Storage) のいずれかである場合にサポートされます。
+
+
+
+== 2022年5月1日
+
+
+
+=== 同期タイムアウト
+
+同期関係に新しい *同期タイムアウト* 設定が利用できるようになりました。この設定では、指定された時間数または日数内に同期が完了しなかった場合に、 Cloud Sync がデータ同期をキャンセルするかどうかを定義できます。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#change-the-settings-for-a-sync-relationship["同期関係の設定の変更について詳しくは、こちらをご覧ください。"] 。
+
+
+
+=== 通知
+
+同期関係に新しい *通知* 設定が利用できるようになりました。この設定により、 NetAppコンソールの通知センターでCloud Sync通知を受信するかどうかを選択できます。成功したデータ同期、失敗したデータ同期、キャンセルされたデータ同期に関する通知を有効にすることができます。
+
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["NetAppコンソールの通知センターを示すスクリーンショット。"]
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#change-the-settings-for-a-sync-relationship["同期関係の設定の変更について詳しくは、こちらをご覧ください。"] 。
+
+
+
+== 2022年4月3日
+
+
+
+=== データブローカーグループの機能強化
+
+データ ブローカー グループにいくつかの機能強化を加えました。
+
+* データ ブローカーを新規または既存のグループに移動できるようになりました。
+* データ ブローカーのプロキシ構成を更新できるようになりました。
+* 最後に、データ ブローカー グループを削除することもできます。
+
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-data-brokers.html["データブローカーグループの管理方法を学ぶ"] 。
+
+
+
+=== ダッシュボードフィルター
+
+同期ダッシュボードの内容をフィルタリングして、特定のステータスに一致する同期関係をより簡単に見つけることができるようになりました。たとえば、失敗したステータスの同期関係をフィルタリングすることができます
+
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-sync-filter.png["ダッシュボードの上部にある同期ステータスによるフィルター オプションを示すスクリーンショット。"]
+
+
+
+== 2022年3月3日
+
+
+
+=== ダッシュボードでの並べ替え
+
+ダッシュボードを同期関係名で並べ替えるようになりました。
+
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-sync-sort.png["ダッシュボードから利用できる「名前で並べ替え」オプションを示すスクリーンショット。"]
+
+
+
+=== Data Sense統合の強化
+
+前回のリリースでは、 Cloud Syncと Cloud Data Sense の統合を導入しました。今回のアップデートでは、同期関係の作成が容易になり、統合が強化されました。  Cloud Data Sense からデータ同期を開始すると、すべてのソース情報が 1 つのステップにまとめられ、いくつかの重要な詳細を入力するだけで済みます。
+
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-sync-data-sense.png["Cloud Data Sense から直接新しい同期を開始した後に表示される Data Sense 統合ページを示すスクリーンショット。"]
+
+
+
+== 2022年2月6日
+
+
+
+=== データブローカーグループの強化
+
+データ ブローカー グループを強調することで、データ ブローカーとのやり取り方法を変更しました。
+
+たとえば、新しい同期関係を作成するときは、特定のデータ ブローカーではなく、関係で使用するデータ ブローカー グループを選択します。
+
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-sync-select-data-broker-group.png["データ ブローカー グループの選択を示す同期関係ウィザードのスクリーンショット。"]
+
+*データ ブローカーの管理* タブには、データ ブローカー グループが管理している同期関係の数も表示されます。
+
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-sync-group-relationships.png["データ ブローカー グループと、そのグループの詳細 (管理しているリレーションシップの数など) を表示する「データ ブローカーの管理」ページのスクリーンショット。"]
+
+
+
+=== PDFレポートをダウンロード
+
+レポートの PDF をダウンロードできるようになりました。
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-reports.html["レポートの詳細"] 。
+
+
+
+== 2022年1月2日
+
+
+
+=== 新しいBox同期関係
+
+2 つの新しい同期関係がサポートされています。
+
+* Box からAzure NetApp Filesへ
+* Box からAmazon FSx for ONTAPへ
+
+
+link:reference-supported-relationships.html["サポートされている同期関係のリストを表示する"] 。
+
+
+
+=== 関係名
+
+各同期関係にわかりやすい名前を付けて、各関係の目的をより簡単に識別できるようになりました。関係を作成するときやその後いつでも名前を追加できます。
+
+image:screenshot-sync-relationship-edit-name.png["関係の名前の横にある編集ボタンが表示されている同期関係のスクリーンショット。"]
+
+
+
+=== S3プライベートリンク
+
+Amazon S3 との間でデータを同期するときに、S3 プライベートリンクを使用するかどうかを選択できます。データ ブローカーがソースからターゲットにデータをコピーする場合、プライベート リンクを経由します。
+
+この機能を使用するには、データ ブローカーに関連付けられた IAM ロールに次の権限が必要であることに注意してください。
+
+[source, json]
+----
+"ec2:DescribeVpcEndpoints"
+----
+この権限は、作成する新しいデータ ブローカーに自動的に追加されます。
+
+
+
+=== 氷河の即時検索
+
+同期関係のターゲットが Amazon S3 の場合、_Glacier Instant Retrieval_ ストレージ クラスを選択できるようになりました。
+
+
+
+=== オブジェクトストレージからSMB共有へのACL
+
+Cloud Syncでは、オブジェクト ストレージから SMB 共有への ACL のコピーがサポートされるようになりました。以前は、SMB 共有からオブジェクト ストレージへの ACL のコピーのみがサポートされていました。
+
+
+
+=== SFTPからS3へ
+
+SFTP から Amazon S3 への同期関係の作成がユーザー インターフェイスでサポートされるようになりました。この同期関係は以前は API でのみサポートされていました。
+
+
+
+=== テーブルビューの強化
+
+使いやすさを考慮して、ダッシュボードのテーブル ビューを再設計しました。  *詳細情報*を選択すると、 Cloud Sync はダッシュボードをフィルターし、特定の関係に関する詳細情報を表示します。
+
+image:screenshot-sync-table.png["ダッシュボードのテーブル ビューのスクリーンショット。"]
+
+
+
+=== ジャルカルタ地域への支援
+
+Cloud Syncでは、AWS アジアパシフィック (ジャカルタ) リージョンでのデータブローカーのデプロイがサポートされるようになりました。
+
+
+
+== 2021年11月28日
+
+
+
+=== SMBからオブジェクトストレージへのACL
+
+Cloud Sync、ソース SMB 共有からオブジェクト ストレージ ( ONTAP S3 を除く) への同期関係を設定するときに、アクセス制御リスト (ACL) をコピーできるようになりました。
+
+Cloud Sync は、オブジェクト ストレージから SMB 共有への ACL のコピーをサポートしていません。
+
+link:task-copying-acls.html["SMB共有からACLをコピーする方法を学ぶ"] 。
+
+
+
+=== ライセンスの更新
+
+延長したCloud Syncライセンスを更新できるようになりました。
+
+NetAppから購入したCloud Syncライセンスを延長した場合は、ライセンスを再度追加して有効期限を更新できます。
+
+link:task-licensing.html["ライセンスの更新方法を学ぶ"] 。
+
+
+
+=== Boxの資格情報を更新する
+
+既存の同期関係の Box 資格情報を更新できるようになりました。
+
+link:task-managing-relationships.html["資格情報を更新する方法を学ぶ"] 。
+
+
+
+== 2021年10月31日
+
+
+
+=== ボックスサポート
+
+Box サポートが、 Cloud Syncユーザー インターフェースでプレビューとして利用できるようになりました。
+
+Box は、いくつかの種類の同期関係においてソースまたはターゲットになることができます。link:reference-supported-relationships.html["サポートされている同期関係のリストを表示する"] 。
+
+
+
+=== 作成日の設定
+
+SMB サーバーがソースの場合、「_作成日_」という新しい同期関係設定を使用すると、特定の日付以降、特定の日付前、または特定の時間範囲内に作成されたファイルを同期できます。
+
+link:task-managing-relationships.html["Cloud Sync設定の詳細"] 。
+
+
+
+== 2021年10月4日
+
+
+
+=== 追加のBoxサポート
+
+Cloud Syncは、以下の追加の同期関係をサポートするようになりました。 https://www.box.com/home["箱"^] Cloud Sync API を使用する場合:
+
+* Amazon S3からBoxへ
+* IBM Cloud Object StorageからBoxへ
+* StorageGRIDからBoxへ
+* NFSサーバーへのBox
+* BoxからSMBサーバーへ
+
+
+link:api-sync.html["APIを使用して同期関係を設定する方法を学びます"] 。
+
+
+
+=== SFTPパスのレポート
+
+これでlink:task-managing-reports.html["レポートを作成する"]SFTP パスの場合。
+
+
+
+== 2021年9月2日
+
+
+
+=== FSx for ONTAPのサポート
+
+Amazon FSx for ONTAPファイルシステムとの間でデータを同期できるようになりました。
+
+* https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/concept-fsx-aws.html["Amazon FSx for ONTAPについて学ぶ"^]
+* link:reference-requirements.html["サポートされている同期関係を表示する"]
+* link:task-creating-relationships.html["Amazon FSx for ONTAPの同期関係を作成する方法を学びます"]
+
+
+
+
+== 2021年8月1日
+
+
+
+=== 資格情報を更新する
+
+Cloud Syncでは、既存の同期関係のソースまたはターゲットの最新の資格情報を使用してデータ ブローカーを更新できるようになりました。
+
+この機能強化は、セキュリティ ポリシーにより資格情報を定期的に更新する必要がある場合に役立ちます。link:task-managing-relationships.html["資格情報を更新する方法を学ぶ"] 。
+
+image:screenshot_sync_update_credentials.png["ソースまたはターゲットの名前のすぐ下にある「同期関係」ページの「資格情報の更新」オプションを示すスクリーンショット。"]
+
+
+
+=== オブジェクトストレージターゲットのタグ
+
+同期関係を作成するときに、同期関係のオブジェクト ストレージ ターゲットにタグを追加できるようになりました。
+
+タグの追加は、Amazon S3、Azure Blob、Google Cloud Storage、IBM Cloud Object Storage、 StorageGRIDでサポートされています。
+
+image:screenshot_sync_tags.png["リレーションシップ内のオブジェクト ストレージ ターゲットにリレーションシップ タグを追加できるシステム ウィザードのページを示すスクリーンショット。"]
+
+
+
+=== Boxのサポート
+
+Cloud Syncがサポートされるようになりました https://www.box.com/home["箱"^]Cloud Sync API を使用する場合、Amazon S3、 StorageGRID 、IBM Cloud Object Storage との同期関係のソースとして。
+
+link:api-sync.html["APIを使用して同期関係を設定する方法を学びます"] 。
+
+
+
+=== Google Cloud のデータ ブローカーのパブリック IP
+
+Google Cloud にデータ ブローカーをデプロイするときに、仮想マシン インスタンスのパブリック IP アドレスを有効にするか無効にするかを選択できるようになりました。
+
+link:task-installing-gcp.html["Google Cloud でデータブローカーをデプロイする方法を学びます"] 。
+
+
+
+=== Azure NetApp Filesのデュアルプロトコル ボリューム
+
+Azure NetApp Filesのソース ボリュームまたはターゲット ボリュームを選択すると、同期関係にどのプロトコルを選択したかに関係なく、 Cloud Syncによってデュアル プロトコル ボリュームが表示されるようになりました。
+
+
+
+== 2021年7月7日
+
+
+
+=== ONTAP S3 ストレージと Google Cloud ストレージ
+
+Cloud Sync は、ユーザー インターフェースからONTAP S3 ストレージと Google Cloud Storage バケット間の同期関係をサポートするようになりました。
+
+link:reference-supported-relationships.html["サポートされている同期関係のリストを表示する"] 。
+
+
+
+=== オブジェクトメタデータタグ
+
+同期関係を作成し、設定を有効にすると、 Cloud Syncでオブジェクトベースのストレージ間でオブジェクトのメタデータとタグをコピーできるようになりました。
+
+link:task-creating-relationships.html#settings["オブジェクトのコピー設定の詳細"] 。
+
+
+
+=== HashiCorp Vaultsのサポート
+
+Google Cloud サービス アカウントで認証することで、外部の HashiCorp Vault からの認証情報にアクセスするようにデータ ブローカーを設定できるようになりました。
+
+link:task-external-vault.html["HashiCorp Vault をデータブローカーで使用する方法について詳しくは、こちらをご覧ください。"] 。
+
+
+
+=== S3バケットのタグまたはメタデータを定義する
+
+Amazon S3 バケットとの同期関係を設定するときに、同期関係ウィザードを使用して、ターゲット S3 バケット内のオブジェクトに保存するタグまたはメタデータを定義できるようになりました。
+
+タグ付けオプションは、以前は同期関係の設定の一部でした。
+
+
+
+== 2021年6月7日
+
+
+
+=== Google Cloud のストレージ クラス
+
+Google Cloud Storage バケットが同期関係のターゲットである場合、使用するストレージ クラスを選択できるようになりました。  Cloud Sync は次のストレージ クラスをサポートしています。
+
+* Standard
+* ニアライン
+* コールドライン
+* アーカイブ
+
+
+
+
+== 2021年5月2日
+
+
+
+=== レポートのエラー
+
+レポートで見つかったエラーを表示し、最後のレポートまたはすべてのレポートを削除できるようになりました。
+
+link:task-managing-reports.html["構成を調整するためのレポートの作成と表示について詳しくは、"] 。
+
+
+
+=== 属性を比較する
+
+各同期関係に対して、新しい *比較基準* 設定が利用できるようになりました。
+
+この詳細設定では、ファイルまたはディレクトリが変更されたかどうか、再度同期する必要があるかどうかを判断するときに、 Cloud Sync が特定の属性を比較するかどうかを選択できます。
+
+link:task-managing-relationships.html#change-the-settings-for-a-sync-relationship["同期関係の設定の変更について詳しくは、こちらをご覧ください。"] 。
+
+
+
+== 2021年4月11日
+
+
+
+=== スタンドアロンのCloud Syncサービスは廃止されました
+
+スタンドアロンのCloud Syncサービスは廃止されました。これで、 NetAppコンソールから直接Cloud Syncにアクセスし、同じ機能をすべて利用できるようになります。
+
+NetAppコンソールにログインすると、上部の [同期] タブに切り替えて、以前と同じように関係を表示できます。
+
+
+
+=== 異なるプロジェクトの Google Cloud バケット
+
+同期関係を設定するときに、データブローカーのサービス アカウントに必要な権限を付与すると、異なるプロジェクトの Google Cloud バケットから選択できます。
+
+link:task-installing-gcp.html["サービスアカウントの設定方法を学ぶ"] 。
+
+
+
+=== Google Cloud Storage と S3 間のメタデータ
+
+Cloud Syncでは、Google Cloud Storage と S3 プロバイダー (AWS S3、 StorageGRID、IBM Cloud Object Storage) 間でメタデータをコピーできるようになりました。
+
+
+
+=== データブローカーを再起動する
+
+Cloud Syncからデータ ブローカーを再起動できるようになりました。
+
+image:screenshot_sync_restart_data_broker.gif["「データ ブローカーの管理」ページの「データ ブローカーの再起動」アクションを示すスクリーンショット。"]
+
+
+
+=== 最新リリースを実行していない場合のメッセージ
+
+Cloud Sync、データ ブローカーが最新のソフトウェア リリースを実行していないことを識別できるようになりました。このメッセージは、最新の機能を確実に利用できるようにします。
+
+image:screenshot_sync_warning.gif["ダッシュボードでデータ ブローカーを表示するときに警告が表示されるスクリーンショット。"]

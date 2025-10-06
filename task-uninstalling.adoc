@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: task-uninstalling.html 
+keywords: uninstall, uninstall data broker, remove data broker 
+summary: 必要に応じて、アンインストール スクリプトを実行して、データ ブローカーと、データ ブローカーのインストール時に作成されたパッケージおよびディレクトリを削除します。 
+---
+= NetApp Copy and Syncのデータブローカーをアンインストールする
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+必要に応じて、アンインストール スクリプトを実行して、データ ブローカーと、データ ブローカーのインストール時にNetApp Copy and Sync 用に作成されたパッケージおよびディレクトリを削除します。
+
+.手順
+. データ ブローカー ホストにログインします。
+. データ ブローカー ディレクトリに変更します。 `/opt/netapp/databroker`
+. 次のコマンドを実行します。
++
+`chmod +x uninstaller-DataBroker.sh`
+`./uninstaller-DataBroker.sh`
+
+. アンインストールを確認するには「y」を押します。
+

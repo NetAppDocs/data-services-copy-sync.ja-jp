@@ -1,0 +1,123 @@
+---
+sidebar: sidebar 
+permalink: reference-networking.html 
+keywords: networking, 443, port, ports, port 443, connections, connectivity, path, paths, vpn, copy and sync, netapp, bluexp, cloud sync,connectivity,data broker 
+summary: NetApp Copy and Sync のネットワークには、データ ブローカー グループとソースおよびターゲットの場所間の接続、およびポート 443 経由のデータ ブローカーからの送信インターネット接続が含まれます。 
+---
+= NetApp Copy and Sync のネットワーク概要
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync のネットワークには、データ ブローカー グループとソースおよびターゲットの場所間の接続、およびポート 443 経由のデータ ブローカーからの送信インターネット接続が含まれます。
+
+
+
+== データブローカーの場所
+
+データ ブローカー グループは、クラウドまたはオンプレミスにインストールされた 1 つ以上のデータ ブローカーで構成されます。
+
+
+
+=== クラウド上のデータブローカー
+
+次の画像は、AWS、Google Cloud、または Azure のいずれかのクラウドで実行されているデータ ブローカーを示しています。データ ブローカーに接続している限り、ソースとターゲットは任意の場所に配置できます。たとえば、データセンターからクラウド プロバイダーへの VPN 接続がある場合があります。
+
+
+NOTE: Copy and Sync がデータ ブローカーを AWS、Azure、または Google Cloud にデプロイすると、必要な送信通信を有効にするセキュリティ グループが作成されます。
+
+image:diagram_networking_cloud2.png["コピーと同期、クラウドで実行されているデータ ブローカー、およびソースとターゲットへの接続を示す図。"]
+
+
+
+=== オンプレミスのデータブローカー
+
+次の図は、データセンター内のオンプレミスで実行されているデータ ブローカーを示しています。繰り返しになりますが、データ ブローカーに接続されていれば、ソースとターゲットは任意の場所に配置できます。
+
+image:diagram_networking_onprem.png["コピーと同期、オンプレミスで実行されているデータ ブローカー、およびソースとターゲットへの接続を示す図。"]
+
+
+
+== ネットワーク要件
+
+* ソースとターゲットは、データ ブローカー グループへのネットワーク接続を持っている必要があります。
++
+たとえば、NFS サーバーがデータセンターにあり、データブローカーが AWS にある場合は、ネットワークから VPC へのネットワーク接続 (VPN または Direct Connect) が必要です。
+
+* データ ブローカーには、ポート 443 経由でタスクのコピーと同期をポーリングできるように、送信インターネット接続が必要です。
+* NetApp、ソース、ターゲット、およびデータ ブローカーをネットワーク タイム プロトコル (NTP) サービスを使用するように構成することを推奨しています。  3 つのコンポーネント間の時間差は 5 分を超えてはなりません。
+
+
+
+
+== ネットワークエンドポイント
+
+NetAppデータ ブローカーでは、コピーおよび同期と通信し、他のいくつかのサービスやリポジトリに接続するために、ポート 443 経由の送信インターネット アクセスが必要です。ローカル Web ブラウザでも、特定のアクションのためにエンドポイントへのアクセスが必要です。送信接続を制限する必要がある場合は、送信トラフィック用にファイアウォールを構成するときに、次のエンドポイントのリストを参照してください。
+
+
+
+=== データブローカーエンドポイント
+
+データ ブローカーは次のエンドポイントに接続します。
+
+[cols="38,62"]
+|===
+| エンドポイント | 目的 
+
+
+| \https://olcentgbl.trafficmanager.net | データ ブローカー ホストの CentOS パッケージを更新するためのリポジトリに接続します。このエンドポイントは、CentOS ホストにデータ ブローカーを手動でインストールした場合にのみ接続されます。 
+
+
+| \https://rpm.nodesource.com \https://registry.npmjs.org \https://nodejs.org: | 開発で使用される Node.js、npm、その他のサードパーティ パッケージを更新するためにリポジトリに問い合わせます。 
+
+
+| \https://tgz.pm2.io | コピーと同期を監視するために使用されるサードパーティ パッケージである PM2 を更新するためのリポジトリにアクセスします。 
+
+
+| \https://sqs.us-east-1.amazonaws.com \https://kinesis.us-east-1.amazonaws.com | Copy and Sync が操作 (ファイルのキューイング、アクションの登録、データブローカーへの更新の配信) に使用する AWS サービスに接続します。 
+
+
+| \https://s3._region_.amazonaws.com 例: s3.us-east-2.amazonaws.com:443https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region["S3エンドポイントのリストについてはAWSドキュメントを参照してください。"^] | 同期関係に S3 バケットが含まれている場合に Amazon S3 に接続します。 
+
+
+| \https://s3.amazonaws.com/ | Copy and Sync からデータ ブローカー ログをダウンロードすると、データ ブローカーはログ ディレクトリを zip ファイルに圧縮し、us-east-1 リージョンの定義済み S3 バケットにログをアップロードします。 
+
+
+| \https://storage.googleapis.com/ | 同期関係で GCP バケットが使用されるときに Google Cloud に接続します。 
+
+
+| https://_storage-account_.blob.core.windows.net[]Azure Data Lake Gen2 を使用する場合:https://_storage-account_.dfs.core.windows.net[]ここで、_storage-account_ はユーザーのソース ストレージ アカウントです。 | ユーザーの Azure ストレージ アカウント アドレスへのプロキシを開きます。 
+
+
+| \https://cf.cloudsync.netapp.com \https://repo.cloudsync.netapp.com | Copy and Sync に連絡するには。 
+
+
+| \https://support.netapp.com | 同期関係に BYOL ライセンスを使用する場合は、 NetAppサポートにお問い合わせください。 
+
+
+| \https://fedoraproject.org | インストールおよび更新中にデータ ブローカー仮想マシンに 7z をインストールします。  AutoSupportメッセージをNetAppテクニカル サポートに送信するには、7z が必要です。 
+
+
+| \https://sts.amazonaws.com \https://sts.us-east-1.amazonaws.com | データブローカーが AWS にデプロイされている場合、またはオンプレミスにデプロイされていて AWS 認証情報が提供されている場合に、AWS 認証情報を検証します。データ ブローカーは、デプロイ中、更新時、および再起動時にこのエンドポイントに接続します。 
+
+
+| \https://api.bluexp.netapp.com \https://netapp-cloud-account.auth0.com | 分類を使用して新しい同期関係のソース ファイルを選択するときに、 NetApp Data Classification に問い合わせます。 
+
+
+| \https://pubsub.googleapis.com | Google ストレージ アカウントから継続的な同期関係を作成する場合。 
+
+
+| https://_storage-account_.queue.core.windows.net[]\https://management.azure.com/subscriptions/${_subscriptionId_} /resourceGroups/${_resourceGroup_}/providers/Microsoft.EventGrid/* ここで、_storage-account_ はユーザーのソース ストレージ アカウント、_subscriptionid_ はソース サブスクリプション ID、_resourceGroup_ はソース リソース グループです。 | Azure ストレージ アカウントから継続的な同期関係を作成する場合。 
+|===
+
+
+=== Webブラウザのエンドポイント
+
+トラブルシューティングのためにログをダウンロードするには、Web ブラウザが次のエンドポイントにアクセスできる必要があります。
+
+ログ.cloudsync.netapp.com:443

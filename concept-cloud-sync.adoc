@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: concept-cloud-sync.html 
+keywords: NetApp Copy and Sync, overview, conceptual, how, data broker, service, cloudsync, bluexp, copy and sync 
+summary: NetApp Copy and Sync は、クラウド内またはオンプレミスの任意のターゲットにデータを移行するためのシンプルで安全な自動化された方法を提供します。 
+---
+= NetAppのコピーと同期について学ぶ
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync は、クラウド内またはオンプレミスの任意のターゲットにデータを移行するためのシンプルで安全な自動化された方法を提供します。ファイルベースの NAS データセット (NFS または SMB)、Amazon Simple Storage Service (S3) オブジェクト形式、 NetApp StorageGRIDアプライアンス、またはその他のクラウド プロバイダー オブジェクト ストアのいずれであっても、Copy and Sync を使用すると変換して移動できます。
+
+
+
+== NetAppコンソール
+
+NetApp Copy and Sync は、 NetAppコンソールからアクセスできます。
+
+NetAppコンソールは、オンプレミスとクラウド環境全体にわたるエンタープライズ グレードのNetAppストレージとデータ サービスの集中管理を提供します。NetAppデータ サービスにアクセスして使用するには、コンソールが必要です。管理インターフェースとして、1 つのインターフェースから多数のストレージ リソースを管理できます。コンソール管理者は、企業内のすべてのシステムのストレージとサービスへのアクセスを制御できます。
+
+NetAppコンソールの使用を開始するためにライセンスやサブスクリプションは必要ありません。ストレージ システムまたはNetAppデータ サービスへの接続を確保するためにクラウドにコンソール エージェントを展開する必要がある場合にのみ料金が発生します。ただし、コンソールからアクセスできる一部のNetAppデータ サービスは、ライセンスまたはサブスクリプションベースです。
+
+詳細はこちら https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetAppコンソール"]。
+
+
+
+== NetAppのコピーと同期の仕組み
+
+NetApp Copy and Sync は、データ ブローカー グループ、 NetAppコンソールから利用できるクラウドベースのインターフェイス、およびソースとターゲットで構成される SaaS (Software-as-a-Service) プラットフォームです。
+
+次の図は、コピー コンポーネントと同期コンポーネントの関係を示しています。
+
+image:diagram_cloud_sync_overview.png["ソースからターゲットへのデータの流れを示す概念図。データ ブローカー ソフトウェアは仲介者として機能し、コピーと同期のタスクをポーリングします。"]
+
+NetAppデータ ブローカー ソフトウェアは、ソースからターゲットにデータを同期します (これを _同期関係_ と呼びます)。データブローカーは、AWS、Azure、Google Cloud Platform、またはオンプレミスで実行できます。 1 つ以上のデータ ブローカーで構成されるデータ ブローカー グループには、Copy and Sync と通信し、他のいくつかのサービスやリポジトリに接続できるように、ポート 443 経由の送信インターネット接続が必要です。link:reference-networking.html["エンドポイントのリストを表示する"] 。
+
+最初のコピーの後、コピーと同期は設定したスケジュールに基づいて変更されたデータを同期します。
+
+
+
+== サポートされているストレージ タイプ
+
+コピーと同期は、次のストレージ タイプをサポートします。
+
+* 任意のNFSサーバー
+* 任意のSMBサーバー
+* アマゾンEFS
+* Amazon FSx for ONTAP
+* Amazon S3
+* Azure ブロブ
+* Azure データレイクストレージ Gen2
+* Azure NetApp Files
+* ボックス（プレビューとして利用可能）
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* Googleドライブ
+* IBM Cloud Object Storage
+* オンプレミスのONTAPクラスタ
+* ONTAP S3 ストレージ
+* SFTP（APIのみ使用）
+* StorageGRID
+
+
+link:reference-supported-relationships.html["サポートされている同期関係を表示する"] 。
+
+
+
+== 費用
+
+コピーと同期の使用に関連するコストには、リソース料金とサービス料金の 2 種類があります。
+
+リソース料金:: リソース料金は、クラウドで 1 つ以上のデータ ブローカーを実行するためのコンピューティング コストとストレージ コストに関連します。
+サービス料:: 14 日間の無料トライアルが終了した後、同期関係の料金を支払う方法は 2 つあります。最初のオプションは、AWS または Azure からサブスクライブすることです。これにより、時間単位または年単位で支払いが可能になります。  2 番目のオプションは、 NetAppから直接ライセンスを購入することです。
+
+
+link:concept-licensing.html["ライセンスの仕組みを学ぶ"] 。

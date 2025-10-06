@@ -1,0 +1,190 @@
+---
+sidebar: sidebar 
+permalink: api-sync.html 
+keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis, 202, https status code 202, status code 202, id, id field, box 
+summary: Web UI を通じて利用できるNetApp のコピーおよび同期機能は、RESTful API を通じても利用できます。 
+---
+= NetAppコピーおよび同期 API
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Web UI を通じて利用できるNetApp のコピーおよび同期機能は、RESTful API を通じても利用できます。
+
+
+
+== 始めましょう
+
+コピーおよび同期 API の使用を開始するには、ユーザー トークンとNetAppコンソール アカウント ID を取得する必要があります。  API 呼び出しを行うときは、トークンとアカウント ID を Authorization ヘッダーに追加する必要があります。
+
+.手順
+. NetAppコンソールからユーザー トークンを取得します。
++
+[source, http]
+----
+POST https://netapp-cloud-account.auth0.com/oauth/token
+Header: Content-Type: application/json
+Body:
+{
+              "username": "<user_email>",
+              "scope": "profile",
+              "audience": "https://api.cloud.netapp.com",
+              "client_id": "UaVhOIXMWQs5i1WdDxauXe5Mqkb34NJQ",
+              "grant_type": "password",
+              "password": "<user_password>"
+}
+----
++
+
+NOTE: クライアント ID のない個人のメール アカウントを使用している場合は、デフォルトのクライアント ID「QC3AgHk6qdbmC7Yyr82ApBwaaJLwRrNO」を使用できます。
+
+. NetAppコンソール アカウント ID を取得します。
++
+[source, http]
+----
+GET https://api.cloudsync.netapp.com/api/accounts
+Headers: Authorization: Bearer <user_token>
+Content-Type: application/json
+----
++
+この API は次のような応答を返します。
+
++
+[source, json]
+----
+[
+  {
+    "accountId": "account-JeL97Ry3",
+    "name": "Test"
+  }
+]
+----
+. 各 API 呼び出しの Authorization ヘッダーにユーザー トークンとアカウント ID を追加します。
++
+*例*
+
++
+次の例は、Microsoft Azure でデータ ブローカーを作成するための API 呼び出しを示しています。  <user_token> と <accountId> を、前の手順で取得したトークンと ID に置き換えるだけです。
+
++
+[source, http]
+----
+POST https://api.cloudsync.netapp.com/api/data-brokers
+Headers: Authorization: Bearer <user_token>
+Content-Type: application/json
+x-account-id: <accountId>
+Body: { "name": "databroker1", "type": "AZURE" }
+----
+
+
+.次の手順
+NetAppコンソールからのユーザー トークンには有効期限があります。トークンを更新するには、手順 1 から API を再度呼び出す必要があります。
+
+API レスポンスには、トークンの有効期限を示す「expires_in」フィールドが含まれています。
+
+
+
+== リストAPIを使用する
+
+リスト API は非同期 API なので、結果はすぐに返されません (例: `GET /data-brokers/{id}/list-nfs-export-folders`そして `GET /data-brokers/{id}/list-s3-buckets`）。サーバーからの応答は HTTP ステータス 202 のみです。実際の結果を得るには、 `GET /messages/client` API。
+
+.手順
+. 使用したいリスト API を呼び出します。
+. 使用 `GET /messages/client`操作の結果を表示するための API。
+. 先ほど受け取った ID を追加して同じ API を使用します。 `GET \http://api.cloudsync.netapp.com/api/messages/client?last=<id_from_step_2>`
++
+IDは呼び出すたびに変わるので注意してください。 `GET /messages/client` API。
+
+
+
+*例*
+
+電話すると `list-s3-buckets`API では、結果はすぐには返されません。
+
+[source, http]
+----
+GET http://api.cloudsync.netapp.com/api/data-brokers/<data-broker-id>/list-s3-buckets
+Headers: Authorization: Bearer <user_token>
+Content-Type: application/json
+x-account-id: <accountId>
+----
+結果は HTTP ステータス コード 202 です。これは、メッセージは受け入れられましたが、まだ処理されていないことを意味します。
+
+操作の結果を取得するには、次の API を使用する必要があります。
+
+[source, http]
+----
+GET http://api.cloudsync.netapp.com/api/messages/client
+Headers: Authorization: Bearer <user_token>
+Content-Type: application/json
+x-account-id: <accountId>
+----
+結果は、ID フィールドを含む 1 つのオブジェクトを含む配列です。 ID フィールドは、サーバーが送信した最後のメッセージを表します。例えば：
+
+[source, json]
+----
+[
+    {
+        "header": {
+            "requestId": "init",
+            "clientId": "init",
+            "agentId": "init"
+        },
+        "payload": {
+            "init": {}
+        },
+        "id": "5801"
+    }
+]
+----
+受け取った ID を使用して、次の API 呼び出しを実行します。
+
+[source, http]
+----
+GET http://api.cloudsync.netapp.com/api/messages/client?last=<id_from_step_2>
+Headers: Authorization: Bearer <user_token>
+Content-Type: application/json
+x-account-id: <accountId>
+----
+結果はメッセージの配列になります。各メッセージ内にはペイロード オブジェクトが含まれており、これは操作の名前 (キー) とその結果 (値) で構成されます。例えば：
+
+[source, json]
+----
+[
+    {
+        "payload": {
+            "list-s3-buckets": [
+                {
+                    "tags": [
+                        {
+                            "Value": "100$",
+                            "Key": "price"
+                        }
+                    ],
+                    "region": {
+                        "displayName": "US West (Oregon)",
+                        "name": "us-west-2"
+                    },
+                    "name": "small"
+                }
+            ]
+        },
+        "header": {
+            "requestId": "f687ac55-2f0c-40e3-9fa6-57fb8c4094a3",
+            "clientId": "5beb032f548e6e35f4ed1ba9",
+            "agentId": "5bed61f4489fb04e34a9aac6"
+        },
+        "id": "5802"
+    }
+]
+----
+
+
+== APIリファレンス
+
+各コピーおよび同期APIのドキュメントは以下から入手できます。 https://api.cloudsync.netapp.com/docs[] 。

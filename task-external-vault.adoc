@@ -1,0 +1,268 @@
+---
+sidebar: sidebar 
+permalink: task-external-vault.html 
+keywords: hashicorp, vault, credentials, secrets, API 
+summary: Amazon S3、Azure、または Google Cloud の認証情報を必要とする同期関係を作成する場合は、 NetApp Copy and Sync ユーザー インターフェイスまたは API を通じてそれらの認証情報を指定する必要があります。別の方法としては、データ ブローカーを設定して、外部の HashiCorp Vault から直接資格情報にアクセスすることもできます。 
+---
+= NetApp Copy and Sync で外部 HashiCorp Vault を使用するためのデータ ブローカー グループを設定する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Amazon S3、Azure、または Google Cloud の認証情報を必要とする同期関係を作成する場合は、 NetApp Copy and Sync ユーザー インターフェイスまたは API を通じてそれらの認証情報を指定する必要があります。別の方法としては、データ ブローカー グループを設定して、外部の HashiCorp Vault から資格情報 (または _シークレット_) に直接アクセスすることもできます。
+
+この機能は、Amazon S3、Azure、または Google Cloud の資格情報を必要とする同期関係を持つコピーおよび同期 API を通じてサポートされます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"]金庫の準備
+[role="quick-margin-para"]
+URL を設定して、データ ブローカー グループに資格情報を提供するためのボールトを準備します。ボールト内のシークレットの URL は _Creds_ で終わる必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]データブローカーグループの準備
+[role="quick-margin-para"]
+グループ内の各データ ブローカーのローカル構成ファイルを変更して、データ ブローカー グループが外部ボールトから資格情報を取得できるように準備します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三つ"]APIを使用して同期関係を作成する
+[role="quick-margin-para"]
+すべての設定が完了したら、API 呼び出しを送信して、ボールトを使用してシークレットを取得する同期関係を作成できます。
+
+
+
+== 金庫の準備
+
+コピーと同期に、ボールト内のシークレットの URL を提供する必要があります。これらの URL を設定して、Vault を準備します。作成する予定の同期関係の各ソースとターゲットの資格情報への URL を設定する必要があります。
+
+URL は次のように設定する必要があります。
+
+`/<path>/<requestid>/<endpoint-protocol>Creds`
+
+パス:: シークレットへのプレフィックス パス。これは、あなたに固有の任意の値にすることができます。
+Request ID:: 生成する必要があるリクエスト ID。同期関係を作成するときに、API POST リクエストのヘッダーの 1 つに ID を指定する必要があります。
+エンドポイントプロトコル:: 定義される以下のプロトコルのいずれか https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["ポストリレーションシップv2ドキュメント"^]: S3、AZURE、または GCP (それぞれ大文字にする必要があります)。
+資格情報:: URL は _Creds_ で終わる必要があります。
+
+
+
+
+=== 例
+
+次の例は、シークレットの URL を示しています。
+
+ソース資格情報の完全な URL とパスの例:: \http://example.vault.com:8200/my-path/all-secrets/hb312vdasr2/S3Creds
++
+--
+例からわかるように、プレフィックス パスは _/my-path/all-secrets/_、リクエスト ID は _hb312vdasr2_、ソース エンドポイントは S3 です。
+
+--
+ターゲット資格情報の完全な URL とパスの例:: \http://example.vault.com:8200/my-path/all-secrets/n32hcbnejk2/AZURECreds
++
+--
+プレフィックス パスは _/my-path/all-secrets/_、要求 ID は _n32hcbnejk2_、ターゲット エンドポイントは Azure です。
+
+--
+
+
+
+
+== データブローカーグループの準備
+
+グループ内の各データ ブローカーのローカル構成ファイルを変更して、データ ブローカー グループが外部ボールトから資格情報を取得できるように準備します。
+
+.手順
+. グループ内のデータ ブローカーに SSH で接続します。
+. /opt/netapp/databroker/config にある local.json ファイルを編集します。
+. enable を *true* に設定し、_external-integrations.hashicorp_ の下の構成パラメータ フィールドを次のように設定します。
++
+有効::
++
+--
+** 有効な値: true/false
+** タイプ: ブール値
+** デフォルト値: false
+** 真実: データブローカーは独自の外部HashiCorp Vaultから秘密情報を取得します
+** False: データブローカーは資格情報をローカルの保管庫に保存します
+
+
+--
+URL::
++
+--
+** タイプ: 文字列
+** 値: 外部の金庫へのURL
+
+
+--
+path（パス）::
++
+--
+** タイプ: 文字列
+** 値: シークレットへのパスの先頭に資格情報を入力します
+
+
+--
+拒否-不正::
++
+--
+** データブローカーが不正な外部ボールトを拒否するかどうかを決定します
+** タイプ: ブール値
+** デフォルト: false
+
+
+--
+認証方法::
++
+--
+** データブローカーが外部のボールトから資格情報にアクセスするために使用する認証方法
+** タイプ: 文字列
+** 有効な値: "aws-iam" / "role-app" / "gcp-iam"
+
+
+--
+ロール名::
++
+--
+** タイプ: 文字列
+** ロール名（aws-iam または gcp-iam を使用する場合）
+
+
+--
+シークレットイドとルートイド::
++
+--
+** タイプ: 文字列 (app-role を使用する場合)
+
+
+--
+ネームスペース::
++
+--
+** タイプ: 文字列
+** 名前空間（必要な場合は X-Vault-Namespace ヘッダー）
+
+
+--
+
+
+. グループ内の他のデータ ブローカーに対しても、これらの手順を繰り返します。
+
+
+
+
+=== aws-role認証の例
+
+[source, json]
+----
+{
+          “external-integrations”: {
+                  “hashicorp”: {
+                         “enabled”: true,
+                         “url”: “https://example.vault.com:8200”,
+                         “path”: ““my-path/all-secrets”,
+                         “reject-unauthorized”: false,
+                         “auth-method”: “aws-role”,
+                         “aws-role”: {
+                               “role-name”: “my-role”
+                         }
+                }
+       }
+}
+----
+
+
+=== gcp-iam 認証の例
+
+[source, json]
+----
+{
+"external-integrations": {
+    "hashicorp": {
+      "enabled": true,
+      "url": http://ip-10-20-30-55.ec2.internal:8200,
+      "path": "v1/secret",
+      "namespace": "",
+      "reject-unauthorized": true,
+      "auth-method": "gcp-iam",
+      "aws-iam": {
+        "role-name": ""
+      },
+      "app-role": {
+        "root_id": "",
+        "secret_id": ""
+      },
+"gcp-iam": {
+          "role-name": "my-iam-role"
+      }
+    }
+  }
+}
+----
+
+
+=== gcp-iam 認証を使用する際の権限の設定
+
+_gcp-iam_ 認証方法を使用している場合、データ ブローカーには次の GCP 権限が必要です。
+
+[source, yaml]
+----
+- iam.serviceAccounts.signJwt
+----
+link:task-installing-gcp.html#permissions-required-for-the-service-account["データブローカーの GCP 権限要件の詳細"] 。
+
+
+
+== ボールトからのシークレットを使用して新しい同期関係を作成する
+
+すべての設定が完了したら、API 呼び出しを送信して、ボールトを使用してシークレットを取得する同期関係を作成できます。
+
+コピーおよび同期 REST API を使用して関係を投稿します。
+
+....
+Headers:
+Authorization: Bearer <user-token>
+Content-Type: application/json
+x-account-id: <accountid>
+x-netapp-external-request-id-src: request ID as part of path for source credentials
+x-netapp-external-request-id-trg: request ID as part of path for target credentials
+Body: post relationship v2 body
+....
+* ユーザートークンとNetAppコンソールアカウントIDを取得するには、link:api-sync.html["ドキュメントのこのページを参照してください"] 。
+* 結婚後の体を作るには、 https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["relationship-v2 API呼び出しを参照してください"^] 。
+
+
+
+
+=== 例
+
+POSTリクエストの例:
+
+[source, json]
+----
+url: https://api.cloudsync.netapp.com/api/relationships-v2
+headers:
+"x-account-id": "CS-SasdW"
+"x-netapp-external-request-id-src": "hb312vdasr2"
+"Content-Type": "application/json"
+"Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik…"
+Body:
+{
+"dataBrokerId": "5e6e111d578dtyuu1555sa60",
+"source": {
+        "protocol": "s3",
+        "s3": {
+                "provider": "sgws",
+                "host": "1.1.1.1",
+                "port": "443",
+                "bucket": "my-source"
+     },
+"target": {
+        "protocol": "s3",
+        "s3": {
+                "bucket": "my-target-bucket"
+        }
+    }
+}
+----
