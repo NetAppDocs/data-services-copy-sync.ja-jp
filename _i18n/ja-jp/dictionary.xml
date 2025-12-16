@@ -1995,4 +1995,5 @@
   <block id="998375a7e557e86f30bd231c581f357a" category="admonition">コピーと同期を使用して SMB データをCloud Volumes ONTAPにコピーする場合、ソース システムのファイルとフォルダーの所有権は保持されません。この動作は、コピーと同期が Linux SMB クライアントを使用し、転送の認証に使用されるユーザーまたはサービス アカウントに所有権を割り当てるために発生します。アクセス制御リストは保持される場合がありますが、所有権と監査情報はソース システムとは異なる場合があります。これは想定される動作です。</block>
   <block id="3d2ca821daba65add026b662c8f28f8e" category="paragraph">コピーと同期では SMB ACL (アクセス許可) は保持されますが、ファイルまたはフォルダーの所有権はコピーされません。所有権は SMB ACL 転送操作には含まれません。</block>
   <block id="0bdd8934a5af74cc1118d4d760ec3c9f" category="paragraph">ACLに加えて所有権（所有者とグループ）を保持する必要がある場合は、<block ref="56114254c3584cfde1445c406a4953ca" prefix=" " category="inline-code"></block>指示。使用して<block ref="2c1e0967dfb1849f0af6b01e272eed79" prefix=" " category="inline-code"></block>フラグは ACL、所有権、監査情報をコピーします。</block>
+  <block id="35e87b798eb20e7292277632ad38f075" category="paragraph">コピーと同期は、**AWS** と **Azure** からの Marketplace サブスクリプションのみをサポートします。Google Cloud Marketplace サブスクリプションは、コピーと同期ではサポートされていません。</block>
 </blocks>
