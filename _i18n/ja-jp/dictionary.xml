@@ -1991,4 +1991,8 @@
   <block id="daf104544b5203a46e1580e1b8583f1f" category="paragraph">NSS 資格情報をNetApp Consoleアカウントに関連付けることは、コンソール ユーザー ログインに関連付けられている NSS アカウントとは異なります。</block>
   <block id="5bc1315a63455544e7a917a7cc968939" category="paragraph">これらの NSS 資格情報は、特定のコンソール アカウント ID に関連付けられています。コンソール組織に属するユーザーは、*サポート &gt; NSS 管理* からこれらの資格情報にアクセスできます。</block>
   <block id="7687b0a57d5cb728d9fb892dfc814715" category="paragraph">これらのアクションにより、コンソールはライセンスのダウンロード、ソフトウェア アップグレードの検証、将来のサポート登録などに NSS アカウントを使用できるようになります。</block>
+  <block id="b0b815fd6be3894641c6ac1e95849338" category="admonition">Copy Sync は SMB ACL (アクセス許可) をコピーしますが、ファイルまたはフォルダーの所有権はコピーしません。所有権属性は、SMB ACL コピー操作には含まれません。 SMB共有間でデータをコピーする際に所有権を保持する必要がある場合は、<block ref="56114254c3584cfde1445c406a4953ca" prefix=" " category="inline-code"></block>セキュリティ情報を手動でコピーします。例えば、<block ref="2c1e0967dfb1849f0af6b01e272eed79" prefix=" " category="inline-code"></block>フラグは ACL、所有者、監査データをコピーします。</block>
+  <block id="998375a7e557e86f30bd231c581f357a" category="admonition">コピーと同期を使用して SMB データをCloud Volumes ONTAPにコピーする場合、ソース システムのファイルとフォルダーの所有権は保持されません。この動作は、コピーと同期が Linux SMB クライアントを使用し、転送の認証に使用されるユーザーまたはサービス アカウントに所有権を割り当てるために発生します。アクセス制御リストは保持される場合がありますが、所有権と監査情報はソース システムとは異なる場合があります。これは想定される動作です。</block>
+  <block id="3d2ca821daba65add026b662c8f28f8e" category="paragraph">コピーと同期では SMB ACL (アクセス許可) は保持されますが、ファイルまたはフォルダーの所有権はコピーされません。所有権は SMB ACL 転送操作には含まれません。</block>
+  <block id="0bdd8934a5af74cc1118d4d760ec3c9f" category="paragraph">ACLに加えて所有権（所有者とグループ）を保持する必要がある場合は、<block ref="56114254c3584cfde1445c406a4953ca" prefix=" " category="inline-code"></block>指示。使用して<block ref="2c1e0967dfb1849f0af6b01e272eed79" prefix=" " category="inline-code"></block>フラグは ACL、所有権、監査情報をコピーします。</block>
 </blocks>
