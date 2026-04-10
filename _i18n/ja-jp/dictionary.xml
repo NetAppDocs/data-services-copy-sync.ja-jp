@@ -543,12 +543,6 @@
   <block id="98908472faefb0515731df5a3645b02b" category="list-text">このソース/ターゲットとの同期関係は、コピーおよび同期 API の使用によってのみサポートされます。</block>
   <block id="7d847e6bda48d46c1766fec4c5a94bcb" category="list-text">[[storage-classes]]Amazon S3 がターゲットの場合は、特定の S3 ストレージクラスを選択できます。</block>
   <block id="95e5c9b9a242ae01ebbab296e59e2a68" category="list-text">Google Cloud Storage バケットがターゲットの場合は、特定のストレージ クラスを選択できます。</block>
-  <block id="b56253bf92505bda20b38657c778bccf" category="doc">ページタイトルはここに記入してください</block>
-  <block id="5d9328ee3f628e51f1a4f871ccff7313" category="paragraph">このテンプレートは、記事、トピックなど、どのような名前でも使用できます。index.adoc ファイルには記事ページの正しいキーワードが含まれていないため、これをテンプレートとして使用すると、後で公開時に問題が発生する可能性があります。</block>
-  <block id="26739de98ff2a207a5c145caf27c2508" category="admonition">サイドバーにリンクされていない場合でもファイルは公開されるため、最初に公開する前にこのファイルを削除してください。いくつかの記事を作成したら、代わりにそれらをスターターとして使用できます。</block>
-  <block id="38b255c5af258b1f086fb7c9aa4f252c" category="paragraph">記事がコンテンツ サブフォルダーにある場合は、上記の表記に 2 つの調整を加える必要があります。</block>
-  <block id="df25e29acec650a07b41041946158355" category="list-text"><block ref="abc9d0bfc8d5688ddd4babf6a5402ee4" prefix="" category="inline-code"></block></block>
-  <block id="97df5ffadc97296dc727ffddf2d2e1fe" category="list-text"><block ref="ff695bd1637208b4929c7ae2085cd551" prefix="" category="inline-code"></block></block>
   <block id="a1418030947f255c7b2608d1e7212acb" category="summary">NetApp Copy and Sync は、 SMB 共有間、および SMB 共有とオブジェクト ストレージ ( ONTAP S3 を除く) 間でアクセス制御リスト (ACL) をコピーできます。必要に応じて、robocopy を使用して SMB 共有間の ACL を手動で保持することもできます。</block>
   <block id="fa0eef2f3ae1f1da004fe6a16b6b561e" category="doc">NetApp Copy and Syncで SMB 共有から ACL をコピーする</block>
   <block id="6ef697f11922be2e4de0971f7d70997f" category="list-title">オプション</block>
@@ -811,85 +805,10 @@
   <block id="b8786298cd3539afe2429695af111104" category="paragraph">POSTリクエストの例:</block>
   <block id="a99fab69b8aa9775fe1767ce605ae8bd" category="summary">NetApp は、さまざまな方法でNetApp Consoleのサポートを提供します。ナレッジベース (KB) 記事やコミュニティ フォーラムなど、広範な無料のセルフサポート オプションが 24 時間 365 日ご利用いただけます。サポート登録には、Webチケットによるリモートテクニカルサポートも含まれます。</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">ヘルプを受ける</block>
-  <block id="bbbc9b55f08bfe80f146b5207bdb7728" category="paragraph">NetAppは、 BlueXPとそのクラウドサービスに対して、様々なサポートを提供しています。ナレッジベース（KB）記事やコミュニティフォーラムなど、充実した無料のセルフサポートオプションを24時間365日ご利用いただけます。サポート登録には、Webチケットによるリモートテクニカルサポートも含まれます。</block>
-  <block id="522cbb900314aeb84eb5a961c5f94672" category="section-title">クラウドプロバイダーのファイルサービスのサポートを受ける</block>
-  <block id="f6185bb12f5e53c800be8cda7fbca65b" category="paragraph">クラウド プロバイダーのファイル サービス、そのインフラストラクチャ、またはサービスを使用するソリューションに関連するテクニカル サポートについては、その製品のBlueXPドキュメントの「ヘルプの取得」を参照してください。</block>
-  <block id="9d06990508d25d367d9158c6558eb9c8" category="list-text"><block ref="9d06990508d25d367d9158c6558eb9c8" category="inline-link-macro-rx"></block></block>
-  <block id="2e0c742f4616eb27b5b7646aa790edfe" category="list-text"><block ref="2e0c742f4616eb27b5b7646aa790edfe" category="inline-link-macro-rx"></block></block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp Volumes</block>
-  <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
-  <block id="3880ae5df9fdc4d0fc4a6d00a2239530" category="paragraph">BlueXPとそのストレージ ソリューションおよびサービスに固有のテクニカル サポートを受けるには、以下に説明するサポート オプションを使用してください。</block>
-  <block id="edd15fbeb7b2dffa163336ecd4f3e80c" category="section-title">セルフサポートオプションを使用する</block>
-  <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">以下のオプションは、24 時間 365 日無料でご利用いただけます。</block>
-  <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">ドキュメント</block>
-  <block id="a4a6c2ea0078252eac2d74ef3e6c917c" category="paragraph">現在表示しているBlueXPドキュメント。</block>
-  <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">ナレッジベース</block>
-  <block id="942c9249796cf6b78c981ebf15195809" category="list-text"><block ref="942c9249796cf6b78c981ebf15195809" category="inline-link-rx"></block></block>
-  <block id="9a3db1abe5491d0eb9bb5d125981356c" category="paragraph">BlueXPナレッジベースを検索して、問題のトラブルシューティングに役立つ記事を見つけます。</block>
-  <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">コミュニティ</block>
-  <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
-  <block id="00c5fef3bb9d593ae96bf5d2ee60354a" category="paragraph">BlueXPコミュニティに参加して、進行中のディスカッションをフォローしたり、新しいディスカッションを作成したりしてください。</block>
-  <block id="d88bacf2a9fdcbbc844edcba97c34e30" category="section-title">NetAppサポートでケースを作成する</block>
-  <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">上記のセルフ サポート オプションに加えて、サポートを有効にした後は、 NetAppサポート スペシャリストと協力して問題を解決することもできます。</block>
   <block id="8fece025a1a8fef7018449bf104a2527" category="list-title">始める前に</block>
-  <block id="920fe1428c19533eda6222fe7e58efbe" category="inline-link">BlueXPログインに関連付けられた資格情報を管理する方法を学びます</block>
-  <block id="e1d2e1a634647fd631081bc4f6f8e523" category="list-text">*ケースの作成*機能を使用するには、まずNetAppサポート サイトの資格情報をBlueXPログインに関連付ける必要があります。<block ref="2a0d8b66ca9e99d023b48cf25f40fb12" category="inline-link-rx"></block> 。</block>
-  <block id="e49aa971c20ec071f1b5bbc3c7266769" category="list-text">シリアル番号を持つONTAPシステムのケースを開く場合は、NSS アカウントがそのシステムのシリアル番号に関連付けられている必要があります。</block>
-  <block id="7fe6981833e8fe7fd89e0a99a55573da" category="list-text">BlueXPで、*ヘルプ &gt; サポート*を選択します。</block>
-  <block id="08d96fdd1a845d80db99e6e1dffb8bc7" category="list-text">*リソース*ページで、テクニカル サポートの下にある利用可能なオプションのいずれかを選択します。</block>
-  <block id="6a1b74969231967ed071d465206b15c7" category="list-text">電話で誰かと話したい場合は、「電話する」を選択してください。電話をかけることができる電話番号をリストした netapp.com のページに移動します。</block>
-  <block id="d65a2a6fc9caad1867728d4382eeb989" category="list-text">NetAppサポート スペシャリストとのチケットを開くには、[ケースを作成] を選択します。</block>
-  <block id="d63bf50426f4c712554faec55b30c548" category="list-text">*サービス*: 問題が関連付けられているサービスを選択します。たとえば、サービス内のワークフローまたは機能に関するテクニカル サポートの問題に固有の場合はBlueXP。</block>
-  <block id="2e50c5f85523f0aba9ff2db10f18279c" category="list-text">*作業環境*: ストレージに該当する場合は、* Cloud Volumes ONTAP* または * On-Prem* を選択し、関連する作業環境を選択します。</block>
-  <block id="98d90e398fc56688ddc647e5f49075ec" category="paragraph">作業環境のリストは、サービスのトップバナーで選択したBlueXP組織 (またはアカウント)、プロジェクト (またはワークスペース)、およびコネクタの範囲内にあります。</block>
-  <block id="e6f29fb3c7636dc0040600dd0e84bb79" category="list-text">*ケースの優先度*: ケースの優先度 (低、中、高、重大) を選択します。</block>
-  <block id="835eb4008e97c2a7f69bbb2725285e34" category="paragraph">これらの優先順位の詳細を確認するには、フィールド名の横にある情報アイコンの上にマウスを置きます。</block>
-  <block id="0f7d9319c95a8be1492e74601c4b3259" category="list-text">*問題の説明*: 該当するエラー メッセージや実行したトラブルシューティング手順など、問題の詳細な説明を入力します。</block>
-  <block id="002c6f26fb01affb37b8cf3cef7a1fb0" category="list-text">*追加のメールアドレス*:この問題を他の人に知らせたい場合は、追加のメールアドレスを入力してください。</block>
-  <block id="c7f5c1a75acc58c6f004efc0ce1eba09" category="list-text">*添付ファイル (オプション)*: 一度に 1 つずつ、最大 5 つの添付ファイルをアップロードします。</block>
-  <block id="bfa80e7aaad6da353b431bff3a0e12d6" category="paragraph">添付ファイルはファイルごとに 25 MB までに制限されます。サポートされているファイル拡張子は、txt、log、pdf、jpg/jpeg、rtf、doc/docx、xls/xlsx、csv です。</block>
-  <block id="baaf0e61add7d12cf8d12e023d5aef18" category="inline-image-macro">NetAppサポートでケースを作成できる「ケースの作成」フォームのスクリーンショット。</block>
-  <block id="509259be6d5e15d8959f705cbe0cbcc1" category="paragraph"><block ref="509259be6d5e15d8959f705cbe0cbcc1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">終了後の操作</block>
-  <block id="18f487556417bb6d9721a7005ae097c9" category="paragraph">サポート ケース番号を示すポップアップが表示されます。NetAppサポート スペシャリストがお客様のケースを確認し、すぐにご連絡いたします。</block>
-  <block id="0ff9b4b8684b9e03c9c1e1320935eae3" category="paragraph">サポート ケースの履歴については、*設定 &gt; タイムライン* を選択し、「サポート ケースの作成」というアクションを探します。右端のボタンを使用すると、アクションを展開して詳細を表示できます。</block>
-  <block id="5c56753585e89a84941bb3a78bc681af" category="paragraph">ケースを作成しようとすると、次のエラー メッセージが表示される場合があります。</block>
-  <block id="a30f69ab0ec85d427a3e8835713525bd" category="paragraph">「選択したサービスに対してケースを作成する権限がありません」</block>
-  <block id="c7b7a5ae9f37fd7d24e4d641b9186fe9" category="paragraph">このエラーは、NSS アカウントとそれに関連付けられているレコード会社が、 BlueXPアカウントのシリアル番号のレコード会社と同じではないことを意味している可能性があります (つまり、960xxxx) または作業環境のシリアル番号。次のいずれかのオプションを使用してサポートを求めることができます。</block>
-  <block id="e01df0b4dfd95eba2c59333419e4fac6" category="list-text">製品内チャットを使用する</block>
-  <block id="639be990cfca56ab4b63685d8bacd437" category="list-text">非技術的なケースを提出する<block ref="2298f47e4dad19a3156da7ce6116d9b1" category="inline-link-rx"></block></block>
-  <block id="898e35e1a4bf4b025c3edec879439b08" category="section-title">サポートケースを管理する（プレビュー）</block>
-  <block id="8b74b053fbeeff5c3b6f4991cb1d028d" category="paragraph">アクティブおよび解決済みのサポート ケースをBlueXPから直接表示および管理できます。NSS アカウントおよび会社に関連付けられたケースを管理できます。</block>
-  <block id="394ef093ad3259b9ff0fe7406f015b83" category="paragraph">ケース管理はプレビューとして利用できます。今後のリリースでは、このエクスペリエンスを改良し、機能強化を追加する予定です。製品内チャットを使用してフィードバックをお送りください。</block>
   <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">次の点に注意してください。</block>
-  <block id="5e4e7672ec2ba2b8a763da7f6714e212" category="list-text">ページ上部のケース管理ダッシュボードには、次の 2 つのビューがあります。</block>
-  <block id="01c3ffea552d74a5ae390b10e71a1f26" category="list-text">左側のビューには、指定したユーザー NSS アカウントによって過去 3 か月間に開かれたケースの合計が表示されます。</block>
-  <block id="e3b6c09a5686233f72ce1ea60a1eb088" category="list-text">右側のビューには、ユーザーの NSS アカウントに基づいて、会社レベルで過去 3 か月間に開かれたケースの合計が表示されます。</block>
-  <block id="b19b168cc8a2b8c984465e140256b3a2" category="paragraph">表の結果には、選択したビューに関連するケースが反映されます。</block>
-  <block id="56dcadeee6b0e5c47a52673f9b5a0bb3" category="list-text">関心のある列を追加または削除したり、優先度やステータスなどの列の内容をフィルタリングしたりできます。その他の列は並べ替え機能のみを提供します。</block>
-  <block id="6f936762e1223311f031685422fcd3a4" category="paragraph">詳細については、以下の手順をご覧ください。</block>
-  <block id="b14929795a61440e9b4ec9f8a4885ae3" category="list-text">ケースごとに、ケースメモを更新したり、まだ「クローズ」または「クローズ保留中」ステータスになっていないケースをクローズしたりする機能を提供します。</block>
-  <block id="0a4050ac39772e9281a9aba225254bf8" category="list-text">*ケース管理*を選択し、プロンプトが表示されたら、NSS アカウントをBlueXPに追加します。</block>
-  <block id="d8ce1865cf1fe3cffd60300b4b86ad63" category="paragraph">*ケース管理* ページには、 BlueXPユーザー アカウントに関連付けられている NSS アカウントに関連するオープン ケースが表示されます。これは、*NSS 管理* ページの上部に表示される NSS アカウントと同じです。</block>
-  <block id="2ae5ae78bdb2d222f15fd8e89248709c" category="list-text">必要に応じて、テーブルに表示される情報を変更します。</block>
-  <block id="1d39d3ab518e1e3f16cbafb2a56e1fd9" category="list-text">*組織のケース*の下で*表示*を選択すると、会社に関連付けられているすべてのケースが表示されます。</block>
-  <block id="059e856250b59be3069246887b74a23c" category="list-text">正確な日付範囲を選択するか、別の期間を選択して日付範囲を変更します。</block>
-  <block id="dfb3764bce2548df4e06357403f9c7d0" category="inline-image-macro">ケース管理ページの表の上にあるオプションのスクリーンショット。正確な日付範囲、または過去 7 日間、30 日間、または 3 か月間を選択できます。</block>
-  <block id="0972db30d942fdb65d1732e6e84bde99" category="paragraph"><block ref="0972db30d942fdb65d1732e6e84bde99" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a1bb576be9e5a356290f231efb51b3f5" category="list-text">列の内容をフィルタリングします。</block>
-  <block id="3753f10a59e21f58b30e3e67d416453e" category="inline-image-macro">「アクティブ」や「クローズ」などの特定のステータスに一致するケースを除外できる、「ステータス」列のフィルター オプションのスクリーンショット。</block>
-  <block id="cb6a777dd3c6e43b0dc441d38519d219" category="paragraph"><block ref="cb6a777dd3c6e43b0dc441d38519d219" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1c6ea5ef583389e18e7d7bda70beaa71" category="inline-image-macro">表に表示されるプラスアイコン</block>
-  <block id="cdf14d2156528231a5dbd12ad5c95d3f" category="list-text">表に表示される列を変更するには、<block ref="b574dd55d604ddb721d869a0fc302007" category="inline-image-macro-rx" type="image"></block>次に、表示する列を選択します。</block>
-  <block id="370b44009f1b82d0b6b178bb80cc62fa" category="inline-image-macro">テーブルに表示できる列を示すスクリーンショット。</block>
-  <block id="e65065c4fd326b9f3a1eeb9453c30d73" category="paragraph"><block ref="e65065c4fd326b9f3a1eeb9453c30d73" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ad0ae9ea1f2e8d973a9a0f6bb169f494" category="inline-image-macro">表の最後の列に表示される3つの点のアイコン</block>
-  <block id="348552521b849746260fe8d296d34c15" category="list-text">既存のケースを管理するには、<block ref="566c029d89e7d5421080767a37bf443e" category="inline-image-macro-rx" type="image"></block>利用可能なオプションのいずれかを選択します。</block>
-  <block id="6d9dd74e7709ef802d299966f7898f6b" category="list-text">*ケースを表示*: 特定のケースに関する詳細をすべて表示します。</block>
-  <block id="8e6b52a532a4fbbfc98dca3ebfa5f1e6" category="list-text">*ケースノートを更新*: 問題に関する追加の詳細を入力するか、*ファイルのアップロード*を選択して最大 5 つのファイルを添付します。</block>
-  <block id="bb6d5d351525342dd6b3cf4d15b6f298" category="list-text">*ケースを閉じる*: ケースを閉じる理由の詳細を入力し、[*ケースを閉じる*] を選択します。</block>
-  <block id="e93217b2f709a398ce3c0fb753beb05f" category="inline-image-macro">表の最後の列にあるメニューを選択した後に実行できるアクションを示すスクリーンショット。</block>
-  <block id="2ea260929e27ffcb623c8aa35689bd18" category="paragraph"><block ref="2ea260929e27ffcb623c8aa35689bd18" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3e704a6aa0f03240221b087243f22cb3" category="summary">新しいデータブローカーを作成するときは、AWS Data Broker オプションを選択して、VPC 内の新しい EC2 インスタンスにデータブローカーソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。</block>
   <block id="e6c2b88f0ee0535b5f88ad4412a3f3ee" category="doc">NetApp Copy and Sync用の新しいデータブローカーを AWS に作成する</block>
   <block id="c7b65fcfa3679453d5c76931828436df" category="paragraph">NetApp Copy and Syncの新しいデータ ブローカー グループを作成するときは、Amazon Web Services を選択して、VPC 内の新しい EC2 インスタンスにデータ ブローカー ソフトウェアをデプロイします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。</block>
@@ -1055,7 +974,6 @@
   <block id="2000ca1442de85fd150e153de708e9db" category="doc">NetApp Copy and Sync用のデータ ブローカーを Linux ホストにインストールします。</block>
   <block id="9d74fb9e62667ce8100ef05a3fab1aa6" category="paragraph">NetApp Copy and Syncの新しいデータ ブローカー グループを作成する場合は、オンプレミス データ ブローカー オプションを選択して、オンプレミスの Linux ホストまたはクラウド内の既存の Linux ホストにデータ ブローカー ソフトウェアをインストールします。  NetApp Copy and Sync はインストール プロセスをガイドしますが、インストールの準備に役立つように、このページに要件と手順が繰り返し記載されています。</block>
   <block id="ace028fe1c5dc8fb39091440d89fd9fd" category="section-title">Linuxホストの要件</block>
-  <block id="3677e4449a81dc7f1c8db056eade76dd" category="list-text">*Node.js 互換性*: v21.2.0</block>
   <block id="17308c76959fcb971603b7274a57c128" category="list-text">*オペレーティング·システム*：</block>
   <block id="deb96f2e04c20206372a663fc1e22a63" category="list-text">CentOS 8.0 および 8.5</block>
   <block id="735736a0904d4dd4641f1c0b6e93ac7a" category="paragraph">CentOS Streamはサポートされていません。</block>
@@ -1064,7 +982,6 @@
   <block id="62c1014736e4269f295e55cd59d3a0ec" category="list-text">Ubuntu Server 20.04 LTS、23.04 LTS、および 24.04 LTS</block>
   <block id="473733802c02f67f489689f787461e62" category="list-text">SUSE Linux Enterprise Server 15 SP1</block>
   <block id="a855786065eb842829e76727ee601d59" category="paragraph">コマンド<block ref="bcb2c9ba3070afceaf76b8ceb5e4a15b" prefix=" " category="inline-code"></block>データ ブローカーをインストールする前に、ホスト上で実行する必要があります。</block>
-  <block id="35ec85020897e56acfca830003a03e8c" category="paragraph">Red Hat Enterprise Linux システムは、Red Hat Subscription Management に登録する必要があります。登録されていない場合、システムはインストール中に必要なサードパーティ製ソフトウェアを更新するためのリポジトリにアクセスできません。</block>
   <block id="b4951d06315b1f9ffb6d04ceb4346101" category="list-text">*RAM*: 16 GB</block>
   <block id="53a3e84f8dd7775216fa9eaac8d2ba6d" category="list-text">*CPU*: 4コア</block>
   <block id="1187c6e89712492c48d5d9a1e68f3b42" category="list-text">*空きディスク容量*: 10 GB</block>
@@ -1094,12 +1011,9 @@
   <block id="7af7eb8440af6bb7f9ffd64569367b5b" category="paragraph">Azure へのアクセスは、同期関係ウィザードでストレージ アカウントと接続文字列を指定することにより、関係ごとに定義されます。</block>
   <block id="dc06ddbd32d43560edacfaa29183ccbc" category="section-title">データブローカーをインストールする</block>
   <block id="1944006c73d02c718c69408861e1307c" category="paragraph">同期関係を作成するときに、Linux ホストにデータ ブローカーをインストールできます。</block>
-  <block id="8f1cf53c93c91532c10f4779cc067c94" category="list-text">*データ ブローカー グループ* ページで、*データ ブローカーの作成* を選択し、*オンプレミス データ ブローカー* を選択します。</block>
   <block id="df89dda1d1c7ea3cd71a127402ea04d7" category="paragraph"><block ref="df89dda1d1c7ea3cd71a127402ea04d7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8020038698547625e7abf1eda36c8877" category="admonition">このオプションには *_On-Prem_ Data Broker* というラベルが付いていますが、オンプレミスまたはクラウド内の Linux ホストに適用されます。</block>
-  <block id="023c2e07bedf559d5fb81f1e623f1b6f" category="paragraph">説明ページがすぐに読み込まれます。以下の手順に従う必要があります。手順にはインストーラーをダウンロードするための固有のリンクが含まれています。</block>
   <block id="85b186137a154778928917ee83dc3e5a" category="list-text">説明ページで：</block>
-  <block id="104cb193c6d09dc15eb76f25ec29609a" category="list-text">*AWS*、*Google Cloud*、またはその両方へのアクセスを有効にするかどうかを選択します。</block>
   <block id="44eb9ba03c7d9855883bd4ca00384b79" category="list-text">インストール オプションを選択します: *プロキシなし*、*プロキシ サーバーを使用する*、または *認証付きプロキシ サーバーを使用する*。</block>
   <block id="b9a11b90960ff803269429887ab4cff3" category="admonition">ユーザーはローカル ユーザーである必要があります。ドメイン ユーザーはサポートされていません。</block>
   <block id="3ffb05d0d75933ee792a4e57196ceaa9" category="list-text">コマンドを使用して、データ ブローカーをダウンロードしてインストールします。</block>
@@ -1521,9 +1435,7 @@
   <block id="e9b1f53d6cabb3394833a4e102eb6a69" category="section-title">NetAppの新着情報</block>
   <block id="c20c107d0d4eef6351660f3590324232" category="paragraph">NetAppを初めて使用し、NSS アカウントをお持ちでない場合は、以下の手順に従ってください。</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">「サポート」が最初のオプションとしてリストされている「ヘルプ」メニューのスクリーンショット</block>
-  <block id="e8d4092baef6680c6a35d5228ae31de2" category="paragraph"><block ref="e8d4092baef6680c6a35d5228ae31de2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">サポート登録ページからアカウント ID シリアル番号を見つけます。</block>
-  <block id="379f9cd57d97013f3f7fdd24f692a0b1" category="paragraph"><block ref="379f9cd57d97013f3f7fdd24f692a0b1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">NetAppのサポート登録サイト</block>
   <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">移動先<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block>*私は登録済みのNetApp顧客ではありません* を選択します。</block>
   <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">必須フィールド（赤いアスタリスクが付いているフィールド）に入力します。</block>
@@ -1551,8 +1463,6 @@
   <block id="a04a3a5322782e8c18d0d64be7e1ccbc" category="paragraph">既存の顧客レベルの NSS アカウントがあり、パートナー レベルのアカウントを追加しようとする場合も同様です。</block>
   <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">ログインが成功すると、 NetApp はNSS ユーザー名を保存します。</block>
   <block id="1dcb63fd55c4d22e87cb32275b8cc808" category="inline-image-macro">3つの水平の点のアイコン</block>
-  <block id="0dfcbbbe02d3e96f8ad78782e8772587" category="paragraph">これは、メールにマッピングされるシステム生成の ID です。*NSS管理*ページでは、<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block>メニュー。</block>
-  <block id="fc79de85a483938f72fbcb9822ec0ae3" category="list-text">ログイン認証トークンを更新する必要がある場合は、<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block>メニュー。</block>
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">このオプションを使用すると、再度ログインするよう求められます。これらのアカウントのトークンは 90 日後に期限切れになることに注意してください。これを知らせる通知が投稿されます。</block>
   <block id="3d4a1e312061c2a0e1171d137dc166dd" category="summary">必要に応じて、アンインストール スクリプトを実行して、データ ブローカーと、データ ブローカーのインストール時に作成されたパッケージおよびディレクトリを削除します。</block>
   <block id="0819e2daba9426ff8ef91364c1b94873" category="doc">NetApp Copy and Syncのデータブローカーをアンインストールする</block>
@@ -1996,4 +1906,19 @@
   <block id="3d2ca821daba65add026b662c8f28f8e" category="paragraph">コピーと同期では SMB ACL (アクセス許可) は保持されますが、ファイルまたはフォルダーの所有権はコピーされません。所有権は SMB ACL 転送操作には含まれません。</block>
   <block id="0bdd8934a5af74cc1118d4d760ec3c9f" category="paragraph">ACLに加えて所有権（所有者とグループ）を保持する必要がある場合は、<block ref="56114254c3584cfde1445c406a4953ca" prefix=" " category="inline-code"></block>指示。使用して<block ref="2c1e0967dfb1849f0af6b01e272eed79" prefix=" " category="inline-code"></block>フラグは ACL、所有権、監査情報をコピーします。</block>
   <block id="35e87b798eb20e7292277632ad38f075" category="paragraph">コピーと同期は、**AWS** と **Azure** からの Marketplace サブスクリプションのみをサポートします。Google Cloud Marketplace サブスクリプションは、コピーと同期ではサポートされていません。</block>
+  <block id="2ae091a3671766342a004e04ab997fa7" category="doc">NetApp Copy and Syncの法的通知</block>
+  <block id="73739eb6708b1f94f14a3235110634df" category="doc">NetApp Copy and Syncのヘルプを表示</block>
+  <block id="6828272c02a6fcbd01d1f27906de2d7f" category="paragraph">&lt;stdin&gt; - include::https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/_include/get-help.adoc[]内の未解決のディレクティブ</block>
+  <block id="6c99d7531563acf5f46e03db9f34385a" category="list-text">*Node.js互換性*：v25.x</block>
+  <block id="b0655b2066e927b67447db8f80868c31" category="paragraph">Red Hat Enterprise Linuxシステムは、Red Hat Subscription Managementに登録する必要があります。登録されていない場合、システムはインストール中に必要なサードパーティ製ソフトウェアを更新するためのリポジトリにアクセスできません。</block>
+  <block id="246c5170634ef7f1ddda0232ad7d402e" category="list-text">*同期関係の定義*ページで、ソースとターゲットを選択し、*続行*を選択します。</block>
+  <block id="7957dd8e3b69c7f92d2bdd7da4a15960" category="list-text">*Data Broker Group* ページで、 *Create Data Broker* を選択し、次に *On-Prem Data Broker* を選択します。</block>
+  <block id="411af02bdc9672ad2ee32883bb960a04" category="list-text">データブローカーの名前を入力し、*続行*を選択します。</block>
+  <block id="e75a211b2366ec05af877ea76987f1de" category="paragraph">手順ページが表示されたら、インストーラーをダウンロードするための固有のリンクを含む指示に従ってください。</block>
+  <block id="97ee9add392d14ccabb3000701440c2d" category="list-text">*AWS*、*Google Cloud*、またはその両方へのアクセスを有効にするかどうかを選択してください。</block>
+  <block id="dd4b35c3c87be83b2116adbebed5333d" category="doc">NetApp Copy and Sync のサポートに登録</block>
+  <block id="38fc1b337c0ea26463916fc2913205c1" category="paragraph"><block ref="38fc1b337c0ea26463916fc2913205c1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7019a39846e9a2c7f7a80eaba91e4a41" category="paragraph"><block ref="7019a39846e9a2c7f7a80eaba91e4a41" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">これはシステムによって生成されたIDで、お客様のメールアドレスにマッピングされます。*NSS管理*ページの<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block>メニューからメールアドレスを表示できます。</block>
+  <block id="872eaae7deb6035c20f9bfe6deefd03d" category="list-text">ログイン資格情報トークンを更新する必要がある場合は、<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> メニューに*資格情報の更新*オプションもあります。</block>
 </blocks>
