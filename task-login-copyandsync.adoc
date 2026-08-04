@@ -16,11 +16,11 @@ summary: NetApp Consoleを使用してNetApp Copy and Syncにログインしま�
 [role="lead"]
 NetApp Consoleを使用してNetApp Copy and Syncにログインします。
 
-コンソールにログインするには、 NetAppサポート サイトの認証情報を使用するか、電子メールとパスワードを使用してNetAppクラウド ログインにサインアップすることができます。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["ログインについて詳しくはこちら"^] 。
+コンソールにログインするには、NetApp Support Siteの認証情報を使用するか、メールアドレスとパスワードを使用してNetAppクラウドログインにサインアップすることができます。 https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["ログインについて詳しくはこちら"^]。
 
 NetApp Copy and Sync は、アイデンティティ アクセス管理を使用して、各ユーザーの特定のアクションへのアクセスを制御します。
 
-*必要なNetApp Consoleロール* 組織管理者ロール。 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["NetApp Consoleのアクセスロールについて学ぶ"^] 。
+*必須NetApp Console ロール* 組織管理者ロール。 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp Consoleのアクセスロールについて学ぶ"^]。
 
 .手順
 . ウェブブラウザを開いて、 https://console.netapp.com/["NetApp Console"^] 。

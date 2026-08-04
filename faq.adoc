@@ -18,12 +18,14 @@ summary: フォーラム、チャット サービス、ビデオなどのさま�
 
 
 
+[[getting-started]]
 == 開始
 
 次の質問は、NetApp Copy and Syncの使用開始に関連しています。
 
 
 
+[[how-does-netapp-copy-and-sync-work]]
 === NetApp Copy and Sync はどのように機能しますか?
 
 コピーと同期では、 NetAppデータ ブローカー ソフトウェアを使用して、ソースからターゲットにデータを同期します (これを _同期関係_ と呼びます)。
@@ -34,12 +36,14 @@ summary: フォーラム、チャット サービス、ビデオなどのさま�
 
 
 
+[[how-does-the-14-day-free-trial-work]]
 === 14 日間の無料トライアルはどのように機能しますか?
 
 14 日間の無料トライアルは、Copy and Sync にサインアップすると開始されます。作成したコピーおよび同期関係に対しては、14 日間NetApp の料金は発生しません。ただし、デプロイするデータ ブローカーのすべてのリソース料金は引き続き適用されます。
 
 
 
+[[how-much-does-copy-and-sync-cost]]
 === コピーと同期にはいくらかかりますか?
 
 コピーと同期の使用に関連するコストには、サービス料金とリソース料金の 2 種類があります。
@@ -66,12 +70,14 @@ NOTE: コピーおよび同期関係は、Azure NetApp Filesでは無料です�
 
 
 
+[[how-is-copy-and-sync-billed-and-how-do-i-manage-my-subscription]]
 === コピーと同期はどのように請求され、サブスクリプションはどのように管理すればよいですか?
 
 14 日間の無料トライアルが終了した後、同期関係の料金を支払う方法は 2 つあります。最初のオプションは、AWS または Azure からサブスクライブすることです。これにより、従量課金制または年間支払いが可能になります。 2 番目のオプションは、 NetAppから直接ライセンスを購入することです。いずれの場合も、サブスクリプションは、コピーと同期のユーザー インターフェースではなく、プロバイダー マーケットプレイスを通じて管理されます。
 
 
 
+[[can-i-use-copy-and-sync-outside-the-cloud]]
 === クラウド外でもコピーと同期を使用できますか?
 
 はい、非クラウド アーキテクチャでもコピーと同期を使用できます。ソースとターゲットはオンプレミスに存在でき、データ ブローカー ソフトウェアも同様にオンプレミスに存在できます。
@@ -84,30 +90,35 @@ NOTE: コピーおよび同期関係は、Azure NetApp Filesでは無料です�
 
 
 
+[[how-do-i-access-copy-and-sync]]
 === コピーと同期にアクセスするにはどうすればよいですか?
 
 コピーと同期はNetApp Consoleから利用できます。コンソールの左側のナビゲーションから、*モビリティ* > *コピーと同期*を選択します。
 
 
 
+[[whats-a-data-broker-group]]
 === データ ブローカー グループとは何ですか?
 
 各データ ブローカーはデータ ブローカー グループに属します。データ ブローカーをグループ化すると、同期関係のパフォーマンスが向上します。
 
 
 
+[[supported-sources-and-targets]]
 == サポートされているソースとターゲット
 
 次の質問は、同期関係でサポートされるソースとターゲットに関連しています。
 
 
 
+[[which-sources-and-targets-does-copy-and-sync-support]]
 === コピーと同期はどのソースとターゲットをサポートしていますか?
 
 コピーと同期は、さまざまな種類の同期関係をサポートします。link:reference-supported-relationships.html["リスト全体を見る"] 。
 
 
 
+[[what-versions-of-nfs-and-smb-does-copy-and-sync-support]]
 === コピーと同期はどのバージョンの NFS と SMB をサポートしていますか?
 
 コピーと同期は、NFS バージョン 3 以降と SMB バージョン 1 以降をサポートしています。
@@ -116,6 +127,7 @@ link:reference-requirements.html["同期要件の詳細"] 。
 
 
 
+[[when-amazon-s3-is-the-target-can-the-data-be-tiered-to-a-specific-s3-storage-class]]
 === Amazon S3 がターゲットの場合、データを特定の S3 ストレージクラスに階層化できますか?
 
 はい、AWS S3 がターゲットの場合は、特定の S3 ストレージ クラスを選択できます。
@@ -131,6 +143,7 @@ link:reference-requirements.html["同期要件の詳細"] 。
 
 
 
+[[what-about-storage-tiers-for-azure-blob-storage]]
 === Azure Blob ストレージのストレージ層はどうですか?
 
 BLOB コンテナーがターゲットの場合は、特定の Azure BLOB ストレージ層を選択できます。
@@ -141,6 +154,7 @@ BLOB コンテナーがターゲットの場合は、特定の Azure BLOB スト
 
 
 
+[[do-you-support-google-cloud-storage-tiers]]
 === Google Cloud のストレージ階層をサポートしていますか?
 
 はい、Google Cloud Storage バケットがターゲットの場合は、特定のストレージ クラスを選択できます。
@@ -153,12 +167,14 @@ BLOB コンテナーがターゲットの場合は、特定の Azure BLOB スト
 
 
 
+[[networking]]
 == ネットワーク
 
 次の質問は、コピーと同期のネットワーク要件に関連しています。
 
 
 
+[[what-are-the-networking-requirements-for-copy-and-sync]]
 === コピーと同期のネットワーク要件は何ですか?
 
 コピーおよび同期環境では、データ ブローカー グループが、選択したプロトコルまたはオブジェクト ストレージ API (Amazon S3、Azure Blob、IBM Cloud Object Storage) を介してソースおよびターゲットに接続されている必要があります。
@@ -169,6 +185,7 @@ BLOB コンテナーがターゲットの場合は、特定の Azure BLOB スト
 
 
 
+[[can-i-use-a-proxy-server-with-the-data-broker]]
 === データ ブローカーでプロキシ サーバーを使用できますか?
 
 ○
@@ -179,12 +196,14 @@ BLOB コンテナーがターゲットの場合は、特定の Azure BLOB スト
 
 
 
+[[data-synchronization]]
 == データ同期
 
 次の質問は、データ同期の仕組みに関するものです。
 
 
 
+[[how-often-does-synchronization-occur]]
 === 同期はどのくらいの頻度で行われますか?
 
 デフォルトのスケジュールは毎日同期するように設定されています。最初の同期後に、次の操作を実行できます。
@@ -196,12 +215,14 @@ BLOB コンテナーがターゲットの場合は、特定の Azure BLOB スト
 
 
 
+[[what-is-the-minimum-sync-schedule]]
 === 最小同期スケジュールは何ですか?
 
 関係を 1 分ごとに同期するようにスケジュールできます。
 
 
 
+[[does-the-data-broker-group-retry-when-a-file-fails-to-sync-or-does-it-timeout]]
 === ファイルの同期に失敗した場合、データ ブローカー グループは再試行しますか? それともタイムアウトになりますか?
 
 1 つのファイルの転送に失敗しても、データ ブローカー グループはタイムアウトしません。代わりに、データ ブローカー グループは、ファイルをスキップする前に 3 回再試行します。再試行値は、同期関係の設定で構成できます。
@@ -210,6 +231,7 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[what-if-i-have-a-very-large-dataset]]
 === データセットが非常に大きい場合はどうすればよいですか?
 
 1つのディレクトリに600,000以上のファイルが含まれている場合、link:task-get-help.html["お問い合わせ"]ペイロードを処理するためのデータ ブローカー グループの構成を支援できるようになります。データ ブローカー グループに追加のメモリを追加する必要がある可能性があります。
@@ -218,12 +240,14 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[security]]
 == セキュリティ
 
 以下の質問はセキュリティに関するものです。
 
 
 
+[[is-copy-and-sync-secure]]
 === コピーと同期は安全ですか?
 
 ○すべてのコピーと同期のネットワーク接続は、 https://aws.amazon.com/sqs/["Amazon シンプルキューサービス (SQS)"^] 。
@@ -241,6 +265,7 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[is-data-encrypted-by-copy-and-sync]]
 === コピーと同期によってデータは暗号化されますか?
 
 * コピーと同期は、ソース NFS サーバーとターゲット NFS サーバー間のデータインフライト暗号化をサポートします。link:task-nfs-encryption.html["詳細情報"] 。
@@ -254,12 +279,14 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[permissions]]
 == 権限
 
 次の質問はデータの権限に関するものです。
 
 
 
+[[are-smb-data-permissions-synced-to-the-target-location]]
 === SMB データ権限はターゲットの場所に同期されていますか?
 
 コピーと同期を設定すると、ソース SMB 共有とターゲット SMB 共有間、およびソース SMB 共有からオブジェクト ストレージ ( ONTAP S3 を除く) へのアクセス制御リスト (ACL) を保持できます。
@@ -274,6 +301,7 @@ NOTE: Copy Sync は SMB ACL (アクセス許可) をコピーしますが、フ�
 
 
 
+[[are-nfs-data-permissions-synced-to-the-target-location]]
 === NFS データの権限はターゲットの場所に同期されていますか?
 
 コピーと同期は、次のように NFS サーバー間で NFS 権限を自動的にコピーします。
@@ -284,10 +312,12 @@ NOTE: Copy Sync は SMB ACL (アクセス許可) をコピーしますが、フ�
 
 
 
+[[object-storage-metadata]]
 == オブジェクトストレージメタデータ
 
 
 
+[[what-kinds-of-sync-relationships-preserve-object-storage-metadata]]
 === どのような同期関係がオブジェクト ストレージ メタデータを保存しますか?
 
 コピーと同期は、次の種類の同期関係について、オブジェクト ストレージ メタデータをソースからターゲットにコピーします。
@@ -311,24 +341,28 @@ NOTE: Copy Sync は SMB ACL (アクセス許可) をコピーしますが、フ�
 
 
 
+[[what-kinds-of-metadata-are-replicated-during-syncs-where-nfs-or-smb-are-the-source]]
 === NFS または SMB がソースである場合の同期中に、どのような種類のメタデータが複製されますか?
 
 ユーザー ID、変更時刻、アクセス時刻、GID などのメタデータはデフォルトで複製されます。ユーザーは、同期関係を作成するときに ACL を必須としてマークすることにより、CIF から ACL を複製することを選択できます。
 
 
 
+[[performance]]
 == パフォーマンス
 
 次の質問は、コピーと同期のパフォーマンスに関するものです。
 
 
 
+[[what-does-the-progress-indicator-for-a-sync-relationship-represent]]
 === 同期関係の進行状況インジケーターは何を表していますか?
 
 同期関係には、データ ブローカー グループのネットワーク アダプターのスループットが表示されます。複数のデータ ブローカーを使用して同期パフォーマンスを高速化した場合、スループットはすべてのトラフィックの合計になります。このスループットは 20 秒ごとに更新されます。
 
 
 
+[[im-experiencing-performance-issues-can-we-limit-the-number-of-concurrent-transfers]]
 === パフォーマンスの問題が発生しています。同時転送の数を制限することはできますか?
 
 ファイルが非常に大きい場合 (それぞれ複数 TiB)、転送プロセスの完了に長い時間がかかり、パフォーマンスに影響が出る可能性があります。
@@ -337,6 +371,7 @@ NOTE: Copy Sync は SMB ACL (アクセス許可) をコピーしますが、フ�
 
 
 
+[[why-am-i-experiencing-low-performance-with-azure-netapp-files]]
 === Azure NetApp Filesのパフォーマンスが低下するのはなぜですか?
 
 Azure NetApp Filesとの間でデータを同期する場合、ディスク サービス レベルが Standard の場合は障害やパフォーマンスの問題が発生する可能性があります。
@@ -347,6 +382,7 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 
 
+[[how-many-data-brokers-are-required-in-a-group]]
 === グループには何人のデータ ブローカーが必要ですか?
 
 新しい関係を作成するときは、グループ内の単一のデータ ブローカーから開始します (高速同期関係に属する既存のデータ ブローカーを選択した場合を除く)。多くの場合、単一のデータ ブローカーで同期関係のパフォーマンス要件を満たすことができます。そうでない場合は、グループにデータ ブローカーを追加することで同期のパフォーマンスを向上できます。ただし、まず同期パフォーマンスに影響を与える可能性のある他の要因を確認する必要があります。
@@ -359,18 +395,21 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 
 
+[[deleting-things]]
 == 削除する
 
 次の質問は、ソースとターゲットから同期関係とデータを削除することに関するものです。
 
 
 
+[[what-happens-if-i-delete-my-copy-and-sync-relationship]]
 === コピーと同期の関係を削除するとどうなりますか?
 
 関係を削除すると、今後のすべてのデータ同期が停止され、支払いが終了します。ターゲットに同期されたデータはそのまま残ります。
 
 
 
+[[what-happens-if-i-delete-something-from-my-source-server-is-it-removed-from-the-target-too]]
 === ソースサーバーから何かを削除するとどうなりますか? ターゲットからも削除されますか?
 
 デフォルトでは、アクティブな同期関係がある場合、ソース サーバーで削除された項目は、次回の同期時にターゲットから削除されません。ただし、各関係の同期設定にはオプションがあり、ソースからファイルが削除された場合にコピーと同期によってターゲットの場所にあるファイルも削除するように定義できます。
@@ -379,24 +418,28 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[what-happens-if-i-delete-something-from-my-target-is-it-removed-from-my-source-too]]
 === ターゲットから何かを削除するとどうなりますか? 私のソースからも削除されましたか?
 
 アイテムがターゲットから削除されても、ソースからは削除されません。関係はソースからターゲットへの一方向です。次の同期サイクルでは、コピーと同期によってソースとターゲットが比較され、アイテムが不足していることが識別され、コピーと同期によってそのアイテムがソースからターゲットに再度コピーされます。
 
 
 
+[[troubleshooting]]
 == トラブルシューティング
 
 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Sync/Cloud_Sync_FAQ:_Support_and_Troubleshooting["NetAppナレッジベース: コピーと同期に関する FAQ: サポートとトラブルシューティング"^]
 
 
 
+[[data-broker-deep-dive]]
 == データブローカーの詳細
 
 次の質問はデータ ブローカーに関するものです。
 
 
 
+[[can-you-explain-the-architecture-of-the-data-broker]]
 === データブローカーのアーキテクチャについて説明していただけますか?
 
 もちろん。最も重要なポイントは次のとおりです。

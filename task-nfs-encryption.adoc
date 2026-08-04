@@ -20,6 +20,7 @@ summary: 企業に厳格なセキュリティ ポリシーがある場合は、�
 
 
 
+[[how-data-in-flight-encryption-works]]
 == 転送中のデータ暗号化の仕組み
 
 データインフライト暗号化は、2 つのデータ ブローカー間でネットワーク経由で送信される NFS データを暗号化します。次の図は、2 つの NFS サーバーと 2 つのデータ ブローカーの関係を示しています。
@@ -44,6 +45,7 @@ image:diagram_nfs_encryption.gif["2 つの NFS サーバーと 2 つのデータ
 
 
 
+[[supported-nfs-versions]]
 == サポートされるNFSバージョン
 
 * NFS サーバーの場合、データインフライト暗号化は NFS バージョン 3、4.0、4.1、および 4.2 でサポートされます。
@@ -52,12 +54,14 @@ image:diagram_nfs_encryption.gif["2 つの NFS サーバーと 2 つのデータ
 
 
 
+[[proxy-server-limitation]]
 == プロキシサーバーの制限
 
 暗号化された同期関係を作成すると、暗号化されたデータは HTTPS 経由で送信され、プロキシ サーバー経由でルーティングできなくなります。
 
 
 
+[[what-youll-need-to-get-started]]
 == 始めるために必要なもの
 
 以下のものを必ず用意してください。
@@ -85,6 +89,7 @@ image:diagram_nfs_encryption.gif["2 つの NFS サーバーと 2 つのデータ
 
 
 
+[[sync-nfs-data-using-data-in-flight-encryption]]
 == データインフライト暗号化を使用して NFS データを同期する
 
 2 つの NFS サーバー間またはAzure NetApp Files間で新しい同期関係を作成し、インフライト暗号化オプションを有効にして、プロンプトに従います。

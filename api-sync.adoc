@@ -18,6 +18,7 @@ Web UI を通じて利用できるNetApp Copy and Sync機能は、RESTful API �
 
 
 
+[[get-started]]
 == 始めましょう
 
 コピーおよび同期 API の使用を開始するには、ユーザー トークンとNetApp Consoleアカウント ID を取得する必要があります。  API 呼び出しを行うときは、トークンとアカウント ID を Authorization ヘッダーに追加する必要があります。
@@ -89,6 +90,7 @@ API レスポンスには、トークンの有効期限を示す「expires_in」
 
 
 
+[[use-list-apis]]
 == リストAPIを使用する
 
 リスト API は非同期 API なので、結果はすぐに返されません (例: `GET /data-brokers/{id}/list-nfs-export-folders`そして `GET /data-brokers/{id}/list-s3-buckets`）。サーバーからの応答は HTTP ステータス 202 のみです。実際の結果を得るには、 `GET /messages/client` API。
@@ -185,6 +187,7 @@ x-account-id: <accountId>
 ----
 
 
+[[api-reference]]
 == APIリファレンス
 
 各コピーおよび同期APIのドキュメントは以下から入手できます。 https://api.cloudsync.netapp.com/docs[] 。

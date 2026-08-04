@@ -23,6 +23,7 @@ NetApp Copy and Sync は、 SMB 共有間、および SMB 共有とオブジェ�
 
 
 
+[[set-up-copy-and-sync-to-copy-acls]]
 == ACLをコピーするにはコピーと同期を設定する
 
 関係を作成するとき、または関係を作成した後に設定を有効にして、SMB 共有間および SMB 共有とオブジェクト ストレージ間で ACL をコピーします。
@@ -73,6 +74,7 @@ image:screenshot-sync-tags-metadata.png["オブジェクト ストレージに�
 
 
 
+[[manually-copy-acls-between-smb-shares]]
 == SMB共有間でACLを手動でコピーする
 
 Windows robocopy コマンドを使用して、SMB 共有間の ACL を手動で保持できます。

@@ -18,6 +18,7 @@ NetApp Copy and Sync は、クラウド内またはオンプレミスの任意�
 
 
 
+[[netapp-console]]
 == NetApp Console
 
 NetApp Copy and Sync はNetApp Consoleからアクセスできます。
@@ -26,10 +27,11 @@ NetApp Consoleは、オンプレミスとクラウド環境全体にわたるエ
 
 NetApp Consoleの使用を開始するためにライセンスやサブスクリプションは必要ありません。ストレージ システムまたはNetAppデータ サービスへの接続を確保するためにクラウドにコンソール エージェントを展開する必要がある場合にのみ料金が発生します。ただし、コンソールからアクセスできる一部のNetAppデータ サービスは、ライセンスまたはサブスクリプションベースです。
 
-詳細はこちら https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"]。
+ https://docs.netapp.com/us-en/console-setup-admin/concept-overview.html["NetApp Console"]の詳細については、こちらをご覧ください。
 
 
 
+[[how-netapp-copy-and-sync-works]]
 == NetApp Copy and Syncの仕組み
 
 NetApp Copy and Sync は、データ ブローカー グループ、 NetApp Consoleから利用できるクラウドベースのインターフェイス、およびソースとターゲットで構成される SaaS (Software-as-a-Service) プラットフォームです。
@@ -44,6 +46,7 @@ NetAppデータ ブローカー ソフトウェアは、ソースからターゲ
 
 
 
+[[supported-storage-types]]
 == サポートされているストレージ タイプ
 
 コピーと同期は、次のストレージ タイプをサポートします。
@@ -71,6 +74,7 @@ link:reference-supported-relationships.html["サポートされている同期�
 
 
 
+[[costs]]
 == 費用
 
 コピーと同期の使用に関連するコストには、リソース料金とサービス料金の 2 種類があります。

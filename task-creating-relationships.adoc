@@ -20,6 +20,7 @@ summary: 同期関係を作成すると、 NetApp Copy and Syncソースから�
 
 
 
+[[create-sync-relationships-for-specific-types-of-systems]]
 == 特定の種類のシステムの同期関係を作成する
 
 次のいずれかの同期関係を作成する場合は、まずシステムを作成または検出する必要があります。
@@ -34,13 +35,13 @@ summary: 同期関係を作成すると、 NetApp Copy and Syncソースから�
 . link:task-login-copyandsync.html["コピーと同期にログイン"] 。
 . システムを作成または検出します。
 +
-** https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/task-getting-started-fsx.html["Amazon FSx for ONTAPシステムを作成する"^]
-** https://docs.netapp.com/us-en/bluexp-azure-netapp-files/task-quick-start.html["Azure NetApp Files の設定と検出"^]
-** https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-aws.html["AWS でCloud Volumes ONTAP を起動"^]
-** https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure でCloud Volumes ONTAP を起動する"^]
-** https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["Google Cloud でCloud Volumes ONTAP を起動"^]
-** https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-adding-systems.html["既存のCloud Volumes ONTAPシステムの追加"^]
-** https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["ONTAPクラスターの検出"^]
+** https://docs.netapp.com/us-en/storage-management-fsx-ontap/start/task-getting-started-fsx.html["Amazon FSx for ONTAPシステムを作成する"^]
+** https://docs.netapp.com/us-en/storage-management-azure-netapp-files/task-quick-start.html["Azure NetApp Files の設定と検出"^]
+** https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-aws.html["AWS でCloud Volumes ONTAP を起動"^]
+** https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure でCloud Volumes ONTAP を起動する"^]
+** https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Google Cloud でCloud Volumes ONTAP を起動"^]
+** https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-adding-systems.html["既存のCloud Volumes ONTAPシステムの追加"^]
+** https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["ONTAPクラスターの検出"^]
 
 
 . *システムページ*を選択します。
@@ -54,6 +55,7 @@ image:screenshot_sync_we.gif["システムを選択した後、同期メニュ�
 
 
 
+[[create-other-types-of-sync-relationships]]
 == 他の種類の同期関係を作成する
 
 Amazon FSx for ONTAP、 Azure NetApp Files、 Cloud Volumes ONTAP、またはオンプレミスのONTAPクラスター以外のサポートされているストレージタイプとの間でデータを同期するには、次の手順に従います。以下の手順は、NFS サーバーから S3 バケットへの同期関係を設定する方法を示した例です。
@@ -247,10 +249,11 @@ TIP: 同じ機能は、 StorageGRIDおよび IBM Cloud Object Storage にデー�
 
 *結果*
 
-コピーと同期は、ソースとターゲット間のデータの同期を開始します。同期にかかった時間、同期が停止したかどうか、コピー、スキャン、または削除されたファイルの数に関する同期統計が利用できます。その後、 https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html["同期関係"] 、 https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-data-brokers.html["データブローカーを管理する"] 、 または https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-reports.html#creating-reports["パフォーマンスと構成を最適化するためのレポートを作成する"]。
+コピーと同期機能は、ソースとターゲット間でデータの同期を開始します。同期にかかった時間、同期が中断したかどうか、コピー、スキャン、削除されたファイルの数などの同期統計情報が利用可能です。その後、link:task-managing-relationships.html["同期関係"]、link:task-managing-data-brokers.html["データブローカーを管理する"]、またはlink:task-managing-reports.html#creating-reports["パフォーマンスと構成を最適化するためのレポートを作成する"]を管理できます。
 
 
 
+[[create-sync-relationships-from-netapp-data-classification]]
 == NetApp Data Classificationから同期関係を作成する
 
 コピーと同期はNetApp Data Classificationと統合されています。  NetApp Data Classification内から、コピーと同期を使用してターゲットの場所に同期するソース ファイルを選択できます。
@@ -259,4 +262,4 @@ NetApp Data Classificationからデータ同期を開始すると、すべての
 
 image:screenshot-sync-data-sense.png["NetApp Data Classification NetApp Data Classification Classification 統合ページを示すスクリーンショット。"]
 
-https://docs.netapp.com/us-en/bluexp-classification/task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system["NetApp Data Classificationから同期関係を開始する方法を学びます"^] 。
+https://docs.netapp.com/us-en/data-services-data-classification/concept-classification.html["NetApp Data Classificationから同期関係を開始する方法を学びます"^]。

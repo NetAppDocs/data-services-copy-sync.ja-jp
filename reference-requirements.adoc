@@ -18,6 +18,7 @@ summary: ソースとターゲットが次の要件を満たしていること�
 
 
 
+[[networking]]
 == ネットワーク
 
 * ソースとターゲットは、データ ブローカー グループへのネットワーク接続を持っている必要があります。
@@ -29,12 +30,14 @@ summary: ソースとターゲットが次の要件を満たしていること�
 
 
 
+[[target-directory]]
 == ターゲット ディレクトリ
 
 同期関係を作成するときに、「コピーと同期」を使用すると、既存のターゲット ディレクトリを選択し、必要に応じてそのディレクトリ内に新しいフォルダーを作成できます。したがって、優先するターゲット ディレクトリがすでに存在することを確認してください。
 
 
 
+[[permissions-to-read-directories]]
 == ディレクトリの読み取り権限
 
 ソースまたはターゲット内のすべてのディレクトリまたはフォルダーを表示するには、コピーと同期にそのディレクトリまたはフォルダーに対する読み取り権限が必要です。
@@ -59,12 +62,14 @@ NOTE: コピーと同期を使用して SMB データをCloud Volumes ONTAPに�
 
 
 
+[[s3amazon-s3-bucket-requirements]]
 == [[s3]]Amazon S3バケットの要件
 
 Amazon S3 バケットが次の要件を満たしていることを確認してください。
 
 
 
+[[supported-data-broker-locations-for-amazon-s3]]
 === Amazon S3 でサポートされているデータブローカーの場所
 
 S3 ストレージを含む同期関係には、AWS またはオンプレミスにデプロイされたデータブローカーが必要です。どちらの場合でも、コピーと同期では、インストール中にデータブローカーを AWS アカウントに関連付けるように求められます。
@@ -75,12 +80,14 @@ S3 ストレージを含む同期関係には、AWS またはオンプレミス�
 
 
 
+[[supported-aws-regions]]
 === サポートされているAWSリージョン
 
 中国地域を除くすべての地域がサポートされています。
 
 
 
+[[permissions-required-for-s3-buckets-in-other-aws-accounts]]
 === 他の AWS アカウントの S3 バケットに必要な権限
 
 同期関係を設定するときに、データブローカーに関連付けられていない AWS アカウントにある S3 バケットを指定できます。
@@ -106,24 +113,28 @@ image:screenshot_iam_role_arn.gif["ロール ARN を表示する AWS IAM コン�
 
 
 
+[[blobazure-blob-storage-requirements]]
 == [[blob]]Azure Blobストレージの要件
 
 Azure Blob ストレージが次の要件を満たしていることを確認してください。
 
 
 
+[[supported-data-broker-locations-for-azure-blob]]
 === Azure Blob でサポートされているデータ ブローカーの場所
 
 同期関係に Azure Blob Storage が含まれている場合、データ ブローカーは任意の場所に配置できます。
 
 
 
+[[supported-azure-regions]]
 === サポートされているAzureリージョン
 
 中国、米国政府、米国国防総省地域を除くすべての地域がサポートされています。
 
 
 
+[[connection-string-for-relationships-that-include-azure-blob-and-nfssmb]]
 === Azure Blob と NFS/SMB を含む関係の接続文字列
 
 Azure BLOB コンテナーと NFS または SMB サーバー間の同期関係を作成するときは、Copy と Sync にストレージ アカウント接続文字列を指定する必要があります。
@@ -145,12 +156,14 @@ NOTE: Azure BLOB コンテナーを含む継続的な同期関係を実装する
 
 
 
+[[azure-data-lake-storage-gen2]]
 == Azure データレイクストレージ Gen2
 
 Azure Data Lake を含む同期関係を作成する場合は、Copy and Sync にストレージ アカウント接続文字列を提供する必要があります。共有アクセス署名 (SAS) ではなく、通常の接続文字列である必要があります。
 
 
 
+[[azure-netapp-files-requirement]]
 == Azure NetApp Files の要件
 
 Azure NetApp Filesとの間でデータを同期する場合は、Premium または Ultra サービス レベルを使用します。ディスク サービス レベルが標準の場合、障害やパフォーマンスの問題が発生する可能性があります。
@@ -162,6 +175,7 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 
 
+[[box-requirements]]
 == ボックスの要件
 
 * Box を含む同期関係を作成するには、次の資格情報を提供する必要があります。
@@ -189,12 +203,14 @@ link:task-managing-data-brokers.html#set-up-a-unified-configuration["データ�
 
 
 
+[[googlegoogle-cloud-storage-bucket-requirements]]
 == [[google]]Google Cloud Storage バケットの要件
 
 Google Cloud Storage バケットが次の要件を満たしていることを確認してください。
 
 
 
+[[supported-data-broker-locations-for-google-cloud-storage]]
 === Google Cloud Storage でサポートされているデータ ブローカーの場所
 
 Google Cloud Storage を含む同期関係には、Google Cloud またはオンプレミスにデプロイされたデータ ブローカーが必要です。コピーと同期では、同期関係を作成するときに、データ ブローカーのインストール プロセスをガイドします。
@@ -205,32 +221,37 @@ Google Cloud Storage を含む同期関係には、Google Cloud またはオン�
 
 
 
+[[supported-google-cloud-regions]]
 === サポートされている Google Cloud リージョン
 
 すべての地域がサポートされています。
 
 
 
+[[permissions-for-buckets-in-other-google-cloud-projects]]
 === 他の Google Cloud プロジェクトのバケットに対する権限
 
 同期関係を設定するときに、データブローカーのサービス アカウントに必要な権限を付与すると、異なるプロジェクトの Google Cloud バケットから選択できます。link:task-installing-gcp.html["サービスアカウントの設定方法を学ぶ"] 。
 
 
 
+[[permissions-for-a-snapmirror-destination]]
 === SnapMirrorの宛先に対する権限
 
 同期関係のソースがSnapMirror の宛先 (読み取り専用) である場合、ソースからターゲットにデータを同期するには、「読み取り/リスト」権限で十分です。
 
 
 
+[[encrypting-a-google-cloud-bucket]]
 === Google Cloud バケットの暗号化
 
 ターゲットの Google Cloud バケットは、顧客管理の KMS キーまたはデフォルトの Google 管理キーを使用して暗号化できます。バケットにすでに KMS 暗号化が追加されている場合は、デフォルトの Google 管理の暗号化が上書きされます。
 
-顧客管理KMSキーを追加するには、 https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-gcp.html#permissions-required-for-the-service-account["正しい権限"]キーはバケットと同じリージョンに存在する必要があります。
+顧客管理の KMS キーを追加するには、link:task-installing-gcp.html#permissions-required-for-the-service-account["正しい権限"]を使用するデータブローカーが必要です。また、キーはバケットと同じリージョンに存在する必要があります。
 
 
 
+[[google-drive]]
 == Googleドライブ
 
 Google ドライブを含む同期関係を設定する場合は、次の情報を提供する必要があります。
@@ -254,6 +275,7 @@ OAuth スコープ フィールドを編集するときは、次のスコープ�
 
 
 
+[[nfs-server-requirements]]
 == NFSサーバの要件
 
 * NFS サーバーは、 NetAppシステムでも非NetAppシステムでもかまいません。
@@ -277,12 +299,14 @@ NOTE: ONTAP 9.2 以降では、showmount のデフォルト設定は _enabled_ �
 
 
 
+[[ontap-requirements]]
 == ONTAPの要件
 
 同期関係にCloud Volumes ONTAPまたはオンプレミスのONTAPクラスターが含まれており、NFSv4 以降を選択した場合は、 ONTAPシステムで NFSv4 ACL を有効にする必要があります。  ACL をコピーするにはこれが必要です。
 
 
 
+[[ontap-s3-storage-requirements]]
 == ONTAP S3 ストレージ要件
 
 同期関係を設定すると、 https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["ONTAP S3 ストレージ"^] 、以下の情報を提供する必要があります。
@@ -293,6 +317,7 @@ NOTE: ONTAP 9.2 以降では、showmount のデフォルト設定は _enabled_ �
 
 
 
+[[smb-server-requirements]]
 == SMBサーバの要件
 
 * SMB サーバーは、 NetAppシステムでも非NetAppシステムでもかまいません。
@@ -321,12 +346,14 @@ NOTE: ONTAP 9.2 以降では、showmount のデフォルト設定は _enabled_ �
 
 
 
+[[smb-limitation-for-hidden-directories-and-files]]
 === 隠しディレクトリとファイルに対する SMB 制限
 
 SMB 制限は、SMB サーバー間でデータを同期するときに隠しディレクトリとファイルに影響します。ソース SMB サーバー上のディレクトリまたはファイルのいずれかが Windows によって非表示になっている場合、非表示属性はターゲット SMB サーバーにコピーされません。
 
 
 
+[[smb-sync-behavior-due-to-case-insensitivity-limitation]]
 === 大文字と小文字を区別しない制限による SMB 同期の動作
 
 SMB プロトコルは大文字と小文字を区別しません。つまり、大文字と小文字は同じものとして扱われます。同期関係に SMB サーバーが含まれており、ターゲットにデータがすでに存在する場合、この動作によりファイルが上書きされ、ディレクトリのコピー エラーが発生する可能性があります。

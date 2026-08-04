@@ -34,8 +34,8 @@ NetApp Consoleの使用を開始しているはずです。これには、ログ
 Cloud Volumes ONTAP、オンプレミスのONTAPクラスター、およびAmazon FSx for ONTAPには、コンソールエージェントが必要です。
 
 [role="quick-margin-list"]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Consoleの使い方を学ぶ"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["コンソールエージェントの詳細"^]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-overview.html["NetApp Consoleの使い方を学ぶ"^]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["コンソールエージェントの詳細"^]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]ソースとターゲットを準備する

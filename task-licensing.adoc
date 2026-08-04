@@ -28,6 +28,7 @@ link:concept-licensing.html["ライセンスの仕組みについて詳しくは
 
 
 
+[[awssubscribe-from-aws]]
 == [[aws]]AWSからサブスクライブ
 
 AWS では従量課金制または年間払いを選択できます。
@@ -54,6 +55,7 @@ video::796ffd6d-cade-4750-8504-b24c010b225d[panopto]
 
 
 
+[[azuresubscribe-from-azure]]
 == [[azure]]Azureからサブスクライブ
 
 Azure では、従量課金制または年間支払いを選択できます。
@@ -82,6 +84,7 @@ video::a6a39447-b7b1-42f6-9c89-b24c010b21b9[panopto]
 
 
 
+[[licensespurchase-licenses-from-netapp-and-add-them-to-copy-and-sync]]
 == [[ライセンス]] NetAppからライセンスを購入し、コピーと同期に追加します
 
 同期関係の料金を前払いするには、1 つ以上のライセンスを購入し、それをコピーと同期に追加する必要があります。
@@ -109,6 +112,7 @@ video::a6a39447-b7b1-42f6-9c89-b24c010b21b9[panopto]
 
 
 
+[[update-a-license]]
 == ライセンスを更新する
 
 NetAppから購入したコピーおよび同期ライセンスを延長した場合、コピーおよび同期で新しい有効期限は自動的に更新されません。有効期限を更新するには、ライセンスを再度追加する必要があります。ライセンスは、 NetApp Consoleサブスクリプションではなく、Copy and Sync または該当する Web サイトを通じて管理する必要があります。

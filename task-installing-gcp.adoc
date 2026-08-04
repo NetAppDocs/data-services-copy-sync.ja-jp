@@ -20,18 +20,21 @@ NetApp Copy and Syncの新しいデータ ブローカー グループを作成�
 
 
 
+[[supported-google-cloud-regions]]
 == サポートされている Google Cloud リージョン
 
 すべての地域がサポートされています。
 
 
 
+[[root-privileges]]
 == ルート権限
 
 データ ブローカー ソフトウェアは、Linux ホスト上で自動的に root として実行されます。データ ブローカーを操作するには、root として実行する必要があります。たとえば、共有をマウントします。
 
 
 
+[[networking-requirements]]
 == ネットワーク要件
 
 * データ ブローカーには、ポート 443 経由でタスクのコピーと同期をポーリングできるように、送信インターネット接続が必要です。
@@ -46,6 +49,7 @@ Copy and Sync が Google Cloud にデータ ブローカーをデプロイする
 
 
 
+[[permissions-required-to-deploy-the-data-broker-in-google-cloud]]
 == Google Cloud にデータブローカーをデプロイするために必要な権限
 
 データ ブローカーをデプロイする Google Cloud ユーザーに次の権限があることを確認します。
@@ -61,6 +65,7 @@ Copy and Sync が Google Cloud にデータ ブローカーをデプロイする
 ----
 
 
+[[permissions-required-for-the-service-account]]
 == サービスアカウントに必要な権限
 
 データ ブローカーをデプロイするときは、次の権限を持つサービス アカウントを選択する必要があります。
@@ -101,6 +106,7 @@ Copy and Sync が Google Cloud にデータ ブローカーをデプロイする
 
 
 
+[[create-the-data-broker]]
 == データブローカーを作成する
 
 新しいデータ ブローカーを作成するには、いくつかの方法があります。次の手順では、同期関係を作成するときに Google Cloud にデータ ブローカーをインストールする方法について説明します。
@@ -144,6 +150,7 @@ Google Cloud にデータ ブローカーをデプロイし、新しい同期関
 
 
 
+[[provide-permissions-to-use-buckets-in-other-google-cloud-projects]]
 == 他の Google Cloud プロジェクトでバケットを使用する権限を付与する
 
 同期関係を作成し、ソースまたはターゲットとして Google Cloud Storage を選択すると、コピーと同期により、データブローカーのサービス アカウントが使用権限を持つバケットから選択できるようになります。デフォルトでは、データ ブローカー サービス アカウントと同じプロジェクトにあるバケットが含まれます。ただし、必要な権限を付与すれば、他のプロジェクトからバケットを選択できます。
@@ -163,6 +170,7 @@ Google Cloud にデータ ブローカーをデプロイし、新しい同期関
 
 
 
+[[details-about-the-data-broker-vm-instance]]
 == データブローカーVMインスタンスの詳細
 
 コピーと同期は、次の構成を使用して Google Cloud にデータ ブローカーを作成します。

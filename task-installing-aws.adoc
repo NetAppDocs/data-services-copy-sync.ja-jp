@@ -20,18 +20,21 @@ NetApp Copy and Syncの新しいデータ ブローカー グループを作成�
 
 
 
+[[supported-aws-regions]]
 == サポートされているAWSリージョン
 
 中国地域を除くすべての地域がサポートされています。
 
 
 
+[[root-privileges]]
 == ルート権限
 
 データ ブローカー ソフトウェアは、Linux ホスト上で自動的に root として実行されます。データ ブローカーを操作するには、root として実行する必要があります。たとえば、共有をマウントします。
 
 
 
+[[networking-requirements]]
 == ネットワーク要件
 
 * データ ブローカーには、ポート 443 経由でタスクのコピーと同期をポーリングできるように、送信インターネット接続が必要です。
@@ -46,12 +49,14 @@ Copy and Sync が AWS にデータブローカーをデプロイすると、必�
 
 
 
+[[permissions-required-to-deploy-the-data-broker-in-aws]]
 == AWS にデータブローカーをデプロイするために必要な権限
 
 データブローカーをデプロイするために使用するAWSユーザーアカウントには、次の権限が必要です。 https://s3.amazonaws.com/metadata.datafabric.io/docs/aws_iam_policy.json["NetAppが提供するこのポリシー"^] 。
 
 
 
+[[iamrequirements-to-use-your-own-iam-role-with-the-aws-data-broker]]
 == [[iam]]AWSデータブローカーで独自のIAMロールを使用するための要件
 
 Copy and Sync がデータ ブローカーをデプロイすると、データ ブローカー インスタンスの IAM ロールが作成されます。必要に応じて、独自の IAM ロールを使用してデータ ブローカーをデプロイすることもできます。組織に厳格なセキュリティ ポリシーがある場合は、このオプションを使用することをお勧めします。
@@ -66,6 +71,7 @@ IAM ロールは次の要件を満たしている必要があります。
 
 
 
+[[create-the-data-broker]]
 == データブローカーを作成する
 
 新しいデータ ブローカーを作成するには、いくつかの方法があります。これらの手順では、同期関係を作成するときに AWS にデータブローカーをインストールする方法について説明します。
@@ -118,6 +124,7 @@ AWS にデータブローカーをデプロイし、新しい同期関係を作�
 
 
 
+[[details-about-the-data-broker-instance]]
 == データブローカーインスタンスの詳細
 
 コピーと同期は、次の構成を使用して AWS にデータブローカーを作成します。
