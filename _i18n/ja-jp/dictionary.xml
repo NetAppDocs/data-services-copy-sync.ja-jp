@@ -639,7 +639,6 @@
   <block id="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="paragraph"><block ref="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6a7470fea96bed8b75bf17e5f07e01a4" category="list-text">[[設定]]*設定*ページで、ソースファイルとフォルダをターゲットの場所で同期および維持する方法を定義します。</block>
   <block id="25f7347236b51a5eae4ba01a7862cb55" category="list-text">スケジュール</block>
-  <block id="3e8e8a2afdd515355f098433677b9baa" category="list-text">今後の同期の定期スケジュールを選択するか、同期スケジュールをオフにします。関係を 1 分ごとに同期するようにスケジュールできます。</block>
   <block id="64b10e9eb890594a5a1756353aca634b" category="list-text">同期タイムアウト</block>
   <block id="3231a933fa5fac58c16e6d443f352009" category="list-text">指定された分数、時間数、または日数内に同期が完了しなかった場合に、コピーと同期でデータ同期をキャンセルするかどうかを定義します。</block>
   <block id="a274f4d4670213a9045ce258c6c56b80" category="list-text">通知</block>
@@ -1985,4 +1984,6 @@
   <block id="23239688169f4a4cc657d5ef5443f34b" category="paragraph"><block ref="23239688169f4a4cc657d5ef5443f34b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7bed8c71bfbfa7b7847f7029d0d74ccc" category="paragraph"><block ref="7bed8c71bfbfa7b7847f7029d0d74ccc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6c786f9f2baf8236d6ee8e864e78e415" category="list-text"><block ref="6c786f9f2baf8236d6ee8e864e78e415" category="inline-link-rx"></block></block>
+  <block id="46a9d70b85a901c8a4c1eaf05d1a35db" category="admonition">スケジュールを設定する際は、*次回の同期が自動的に開始される日時*を指定する必要があります。Copy and Sync では、ローカルタイムではなく *UTC* が使用されます。スケジュールを設定する際は、それに応じて計画を立ててください。</block>
+  <block id="240f236bfdc0495169ba6aec758c6dd2" category="list-text">今後の同期のために定期的なスケジュールを選択するか、同期スケジュールをオフにしてください。データ同期の頻度を最短1分間隔に設定できます。スケジュールは、1時間ごと、または1日ごとの頻度で設定することもできます。</block>
 </blocks>
