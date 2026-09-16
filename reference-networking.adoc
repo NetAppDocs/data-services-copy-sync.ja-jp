@@ -4,7 +4,7 @@ permalink: reference-networking.html
 keywords: networking, 443, port, ports, port 443, connections, connectivity, path, paths, vpn, copy and sync, netapp, bluexp, cloud sync,connectivity,data broker 
 summary: NetApp Copy and Syncのネットワークには、データ ブローカー グループとソースおよびターゲットの場所間の接続、およびポート 443 経由のデータ ブローカーからの送信インターネット接続が含まれます。 
 ---
-= NetApp Copy and Syncのネットワーク概要
+= NetApp Copy and Syncのネットワーク要件
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

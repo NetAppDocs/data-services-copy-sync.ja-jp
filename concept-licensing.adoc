@@ -4,7 +4,7 @@ permalink: concept-licensing.html
 keywords: licenses, licensing, subscriptions, annual subscription, paygo, hourly subscription, bluexp 
 summary: 14 日間の無料トライアルが終了した後、同期関係の料金を支払う方法は 2 つあります。最初のオプションは、AWS または Azure から従量課金制または年間払いでサブスクライブすることです。  2 番目のオプションは、 NetAppから直接ライセンスを購入することです。 
 ---
-= NetApp Copy and Syncのライセンスの概要
+= NetApp Copy and Sync のライセンスについて
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

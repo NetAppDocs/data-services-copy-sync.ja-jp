@@ -4,7 +4,7 @@ permalink: task-external-vault.html
 keywords: hashicorp, vault, credentials, secrets, API 
 summary: Amazon S3、Azure、または Google Cloud の認証情報を必要とする同期関係を作成する場合は、 NetApp Copy and Syncユーザー インターフェイスまたは API を通じてそれらの認証情報を指定する必要があります。別の方法としては、データ ブローカーを設定して、外部の HashiCorp Vault から直接資格情報にアクセスすることもできます。 
 ---
-= NetApp Copy and Syncで外部 HashiCorp Vault を使用するためのデータ ブローカー グループを設定する
+= NetApp Copy and Syncデータ ブローカー グループ用のHashiCorp Vaultをセットアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

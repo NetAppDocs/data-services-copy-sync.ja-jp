@@ -4,7 +4,7 @@ permalink: task-support-registration.html
 keywords: support registration, register for support, support, nss account, add nss account, 
 summary: NetAppテクニカル サポートでサポート ケースを開く前に、 NetAppサポート サイト アカウントをNetApp Consoleに追加し、サポートに登録する必要があります。 
 ---
-= NetApp Copy and Sync のサポートに登録
+= NetApp Copy and Syncをサポートに登録します
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

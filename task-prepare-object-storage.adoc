@@ -4,7 +4,7 @@ permalink: task-prepare-object-storage.html
 keywords: prepare data broker, data broker, object storage, sync, scanner, configure scanner, bluexp, copy and sync 
 summary: 'NetApp Copy and Syncを使用してオブジェクト ストレージ間でデータを同期する予定の場合 (たとえば、Amazon S3 から Azure Blob)、同期関係を作成する前にデータ ブローカー グループを準備する必要があります。' 
 ---
-= NetApp Copy and Syncのオブジェクト ストレージ間でデータを同期するためのデータ ブローカーを準備します。
+= NetApp Copy and Sync でオブジェクトストレージ同期用のデータブローカーを準備する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

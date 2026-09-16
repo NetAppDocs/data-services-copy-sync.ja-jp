@@ -4,7 +4,7 @@ permalink: task-nfs-encryption.html
 keywords: encryption, in flight, data in flight, in-flight, data-in-flight, nfs, initiator, listener, port 
 summary: 企業に厳格なセキュリティ ポリシーがある場合は、転送中のデータ暗号化を使用して、異なるネットワーク内の NFS サーバー間でデータを同期します。 
 ---
-= NetApp Copy and Syncの Data In Flight 暗号化を使用して NFS データを同期する
+= 暗号化された NFS 同期関係を NetApp Copy and Sync で作成する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

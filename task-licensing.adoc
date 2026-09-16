@@ -4,7 +4,7 @@ permalink: task-licensing.html
 keywords: license, subscription, registering, subscribing, subscribing in aws, subscribing in azure, subscribing to aws, subscribing to azure, aws marketplace, azure marketplace, netapp license, byol license, purchase a license, license settings, pay for relationships, paygo, annual, pay-as-you-go 
 summary: 14 日間の無料トライアルが終了した後、同期関係の料金を支払う方法は 2 つあります。最初のオプションは従量課金制です。  2 番目のオプションは、 NetAppから直接ライセンスを購入することです。 
 ---
-= NetApp Copy and Syncの無料トライアル期間終了後は、同期関係の料金が発生します。
+= NetApp Copy and Sync の同期関係の料金を支払う
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

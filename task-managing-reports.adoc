@@ -4,7 +4,7 @@ permalink: task-managing-reports.html
 keywords: reports, sync reports, NetApp Copy and Sync reports, report errors, path reports 
 summary: レポートを作成して表示し、 NetApp担当者の支援を受けてデータ ブローカーの構成を調整し、パフォーマンスを向上させるために使用できる情報を取得します。 
 ---
-= NetApp Copy and Syncで構成を調整するためのレポートを作成して表示します
+= NetApp Copy and Syncでのレポートの作成と表示
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
