@@ -37,7 +37,7 @@ AWS または Azure からのコピーと同期をサブスクライブすると
 
 時間単位の従量課金制サブスクリプションでは、作成した同期関係の数に基づいて時間ごとに課金されます。
 
-* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice["Azure の価格を見る"^]
+* https://marketplace.microsoft.com/en-us/product/netapp.cloud-sync-service?tab=PlansAndPrice["Azure の価格を見る"^]
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ["AWS の従量課金制料金を見る"^]
 
 

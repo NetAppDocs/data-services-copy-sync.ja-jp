@@ -54,7 +54,7 @@ summary: フォーラム、チャット サービス、ビデオなどのさま�
 
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ["AWS の従量課金制料金を見る"^]
 * https://aws.amazon.com/marketplace/pp/B06XX5V3M2["AWSの年間料金を見る"^]
-* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice["Azure の価格を見る"^]
+* https://marketplace.microsoft.com/en-us/product/netapp.cloud-sync-service?tab=PlansAndPrice["Azure の価格を見る"^]
 
 
 コピー ライセンスと同期ライセンスは、 NetApp担当者を通じても入手できます。各ライセンスでは、12 か月間に 20 の同期関係が有効になります。
