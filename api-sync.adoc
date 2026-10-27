@@ -4,7 +4,7 @@ permalink: api-sync.html
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis, 202, https status code 202, status code 202, id, id field, box 
 summary: Web UI を通じて利用できるNetApp Copy and Sync機能は、RESTful API を通じても利用できます。 
 ---
-= NetApp Copy and SyncAPI
+= NetApp Copy and Sync APIへの接続
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Web UI を通じて利用できるNetApp Copy and Sync機能は、RESTf
 
 
 [role="lead"]
-Web UI を通じて利用できるNetApp Copy and Sync機能は、RESTful API を通じても利用できます。
+Web UIで利用可能なNetApp Copy and Syncの機能は、REST APIを通じても利用できます。
 
 
 
