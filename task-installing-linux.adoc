@@ -28,7 +28,7 @@ NetApp Copy and Syncの新しいデータ ブローカー グループを作成�
 +
 CentOS Streamはサポートされていません。
 
-** Red Hat Enterprise Linux 8.5、8.8、8.9、および 9.4
+** Red Hat Enterprise Linux 8.5、8.8、8.9、9.4、および9.8
 ** ロッキーLinux 9
 ** Ubuntu Server 20.04 LTS、23.04 LTS、および 24.04 LTS
 ** SUSE Linux Enterprise Server 15 SP1
